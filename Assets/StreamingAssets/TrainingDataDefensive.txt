@@ -1,0 +1,9239 @@
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2388502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595422
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1221868
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.09294929
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1075074
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595995
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1189088
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1535376
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1342204
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1446129
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1595319
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1946589
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1649927
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1016502
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1071024
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1461239
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1810282
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.163065
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.1612533
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.3219555
+Action Taken: 3
+
+Data
+Enemy Action: 2
+Stamina: 100
+Reaction Time: 0.2049174
+Action Taken: 3
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.0364484
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 90
+Reaction Time: 0.2501884
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 90
+Reaction Time: 1.032346
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 85
+Reaction Time: 0.3291965
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 80
+Reaction Time: 0.0491382
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 75
+Reaction Time: 0.2355875
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 75
+Reaction Time: 1.052339
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 70
+Reaction Time: 0.05610181
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 60
+Reaction Time: 0.3228412
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 58.77908
+Reaction Time: 0.1169742
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 53.77908
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1481716
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 90
+Reaction Time: 0.400322
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 85
+Reaction Time: 0.4321525
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 80
+Reaction Time: 0.1319634
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 75
+Reaction Time: 0.3439311
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 70
+Reaction Time: 0.3512952
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 65
+Reaction Time: 0.3305276
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.187836
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2401701
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3346379
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.2746626
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 94.48714
+Reaction Time: 0.09096439
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1623076
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 90.87399
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.1945528
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3308698
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3437485
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3109988
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3242387
+Action Taken: 2
+
+Data
+Enemy Action: 1
+Stamina: 95
+Reaction Time: 0.3681085
+Action Taken: 2
+
+Data
+Enemy Action: 3
+Stamina: 90
+Reaction Time: 0.4126421
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 90
+Reaction Time: 0.3504052
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 80
+Reaction Time: 0.3528532
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 70
+Reaction Time: 0.3283989
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 60
+Reaction Time: 0.2818776
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 50
+Reaction Time: 0.2495773
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 40
+Reaction Time: 0.1842716
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 30
+Reaction Time: 0.1251811
+Action Taken: 1
+
+Data
+Enemy Action: 3
+Stamina: 20
+Reaction Time: 0.2069692
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.3494642
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 1
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168956
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 75.02873
+Reaction Time: 0.1167908
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.1833158
+Action Taken: 2
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 66.03586
+Reaction Time: 0.2001615
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 56.03586
+Reaction Time: 1.050033
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.8664923
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 80
+Reaction Time: 0.0168178
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 70
+Reaction Time: 0.1997252
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 90
+Reaction Time: 0.5662952
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 4
+
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 4
+
+Enemy Action: 4
+Stamina: 51.01142
+Reaction Time: 0.167335
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 76.03586
+Reaction Time: 0.3164497
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 81.01142
+Reaction Time: 0.3164299
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 71.01142
+Reaction Time: 0.182832
+Action Taken: 4
+
+Data
+Enemy Action: 4
+Stamina: 61.01142
+Reaction Time: 0.8666826
+Action Taken: 4
+
+Data
+Enemy Action: 0
+Stamina: 95
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 5
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 70
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 65
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 60
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 55
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 50
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 40
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 25
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 20
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 15
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+
+Data
+Enemy Action: 0
+Stamina: 30
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 95
+Reaction Time: 0
+Action Taken: 2
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 1
+
+Data
+Enemy Action: 0
+Stamina: 95
+Reaction Time: 0
+Action Taken: 4
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 4
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 4
+
+Data
+Enemy Action: 0
+Stamina: 95
+Reaction Time: 0
+Action Taken: 4
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 4
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 4
+
+Data
+Enemy Action: 0
+Stamina: 95
+Reaction Time: 0
+Action Taken: 4
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 4
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 4
+
+Data
+Enemy Action: 0
+Stamina: 95
+Reaction Time: 0
+Action Taken: 4
+
+Data
+Enemy Action: 0
+Stamina: 85
+Reaction Time: 0
+Action Taken: 4
+
+Data
+Enemy Action: 0
+Stamina: 75
+Reaction Time: 0
+Action Taken: 4

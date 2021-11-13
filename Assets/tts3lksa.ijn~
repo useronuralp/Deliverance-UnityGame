@@ -1,0 +1,58 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+/// <summary>
+/// sm_ prefix stands for State Machine and is used inside state machine behaviours.
+/// </summary>
+public class BlockHitStateMachine : StateMachineBehaviour
+{
+    private GameObject        sm_AttachedObject;
+    private MovementBehaviour sm_Movementscript;
+    private CombatBehaviour   sm_CombatScript;
+    private HealthStamina     sm_HealthStaminaScript;
+    private float             sm_KnockBackTimer;  //The object that gets hit will be staggered backwards FOR the duration of this variable.
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        //Do these first-----
+        sm_AttachedObject      = animator.gameObject;
+        sm_CombatScript        = sm_AttachedObject.GetComponent<CombatBehaviour>();
+        sm_Movementscript      = sm_AttachedObject.GetComponent<MovementBehaviour>();
+        sm_HealthStaminaScript = sm_AttachedObject.GetComponent<HealthStamina>();
+        //-------------------
+
+        sm_KnockBackTimer                      = 0.04f;
+        sm_CombatScript.m_PreventAttacktInputs = true;
+        sm_Movementscript.m_DisableMovement    = true;
+        sm_CombatScript.m_IsGettingHit         = true;
+        sm_CombatScript.m_IsBlocking           = true;
+        //sm_CombatScript.m_IsGuarding           = true;
+    }
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        sm_KnockBackTimer -= Time.deltaTime;                                                                     
+        if (sm_KnockBackTimer >= 0.0f)
+            sm_AttachedObject.transform.position += 15f * Time.deltaTime * -sm_AttachedObject.transform.forward; 
+
+        if (sm_HealthStaminaScript.m_CurrentStamina <= 0) //During guarding, if the your stamina runs out, the character will get stunned. 
+        {
+            sm_CombatScript.m_Animator.SetBool("isGuarding", false);
+            sm_HealthStaminaScript.m_StaminaRechargeTimer = 0.0f; //Immedietaly start recharing the stamina.
+            sm_CombatScript.m_Animator.SetBool("isStunned", true);
+            sm_CombatScript.m_Animator.SetTrigger("GetStunned");
+            sm_CombatScript.m_IsStunned = true;
+            sm_CombatScript.m_IsGuarding = false;
+        }
+        sm_CombatScript.m_IsBlocking           = true;
+        sm_CombatScript.m_PreventAttacktInputs = true;
+        sm_Movementscript.m_DisableMovement    = true;
+        sm_CombatScript.m_IsGettingHit         = true;
+    }
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        sm_CombatScript.m_IsBlocking           = false;
+        sm_CombatScript.m_PreventAttacktInputs = false;
+        sm_Movementscript.m_DisableMovement    = false;
+        sm_CombatScript.m_IsGettingHit         = false;
+    }
+}
