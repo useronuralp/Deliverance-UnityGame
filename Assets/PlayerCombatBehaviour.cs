@@ -7,9 +7,6 @@ public class PlayerCombatBehaviour : CombatBehaviour
 
     private State m_AIState = State.NONE;
     private FileIO m_Recorder;
-    private List<string> m_AvailablePunches;
-    private List<string> m_AvailableKicks;
-    private bool m_ReleaseGuard;
     protected override void Awake()
     {
         base.Awake();
@@ -17,16 +14,11 @@ public class PlayerCombatBehaviour : CombatBehaviour
     }
     private void Start()
     {
-        m_ReleaseGuard = false;
-        m_AvailablePunches = new List<string>();
-        m_AvailableKicks   = new List<string>();
-        ResetKicks();
-        ResetPunches();
         //m_Recorder         = new FileIO("TrainingData.txt");
     }
     void Update()
     {
-        //Debug.Log(m_IsGettingHit);
+        Debug.Log(m_IsGettingHit);
         ObserveAI();
         //Debug.Log(m_AIState);
         //if(!m_Animator.GetBool("isAttacking"))
@@ -53,27 +45,9 @@ public class PlayerCombatBehaviour : CombatBehaviour
         }
         else if(!m_IsStunned)
         {
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                Parry();
-                ObserveAI();
-                //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.PARRY);
+            ProcessAttackInput();
 
-            }
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                Punch();
-                ObserveAI();
-                //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
-            }
-            else if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                Kick();
-                ObserveAI();
-                //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
-
-            }
-            if(!m_IsAttacking && !m_IsGettingHit && !m_IsParryingFull && !m_IsStunned)
+            if (!m_IsAttacking && !m_IsGettingHit && !m_IsParryingFull && !m_IsStunned)
             {
                 if(Input.GetKeyDown(KeyCode.Space))
                 {
@@ -124,45 +98,42 @@ public class PlayerCombatBehaviour : CombatBehaviour
             }
         }
     }
-    public void Kick()
+    private void ProcessAttackInput()
     {
-        int attackIndex = Random.Range(0, m_AvailableKicks.Count);
-        if(ThrowAttack(m_AvailableKicks[attackIndex], m_Kicks[m_AvailableKicks[attackIndex]]))
+        if (Input.GetKey(KeyCode.X))
         {
-            m_AvailableKicks.RemoveAt(attackIndex);
-            if (m_AvailableKicks.Count == 0)
-            {
-                ResetKicks();
-            }
+            Parry();
+            ObserveAI();
+            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.PARRY);
+
         }
-    }
-    public void Punch()
-    {
-        Debug.Log(m_AvailablePunches.Count);
-        int attackIndex = Random.Range(0, m_AvailablePunches.Count);
-        if(ThrowAttack(m_AvailablePunches[attackIndex], m_Punches[m_AvailablePunches[attackIndex]]))
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.Mouse1))
         {
-            m_AvailablePunches.RemoveAt(attackIndex);
-            if (m_AvailablePunches.Count == 0)
-            {
-                ResetPunches();
-            }
+            ThrowAttack(m_NormalStance.UpKick, m_Kicks[m_NormalStance.UpKick.Head]);
+            ObserveAI();
+            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
         }
-    }
-    public override void ResetPunches()
-    {
-        m_AvailablePunches = new List<string>();
-        foreach(var element in m_Punches)
+        else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.Mouse1))
         {
-            m_AvailablePunches.Add(element.Key);
+            ThrowAttack(m_NormalStance.LeftKick, m_Kicks[m_NormalStance.LeftKick.Head]);
+            ObserveAI();
+            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
+
         }
-    }
-    public override void ResetKicks()
-    {
-        m_AvailableKicks = new List<string>();
-        foreach (var element in m_Kicks)
+        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Mouse1))
         {
-            m_AvailableKicks.Add(element.Key);
+            ThrowAttack(m_NormalStance.DownKick, m_Kicks[m_NormalStance.DownKick.Head]);
+            ObserveAI();
+            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
+
         }
+        else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.Mouse0))
+        {
+            ThrowAttack(m_NormalStance.UpPunch, m_Punches[m_NormalStance.UpPunch.Head]);
+            ObserveAI();
+            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
+
+        }
+        //Debug.Log(m_NormalStance.UpPunch.Head);
     }
 }

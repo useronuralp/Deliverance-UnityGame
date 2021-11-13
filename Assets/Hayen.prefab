@@ -3318,6 +3318,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightFootParticles
       objectReference: {fileID: 0}
+    - target: {fileID: 6694323717724771539, guid: de529577b51c204469620e07d54a5f69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7670373225960825310, guid: de529577b51c204469620e07d54a5f69,
         type: 3}
       propertyPath: CollisionModule.radiusScale
@@ -3624,6 +3629,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightHandParticles
       objectReference: {fileID: 0}
+    - target: {fileID: 6694323717724771539, guid: de529577b51c204469620e07d54a5f69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7670373225960825310, guid: de529577b51c204469620e07d54a5f69,
         type: 3}
       propertyPath: CollisionModule.radiusScale
@@ -3723,6 +3733,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LeftHandParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694323717724771539, guid: de529577b51c204469620e07d54a5f69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7670373225960825310, guid: de529577b51c204469620e07d54a5f69,
         type: 3}
@@ -3838,6 +3853,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LeftFootParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694323717724771539, guid: de529577b51c204469620e07d54a5f69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7670373225960825310, guid: de529577b51c204469620e07d54a5f69,
         type: 3}

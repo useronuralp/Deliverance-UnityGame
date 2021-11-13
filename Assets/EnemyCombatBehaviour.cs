@@ -154,7 +154,7 @@ public class EnemyCombatBehaviour : CombatBehaviour
 
     void Update()
     {
-        Debug.Log(m_ConsecutiveAttackCount);
+        //Debug.Log(m_ConsecutiveAttackCount);
         //Debug.Log(m_PreventAttacktInputs);
         if (m_Animator.GetBool("isDead")) //Check if the character is dead at the start.
         {
@@ -328,16 +328,16 @@ public class EnemyCombatBehaviour : CombatBehaviour
             case 1:
                 switch (Random.Range(0,3))
                 {
-                    case 0: ThrowAttack("TopKickRight", "RightLeg"); break;
-                    case 1: ThrowAttack("TopKickLeft",  "RightLeg"); break;
-                    case 2: ThrowAttack("LegSweepKick", "RightLeg"); break;            
+                    case 0: ThrowAttack(m_NormalStance.UpKick, m_Kicks[m_NormalStance.UpKick.Head]); break;
+                    case 1: ThrowAttack(m_NormalStance.LeftKick,  m_Kicks[m_NormalStance.LeftKick.Head]); break;
+                    case 2: ThrowAttack(m_NormalStance.DownKick, m_Kicks[m_NormalStance.DownKick.Head]); break;
                 }
                 break;
             case 2:
                 switch (Random.Range(0, 2))
                 {
-                    case 0: ThrowAttack("TopPunchLeft", "LeftHand"); break;
-                    case 1: ThrowAttack("TopPunchRight", "RightHand"); break;
+                    case 0: ThrowAttack(m_NormalStance.UpPunch, m_Punches[m_NormalStance.UpPunch.Head]); break;
+                    case 1: ThrowAttack(m_NormalStance.UpPunch, m_Punches[m_NormalStance.UpPunch.Head]); break;
                 }
                 break;
             case 3:

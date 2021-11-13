@@ -29,7 +29,11 @@ public class RecieveHitStateMachine : StateMachineBehaviour
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        sm_CombatScript.m_IsStunned = false;
         sm_CombatScript.m_IsGettingHit = true;
+        sm_CombatScript.m_PreventAttacktInputs = true;
+        sm_Movementscript.m_DisableMovement = true;
+
         sm_KnockBackTimer -= Time.deltaTime;                                                                     //Decrease the timer each second.
         if(sm_KnockBackTimer >= 0.0f)                                    
             sm_AttachedObject.transform.position += 15f * Time.deltaTime * -new Vector3(sm_AttachedObject.transform.forward.x , 0, sm_AttachedObject.transform.forward.z); //Slide back the character 

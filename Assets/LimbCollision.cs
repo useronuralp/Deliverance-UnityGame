@@ -28,11 +28,12 @@ public class LimbCollision : MonoBehaviour
         {
             if (collidedObject.GetType() == typeof(BoxCollider)) //Apply hit, only if you collide with the Hurt Box, not with hit boxes or move boxes (Capsule Collider). //TODO : Do not collide with limb colliders.
             {
-                //Debug.Log(collidedObject.tag);
-                //Debug.Log("Oi!");   
+                //Debug.Log(collidedObject.tag);   
                 //Combat scripts
                 CombatBehaviour selfCombatScript = transform.root.GetComponent<CombatBehaviour>();
                 CombatBehaviour targetCombatScript = GameObject.FindWithTag(target).GetComponent<CombatBehaviour>();
+
+                //Debug.Log(targetCombatScript.m_IsGettingHit);
 
                 string curAttack = selfCombatScript.m_CurrentAttack; //Name of the attack that the character is currently throwing.
 
