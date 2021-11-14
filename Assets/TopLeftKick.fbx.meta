@@ -5,7 +5,7 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -1498010087492872569
-    second: TopLeftKick
+    second: NormalStance_LeftKick_1
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -42,7 +42,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: TopLeftKick
+      name: NormalStance_LeftKick_1
       takeName: CINEMA_4D_Main
       internalID: 0
       firstFrame: 0

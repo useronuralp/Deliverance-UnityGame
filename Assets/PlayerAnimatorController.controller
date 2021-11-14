@@ -1679,7 +1679,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TopPunchLeft
+  m_Name: NormalStance_UpPunch_1
   m_Speed: 1.7
   m_CycleOffset: 0
   m_Transitions:
@@ -3641,7 +3641,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TopKickLeft
+  m_Name: NormalStance_LeftKick_1
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -3805,7 +3805,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TopPunchRight
+  m_Name: NormalStance_UpPunch_2
   m_Speed: 1.7
   m_CycleOffset: 0
   m_Transitions:
@@ -3839,7 +3839,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TopKickRight
+  m_Name: NormalStance_UpKick_1
   m_Speed: 1.3
   m_CycleOffset: 0
   m_Transitions:
@@ -4566,7 +4566,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LegSweep
+  m_Name: NormalStance_DownKick_1
   m_Speed: 1.4
   m_CycleOffset: 0
   m_Transitions:

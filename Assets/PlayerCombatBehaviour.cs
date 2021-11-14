@@ -17,6 +17,12 @@ public class PlayerCombatBehaviour : CombatBehaviour
     }
     void Update()
     {
+        if(m_IsAttacking)
+        {
+            //Debug.Log(m_StateElapesedTime);
+            //Debug.Log(m_ComboWindowStart);
+        }
+
         if(Input.GetKey(KeyCode.T))
         {
             MenuManager.RestartLevel(0);

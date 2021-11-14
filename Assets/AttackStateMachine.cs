@@ -25,6 +25,8 @@ public class AttackStateMachine : StateMachineBehaviour
     private const float       sm_LegSweepWaitingConstant     = 0.4f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
     private const float       sm_TopKickRightWaitingConstant = 0.25f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
     private bool              sm_DidSlide;
+
+
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Do these first-----
@@ -35,9 +37,10 @@ public class AttackStateMachine : StateMachineBehaviour
         sm_HurtBox        = sm_AttachedObject.GetComponent<BoxCollider>();
         //-------------------
 
+
         sm_DistanceToTarget                    = sm_CombatScript.m_DistanceToTarget;
         sm_HurtBox.center                      = sm_CombatScript.m_HurtBoxDimensions;
-        sm_ComboWindowTimer                    = 0.35f;
+        sm_ComboWindowTimer                    = sm_CombatScript.m_ComboWindowDuration;
         sm_ElapsedTime                         = 0.0f;
         sm_CombatScript.m_StateElapesedTime    = 0.0f;
         sm_CurrentAttack                       = sm_CombatScript.m_CurrentAttack;
@@ -51,6 +54,8 @@ public class AttackStateMachine : StateMachineBehaviour
         sm_AnimationSnapCooldownTimer          = sm_CombatScript.m_SnapStarTimers[sm_CombatScript.m_CurrentAttack];  //Get the current animations SNAP cooldown from the cache.
         sm_AnimationSlideTimer                 = sm_CombatScript.m_SlideTimes[sm_CombatScript.m_CurrentAttack];     //Get the current animations SLIDE duration from the cache.
         sm_LandingTime                         = sm_CombatScript.m_LandingTimes[sm_CurrentAttack];
+
+        sm_CombatScript.m_ComboWindowStart     = sm_CombatScript.m_CancelCooldowns[sm_CurrentAttack];
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -119,7 +124,7 @@ public class AttackStateMachine : StateMachineBehaviour
 
         //----------------------------------------------------Animation Cancel / Combo-----------------------------------------------
         if(sm_ElapsedTime >= sm_CombatScript.m_CancelCooldowns[sm_CurrentAttack]) //Check if the elapsed time until the start of the animation has reached the animation cancel window.
-        {                                                                         
+        {
             sm_ComboWindowTimer -= Time.deltaTime;                                //Decrease cancel window timer every frame. 
             if (sm_ComboWindowTimer > 0.0f)                                       //This is the duration of the window that where we give the player a chance to input a combo attack.
             {                                                                            

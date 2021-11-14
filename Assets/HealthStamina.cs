@@ -18,7 +18,7 @@ public class HealthStamina : MonoBehaviour
     public Image    m_HealthImage;
     public Image    m_StaminaImage;
     public Image    m_StaminaBackground;
-    public Animator m_Animator;
+    private Animator m_Animator;
 
     private void Awake()
     {

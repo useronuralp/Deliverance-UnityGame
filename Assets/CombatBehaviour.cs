@@ -82,6 +82,10 @@ public abstract class CombatBehaviour : MonoBehaviour
     protected int                             m_ConsecutiveAttackCount;
     public Stance                             m_NormalStance;
     public string                             m_RecievedAttack;
+    public float                              m_ComboWindowDuration;
+
+    //Experimental
+    public float                              m_ComboWindowStart;
     public class AttackPair //Two attacks that each direction will have in a stance..
     {
         public string Head; //Pointer to the next attack that the character will throw in this direction.
@@ -160,78 +164,78 @@ public abstract class CombatBehaviour : MonoBehaviour
         m_OffensiveColliders = new Dictionary<string, Collider>();
         m_Kicks = new Dictionary<string, string>()
         {
-            { "NormalStance_LeftKick_1",  "RightLeg" },
-            { "NormalStance_UpKick_1", "RightLeg"},
+            { "NormalStance_LeftKick_1", "RightLeg" },
+            { "NormalStance_UpKick_1",   "RightLeg"},
             { "NormalStance_DownKick_1", "RightLeg"}
         };
         m_Punches = new Dictionary<string, string>()
         {
             { "NormalStance_UpPunch_1",  "LeftHand" },
-            { "NormalStance_UpPunch_2", "RightHand" }
+            { "NormalStance_UpPunch_2",  "RightHand" }
         };
         m_BlockLocations = new Dictionary<string, string>()
         {
-            { "NormalStance_LeftKick_1",   "BlockTopLeft" },
-            { "NormalStance_UpKick_1",  "BlockTopLeft" },
-            { "NormalStance_DownKick_1",  "BlockTopLeft" },
+            { "NormalStance_LeftKick_1", "BlockTopLeft" },
+            { "NormalStance_UpKick_1",   "BlockTopLeft" },
+            { "NormalStance_DownKick_1", "BlockTopLeft" },
             { "NormalStance_UpPunch_1",  "BlockTopLeft" },
-            { "NormalStance_UpPunch_2", "BlockTopLeft" }
+            { "NormalStance_UpPunch_2",  "BlockTopLeft" }
         };
         m_HitLocations = new Dictionary<string, string>()
         {
-            { "NormalStance_LeftKick_1",   "GetHitTopLeft"     },
-            { "NormalStance_UpKick_1",  "GetHitTopLeft"     },
-            { "NormalStance_DownKick_1",  "GetHitMiddleLeft"  },
+            { "NormalStance_LeftKick_1", "GetHitTopLeft"     },
+            { "NormalStance_UpKick_1",   "GetHitTopLeft"     },
+            { "NormalStance_DownKick_1", "GetHitMiddleLeft"  },
             { "NormalStance_UpPunch_1",  "GetHitTopStraight" },
-            { "NormalStance_UpPunch_2", "GetHitTopStraight" }
+            { "NormalStance_UpPunch_2",  "GetHitTopStraight" }
         };
         m_SnapStarTimers = new Dictionary<string, float>()
         {
-            { "NormalStance_LeftKick_1",   s_NormalStance_LeftKick_1_SnapStart   },
-            { "NormalStance_UpKick_1",  s_NormalStance_UpKick_1_SnapStart  },
-            { "NormalStance_DownKick_1",  s_NormalStance_DownKick_1_SnapStart  },
+            { "NormalStance_LeftKick_1", s_NormalStance_LeftKick_1_SnapStart },
+            { "NormalStance_UpKick_1",   s_NormalStance_UpKick_1_SnapStart   },
+            { "NormalStance_DownKick_1", s_NormalStance_DownKick_1_SnapStart },
             { "NormalStance_UpPunch_1",  s_NormalStance_UpPunch_1_SnapStart  },
-            { "NormalStance_UpPunch_2", s_NormalStance_UpPunch_2_SnapStart }
+            { "NormalStance_UpPunch_2",  s_NormalStance_UpPunch_2_SnapStart  }
         };
         m_SlideTimes = new Dictionary<string, float>()
         {
-            { "NormalStance_LeftKick_1",  s_NormalStance_LeftKick_1_SlideTime   },
-            { "NormalStance_UpKick_1", s_NormalStance_UpKick_1_SlideTime  },
-            { "NormalStance_DownKick_1", s_NormalStance_DownKick_1_SlideTime  },
-            { "NormalStance_UpPunch_1", s_NormalStance_UpPunch_1_SlideTime  },
-            { "NormalStance_UpPunch_2",s_NormalStance_UpPunch_2_SlideTime }
+            { "NormalStance_LeftKick_1", s_NormalStance_LeftKick_1_SlideTime },
+            { "NormalStance_UpKick_1",   s_NormalStance_UpKick_1_SlideTime   },
+            { "NormalStance_DownKick_1", s_NormalStance_DownKick_1_SlideTime },
+            { "NormalStance_UpPunch_1",  s_NormalStance_UpPunch_1_SlideTime  },
+            { "NormalStance_UpPunch_2",  s_NormalStance_UpPunch_2_SlideTime  }
         };
         m_DamageNumbers = new Dictionary<string, float>()
         {
-            { "NormalStance_LeftKick_1",   s_NormalStance_LeftKick_1_Damage   },
-            { "NormalStance_UpKick_1",  s_NormalStance_UpKick_1_Damage  },
-            { "NormalStance_DownKick_1",  s_NormalStance_DownKick_1_Damage  },
-            { "NormalStance_UpPunch_1",  s_NormalStance_UpPunch_1_Damage  },
-            { "NormalStance_UpPunch_2", s_NormalStance_UpPunch_2_Damage }
+            { "NormalStance_LeftKick_1", s_NormalStance_LeftKick_1_Damage    },
+            { "NormalStance_UpKick_1",   s_NormalStance_UpKick_1_Damage      },
+            { "NormalStance_DownKick_1", s_NormalStance_DownKick_1_Damage    },
+            { "NormalStance_UpPunch_1",  s_NormalStance_UpPunch_1_Damage     },
+            { "NormalStance_UpPunch_2",  s_NormalStance_UpPunch_2_Damage     }
         };
         m_StaminaCosts = new Dictionary<string, float>()
         {
-            { "NormalStance_LeftKick_1",   s_NormalStance_LeftKick_1_Stamina   },
-            { "NormalStance_UpKick_1",  s_NormalStance_UpKick_1_Stamina  },
-            { "NormalStance_DownKick_1",  s_NormalStance_DownKick_1_Stamina  },
-            { "NormalStance_UpPunch_1",  s_NormalStance_UpPunch_1_Stamina  },
-            { "NormalStance_UpPunch_2", s_NormalStance_UpPunch_2_Stamina }
+            { "NormalStance_LeftKick_1", s_NormalStance_LeftKick_1_Stamina   },
+            { "NormalStance_UpKick_1",   s_NormalStance_UpKick_1_Stamina     },
+            { "NormalStance_DownKick_1", s_NormalStance_DownKick_1_Stamina   },
+            { "NormalStance_UpPunch_1",  s_NormalStance_UpPunch_1_Stamina    },
+            { "NormalStance_UpPunch_2",  s_NormalStance_UpPunch_2_Stamina    }
         };
         m_CancelCooldowns = new Dictionary<string, float>()
         {
-            { "NormalStance_LeftKick_1",   s_NormalStance_LeftKick_1_Cancel    },
-            { "NormalStance_UpKick_1",  s_NormalStance_UpKick_1_Cancel   },
-            { "NormalStance_DownKick_1",  s_NormalStance_DownKick_1_Cancel   },
-            { "NormalStance_UpPunch_1",  s_NormalStance_UpPunch_1_Cancel   },
-            { "NormalStance_UpPunch_2", s_NormalStance_UpPunch_2_Cancel  }
+            { "NormalStance_LeftKick_1", s_NormalStance_LeftKick_1_Cancel    },
+            { "NormalStance_UpKick_1",   s_NormalStance_UpKick_1_Cancel      },
+            { "NormalStance_DownKick_1", s_NormalStance_DownKick_1_Cancel    },
+            { "NormalStance_UpPunch_1",  s_NormalStance_UpPunch_1_Cancel     },
+            { "NormalStance_UpPunch_2",  s_NormalStance_UpPunch_2_Cancel     }
         };
         m_LandingTimes = new Dictionary<string, float>()
         {
-            { "NormalStance_LeftKick_1",   s_NormalStance_LeftKick_1_Landing   },
-            { "NormalStance_UpKick_1",  s_NormalStance_UpKick_1_Landing  },
-            { "NormalStance_DownKick_1",  s_NormalStance_DownKick_1_Landing  },
-            { "NormalStance_UpPunch_1",  s_NormalStance_UpPunch_1_Landing  },
-            { "NormalStance_UpPunch_2", s_NormalStance_UpPunch_2_Landing }
+            { "NormalStance_LeftKick_1", s_NormalStance_LeftKick_1_Landing   },
+            { "NormalStance_UpKick_1",   s_NormalStance_UpKick_1_Landing     },
+            { "NormalStance_DownKick_1", s_NormalStance_DownKick_1_Landing   },
+            { "NormalStance_UpPunch_1",  s_NormalStance_UpPunch_1_Landing    },
+            { "NormalStance_UpPunch_2",  s_NormalStance_UpPunch_2_Landing    }
         };
         //-----Stance initilizations----------------------------------------
         m_NormalStance = new Stance
@@ -248,26 +252,28 @@ public abstract class CombatBehaviour : MonoBehaviour
     }
     protected virtual void Awake()
     {
-        m_ActiveStance         = ActiveStance.Normal;
-        m_StateElapesedTime    = 0.0f;
-        m_StunDuration         = 2.0f;
-        m_IsGettingHit         = false;
-        m_IsParrying           = false;
-        m_IsIdle               = true;
-        m_IsBlocking           = false;
-        m_IsParryingFull       = false;
-        m_IsGuarding           = false;
-        m_PreventAttacktInputs = false;
-        m_IsStunned            = false;
-        m_IsAttacking          = false;
-        m_CanCombo             = false;
-        m_LockAttacking        = false;
-        m_RecievedAttack       = "None";
-        m_CurrentAttack        = "None";
-        m_StunTimer            = m_StunDuration;
-        m_Animator             = GetComponent<Animator>();
-        m_HurtBoxDimensions    = GetComponent<BoxCollider>().center;
-        m_MovementScript       = GetComponent<MovementBehaviour>();
+        m_ComboWindowDuration          = 0.35f;
+        m_ActiveStance                 = ActiveStance.Normal;
+        m_StateElapesedTime            = 0.0f;
+        m_StunDuration                 = 2.0f;
+        m_IsGettingHit                 = false;
+        m_IsParrying                   = false;
+        m_IsIdle                       = true;
+        m_IsBlocking                   = false;
+        m_IsParryingFull               = false;
+        m_IsGuarding                   = false;
+        m_PreventAttacktInputs         = false;
+        m_IsStunned                    = false;
+        m_IsAttacking                  = false;
+        m_CanCombo                     = false;
+        m_LockAttacking                = false;
+        m_RecievedAttack               = "None";
+        m_CurrentAttack                = "None";
+        m_StunTimer                    = m_StunDuration;
+        m_Animator                     = GetComponent<Animator>();
+        m_HurtBoxDimensions            = GetComponent<BoxCollider>().center;
+        m_MovementScript               = GetComponent<MovementBehaviour>();
+        m_ComboWindowStart             = 0.0f;
         foreach (Collider collider in gameObject.GetComponentsInChildren<Collider>())
         {
             //Note: Currently depending on colliders to contain a key substring in them to find them. TODO : This part could use a more sophisticated search algorithm.
