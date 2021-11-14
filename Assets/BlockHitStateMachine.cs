@@ -12,26 +12,45 @@ public class BlockHitStateMachine : StateMachineBehaviour
     private CombatBehaviour   sm_CombatScript;
     private HealthStamina     sm_HealthStaminaScript;
     private float             sm_KnockBackTimer;  //The object that gets hit will be staggered backwards FOR the duration of this variable.
+    private string            sm_CurrentRecievedAttack;
+    private Vector3           sm_KnockbackDirection;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Do these first-----
-        sm_AttachedObject      = animator.gameObject;
-        sm_CombatScript        = sm_AttachedObject.GetComponent<CombatBehaviour>();
-        sm_Movementscript      = sm_AttachedObject.GetComponent<MovementBehaviour>();
-        sm_HealthStaminaScript = sm_AttachedObject.GetComponent<HealthStamina>();
+        sm_AttachedObject        = animator.gameObject;
+        sm_CombatScript          = sm_AttachedObject.GetComponent<CombatBehaviour>();
+        sm_Movementscript        = sm_AttachedObject.GetComponent<MovementBehaviour>();
+        sm_HealthStaminaScript   = sm_AttachedObject.GetComponent<HealthStamina>();
         //-------------------
+
+        sm_CurrentRecievedAttack = sm_Movementscript.m_LockTarget.GetComponent<CombatBehaviour>().m_CurrentAttack;
+
+        if (sm_CurrentRecievedAttack.Contains("Left"))
+        {
+            sm_KnockbackDirection = Quaternion.AngleAxis(45, sm_AttachedObject.transform.up) * sm_AttachedObject.transform.forward;
+        }
+        else if (sm_CurrentRecievedAttack.Contains("Right"))
+        {
+            sm_KnockbackDirection = Quaternion.AngleAxis(-45, sm_AttachedObject.transform.up) * sm_AttachedObject.transform.forward;
+        }
+        else
+        {
+            sm_KnockbackDirection = new Vector3(sm_AttachedObject.transform.forward.x, 0, sm_AttachedObject.transform.forward.z);
+        }
+        sm_KnockbackDirection = new Vector3(sm_KnockbackDirection.x, 0, sm_KnockbackDirection.z); //Zero out Y.
 
         sm_KnockBackTimer                      = 0.04f;
         sm_CombatScript.m_PreventAttacktInputs = true;
         sm_Movementscript.m_DisableMovement    = true;
         sm_CombatScript.m_IsGettingHit         = true;
         sm_CombatScript.m_IsBlocking           = true;
+
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         sm_KnockBackTimer -= Time.deltaTime;                                                                     
         if (sm_KnockBackTimer >= 0.0f)
-            sm_AttachedObject.transform.position += 15f * Time.deltaTime * -sm_AttachedObject.transform.forward; 
+            sm_AttachedObject.transform.position += 15f * Time.deltaTime * -sm_KnockbackDirection; 
 
         if (sm_HealthStaminaScript.m_CurrentStamina <= 0) //During guarding, if the your stamina runs out, the character will get stunned. 
         {
@@ -46,6 +65,9 @@ public class BlockHitStateMachine : StateMachineBehaviour
         sm_CombatScript.m_PreventAttacktInputs = true;
         sm_Movementscript.m_DisableMovement    = true;
         sm_CombatScript.m_IsGettingHit         = true;
+
+
+        sm_AttachedObject.transform.LookAt(new Vector3(sm_Movementscript.m_LockTarget.transform.position.x, sm_AttachedObject.transform.position.y, sm_Movementscript.m_LockTarget.transform.position.z));
     }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

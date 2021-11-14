@@ -101,7 +101,7 @@ public class EnemyMovementBehaviour : MovementBehaviour
                     if ((transform.position - m_WayPoint).magnitude < 3)
                         PickWanderWaypoint(5);
                     
-                    transform.position += m_MovementSpeed * Time.deltaTime * transform.forward;
+                    transform.position += m_MovementSpeed * Time.deltaTime * new Vector3(transform.forward.x, 0, transform.forward.z);
                 }
                 else //Standing still
                 {

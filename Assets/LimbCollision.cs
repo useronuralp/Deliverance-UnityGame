@@ -24,7 +24,7 @@ public class LimbCollision : MonoBehaviour
     }
     void ApplyCollisionTo(string target, Collider collidedObject)
     {
-        if (collidedObject.transform.root.CompareTag(target))   //Check if the collided object is actually who we want to deal damage to. (If the character is EnemyAI, deal damage to "Player", if the character is Player, deal damage to "EnemeyAI".)
+        if (collidedObject.transform.CompareTag(target))   //Check if the collided object is actually who we want to deal damage to. (If the character is EnemyAI, deal damage to "Player", if the character is Player, deal damage to "EnemeyAI".)
         {
             if (collidedObject.GetType() == typeof(BoxCollider)) //Apply hit, only if you collide with the Hurt Box, not with hit boxes or move boxes (Capsule Collider). //TODO : Do not collide with limb colliders.
             {
@@ -36,7 +36,8 @@ public class LimbCollision : MonoBehaviour
                 //Debug.Log(targetCombatScript.m_IsGettingHit);
 
                 string curAttack = selfCombatScript.m_CurrentAttack; //Name of the attack that the character is currently throwing.
-
+                //if (curAttack == "None")
+                //    Debug.DebugBreak();
                 if (!targetCombatScript.m_IsGettingHit)  //
                 {
                     if (targetCombatScript.m_IsParrying) //Check if the opponent is parrying.
@@ -73,31 +74,38 @@ public class LimbCollision : MonoBehaviour
     {
         switch (attack) //Play the hit sound here.
         {
-            case "TopKickLeft": SoundManager.PlaySound("GetHitBody"); break;
-            case "TopPunchLeft": SoundManager.PlaySound("GetHitPunch"); break;
-            case "TopPunchRight": SoundManager.PlaySound("GetHitPunch"); break;
-            case "TopKickRight": SoundManager.PlaySound("GetHit"); break;
-            case "LegSweepKick": SoundManager.PlaySound("GetHitBody"); break;
+            case "NormalStance_LeftKick_1": SoundManager.PlaySound("GetHitBody"); break;
+            case "NormalStance_UpPunch_1": SoundManager.PlaySound("GetHitPunch"); break;
+            case "NormalStance_UpPunch_2": SoundManager.PlaySound("GetHitPunch"); break;
+            case "NormalStance_UpKick_1": SoundManager.PlaySound("GetHit"); break;
+            case "NormalStance_DownKick_1": SoundManager.PlaySound("GetHitBody"); break;
         }
     }
     void DealDamage(CombatBehaviour targetCombatScript, string attackToDealDamageWith, Collider other)
     {
-        targetCombatScript.m_IsGettingHit = true;
         PlayGettingHitSound(attackToDealDamageWith);
-        other.transform.root.GetComponent<HealthStamina>().GetHit(targetCombatScript.m_DamageNumbers[attackToDealDamageWith]);
-        targetCombatScript.m_Animator.SetTrigger(targetCombatScript.m_HitLocations[attackToDealDamageWith]);
+        if(attackToDealDamageWith != "None")
+        {
+            targetCombatScript.m_IsGettingHit = true;
+            other.transform.root.GetComponent<HealthStamina>().GetHit(targetCombatScript.m_DamageNumbers[attackToDealDamageWith]);
+            targetCombatScript.m_Animator.SetTrigger(targetCombatScript.m_HitLocations[attackToDealDamageWith]);
+        }
     }
     void ReduceStamina(CombatBehaviour targetCombatScript, string attackName, Collider other)
     {
-        targetCombatScript.m_IsGettingHit = true;
         SoundManager.PlaySound("Block1"); //Play block hit sound.
-        if(attackName.Contains("Kick") || attackName.Contains("kick"))
+        if(attackName != "None")
         {
-            other.transform.root.GetComponent<HealthStamina>().ReduceStamina(20.0f);
-        }
-        else
-        {
-            other.transform.root.GetComponent<HealthStamina>().ReduceStamina(10.0f);
+            if(attackName.Contains("Kick") || attackName.Contains("kick"))
+            {
+                targetCombatScript.m_IsGettingHit = true;
+                other.transform.root.GetComponent<HealthStamina>().ReduceStamina(20.0f);
+            }
+            else
+            {
+                targetCombatScript.m_IsGettingHit = true;
+                other.transform.root.GetComponent<HealthStamina>().ReduceStamina(10.0f);
+            }
         }
         targetCombatScript.m_Animator.SetBool("isGuarding", true); // Added to fix a bug.
         targetCombatScript.m_Animator.SetTrigger(targetCombatScript.m_BlockLocations[attackName]); //Set block animation trigger.

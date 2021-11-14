@@ -22,6 +22,9 @@ public class GuardStateMachine : StateMachineBehaviour
         sm_CombatScript.m_IsIdle               = false;
         sm_CombatScript.m_IsGuarding           = true;
         sm_CombatScript.m_PreventAttacktInputs = true;
+
+        //Experimental
+        sm_CombatScript.m_CurrentAttack        = "None";
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

@@ -89,7 +89,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchRight
+    m_ConditionEvent: ThrowNormalStance_UpPunch_2
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3351338889004778361}
@@ -276,7 +276,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: RecieveHitMiddleLeft
-  m_Speed: 1.5
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 8038901438844489671}
@@ -306,7 +306,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopKickLeft
+    m_ConditionEvent: ThrowNormalStance_LeftKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7950306590543523899}
@@ -410,7 +410,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowLegSweepKick
+    m_ConditionEvent: ThrowNormalStance_DownKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8642900214272124403}
@@ -542,7 +542,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowLegSweepKick
+    m_ConditionEvent: ThrowNormalStance_DownKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8642900214272124403}
@@ -737,7 +737,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopKickRight
+    m_ConditionEvent: ThrowNormalStance_UpKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5783400775659864383}
@@ -787,7 +787,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchRight
+    m_ConditionEvent: ThrowNormalStance_UpPunch_2
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5359001576467782321}
@@ -812,7 +812,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopKickRight
+    m_ConditionEvent: ThrowNormalStance_UpKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5783400775659864383}
@@ -862,7 +862,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopKickRight
+    m_ConditionEvent: ThrowNormalStance_UpKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5783400775659864383}
@@ -887,7 +887,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchLeft
+    m_ConditionEvent: ThrowNormalStance_UpPunch_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8177517049717405106}
@@ -939,7 +939,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: RecieveHitTopStraight
-  m_Speed: 2
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6553406674028453597}
@@ -1094,7 +1094,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowLegSweepKick
+    m_ConditionEvent: ThrowNormalStance_DownKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8642900214272124403}
@@ -1119,7 +1119,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopKickLeft
+    m_ConditionEvent: ThrowNormalStance_LeftKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4753828298766428408}
@@ -1253,7 +1253,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchLeft
+    m_ConditionEvent: ThrowNormalStance_UpPunch_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8177517049717405106}
@@ -1740,7 +1740,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchLeft
+    m_ConditionEvent: ThrowNormalStance_UpPunch_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2414154156231212026}
@@ -1840,7 +1840,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopKickRight
+    m_ConditionEvent: ThrowNormalStance_UpKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5783400775659864383}
@@ -1902,7 +1902,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopKickRight
+    m_ConditionEvent: ThrowNormalStance_UpKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5783400775659864383}
@@ -1927,7 +1927,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchRight
+    m_ConditionEvent: ThrowNormalStance_UpPunch_2
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3351338889004778361}
@@ -1952,7 +1952,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchRight
+    m_ConditionEvent: ThrowNormalStance_UpPunch_2
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5359001576467782321}
@@ -2108,7 +2108,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowLegSweepKick
+    m_ConditionEvent: ThrowNormalStance_DownKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8642900214272124403}
@@ -2158,7 +2158,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopKickRight
+    m_ConditionEvent: ThrowNormalStance_UpKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5783400775659864383}
@@ -2208,31 +2208,31 @@ AnimatorController:
   m_Name: PlayerAnimatorController
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: ThrowTopKickLeft
+  - m_Name: ThrowNormalStance_LeftKick_1
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: ThrowTopKickRight
+  - m_Name: ThrowNormalStance_UpKick_1
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: ThrowTopPunchLeft
+  - m_Name: ThrowNormalStance_UpPunch_1
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: ThrowLegSweepKick
+  - m_Name: ThrowNormalStance_DownKick_1
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: ThrowTopPunchRight
+  - m_Name: ThrowNormalStance_UpPunch_2
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -2421,7 +2421,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: RecieveHitTopLeft
-  m_Speed: 2.2
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4641410805552424840}
@@ -2551,7 +2551,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchRight
+    m_ConditionEvent: ThrowNormalStance_UpPunch_2
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5359001576467782321}
@@ -2576,7 +2576,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchRight
+    m_ConditionEvent: ThrowNormalStance_UpPunch_2
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5359001576467782321}
@@ -2670,7 +2670,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopKickLeft
+    m_ConditionEvent: ThrowNormalStance_LeftKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7950306590543523899}
@@ -2695,7 +2695,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowLegSweepKick
+    m_ConditionEvent: ThrowNormalStance_DownKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8642900214272124403}
@@ -2785,7 +2785,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchRight
+    m_ConditionEvent: ThrowNormalStance_UpPunch_2
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5359001576467782321}
@@ -2851,7 +2851,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowLegSweepKick
+    m_ConditionEvent: ThrowNormalStance_DownKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8642900214272124403}
@@ -3116,7 +3116,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchLeft
+    m_ConditionEvent: ThrowNormalStance_UpPunch_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2414154156231212026}
@@ -3141,7 +3141,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopKickLeft
+    m_ConditionEvent: ThrowNormalStance_LeftKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4753828298766428408}
@@ -3166,7 +3166,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchLeft
+    m_ConditionEvent: ThrowNormalStance_UpPunch_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2414154156231212026}
@@ -3782,7 +3782,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchLeft
+    m_ConditionEvent: ThrowNormalStance_UpPunch_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2414154156231212026}
@@ -3874,7 +3874,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopKickLeft
+    m_ConditionEvent: ThrowNormalStance_LeftKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4753828298766428408}
@@ -4015,7 +4015,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopKickLeft
+    m_ConditionEvent: ThrowNormalStance_LeftKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4753828298766428408}
@@ -4149,7 +4149,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchLeft
+    m_ConditionEvent: ThrowNormalStance_UpPunch_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2414154156231212026}
@@ -4601,7 +4601,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopKickLeft
+    m_ConditionEvent: ThrowNormalStance_LeftKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4753828298766428408}
@@ -4626,7 +4626,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchRight
+    m_ConditionEvent: ThrowNormalStance_UpPunch_2
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5359001576467782321}
@@ -4651,7 +4651,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopKickLeft
+    m_ConditionEvent: ThrowNormalStance_LeftKick_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4753828298766428408}
@@ -4676,7 +4676,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: ThrowTopPunchLeft
+    m_ConditionEvent: ThrowNormalStance_UpPunch_1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2414154156231212026}

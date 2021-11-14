@@ -13,7 +13,7 @@ public class AttackStateMachine : StateMachineBehaviour
     private CombatBehaviour   sm_CombatScript;                       //Combat script of the m_AttachedObject will be stored here.
     private float             sm_AnimationSnapCooldownTimer;         //Animation SNAP cooldown, taken from the combat script of the attached game object.
     private float             sm_AnimationSlideTimer;                //Animation SLIDE time, taken from the combat script of the attached game object.
-    private string            sm_CurrentAttack;                      //Full name of the current attack that is being performed by the character. Taken from the combat script. (Eg: TopKickLeft, TopKickRight, etc...)
+    private string            sm_CurrentAttack;                      //Full name of the current attack that is being performed by the character. Taken from the combat script. (Eg: NormalStance_LeftKick_1, TopKickRight, etc...)
     private float             sm_CharacterSlideSpeed;                //The speed with which we move the character to its target during the sliding mechanic of the attacks.
     private BoxCollider       sm_HurtBox;                            //HurtBox of the character.
     private float             sm_ElapsedTime;                        //Counting the elapsed time when an attack animaiton starts. This is that timer.
@@ -24,7 +24,7 @@ public class AttackStateMachine : StateMachineBehaviour
     private GameObject        sm_LockTarget;
     private const float       sm_LegSweepWaitingConstant     = 0.4f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
     private const float       sm_TopKickRightWaitingConstant = 0.25f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
-
+    private bool              sm_DidSlide;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Do these first-----
@@ -41,10 +41,12 @@ public class AttackStateMachine : StateMachineBehaviour
         sm_ElapsedTime                         = 0.0f;
         sm_CombatScript.m_StateElapesedTime    = 0.0f;
         sm_CurrentAttack                       = sm_CombatScript.m_CurrentAttack;
+        sm_DidSlide                            = false;
         sm_CombatScript.m_IsAttacking          = true;
         sm_CombatScript.m_PreventAttacktInputs = true;  
         sm_Movementscript.m_DisableMovement    = true;
         sm_CombatScript.m_IsIdle               = false;
+        //sm_CombatScript.m_CanCombo             = false;
         sm_CharacterSlideSpeed                 = 10.0f;
         sm_AnimationSnapCooldownTimer          = sm_CombatScript.m_SnapStarTimers[sm_CombatScript.m_CurrentAttack];  //Get the current animations SNAP cooldown from the cache.
         sm_AnimationSlideTimer                 = sm_CombatScript.m_SlideTimes[sm_CombatScript.m_CurrentAttack];     //Get the current animations SLIDE duration from the cache.
@@ -72,39 +74,44 @@ public class AttackStateMachine : StateMachineBehaviour
         {
             sm_AnimationSlideTimer -= Time.deltaTime;                                                  //Another timer, starts only when the above "sm_AnimationSnapCooldownTimer" ends.
             //Two special attacks for which we have to adjust the HurtBoxes.
-            if (sm_CurrentAttack == "LegSweepKick")
+            if(sm_CurrentAttack == sm_CombatScript.m_CurrentAttack)
             {
-                sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 0.0f, sm_HurtBox.center.z);       //Decrease the height of the HurtBox during this attack.
-            }
-            else if (sm_CurrentAttack == "TopKickRight")
-            {
-                sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 1.5f, sm_HurtBox.center.z);       //Increase the height of the HurtBox during this attack sine the character is jumping.
+                if (sm_CurrentAttack == "NormalStance_DownKick_1")
+                {
+                    sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 0.0f, sm_HurtBox.center.z);       //Decrease the height of the HurtBox during this attack.
+                }
+                else if (sm_CurrentAttack == "NormalStance_UpKick_1")
+                {
+                    sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 1.5f, sm_HurtBox.center.z);       //Increase the height of the HurtBox during this attack sine the character is jumping.
+                }
             }
         }
 
-        //---------------------------------------------------Snapping Start---------------------------------------------------------
+        //---------------------------------------------------Sliding Start---------------------------------------------------------
         if (sm_LockTarget)                                                                                                           //Where we apply the snapping mechanic of the attacks..
         {
-            if ((sm_DistanceToTarget > 1.0f && sm_DistanceToTarget < 3.0f) && sm_AnimationSnapCooldownTimer < 0 && sm_AnimationSlideTimer  > 0.0f) //Checking for the necessary conditions. I think the variable names are self explanatory.
+            if ((sm_DistanceToTarget > 1.21f && sm_DistanceToTarget < 3.3f) && sm_AnimationSnapCooldownTimer < 0 && sm_AnimationSlideTimer  > 0.0f && !sm_DidSlide) //Checking for the necessary conditions. I think the variable names are self explanatory.
             {
-                
-                sm_AttachedObject.transform.position += sm_CharacterSlideSpeed / (3 / sm_DistanceToTarget) * Time.deltaTime * sm_AttachedObject.transform.forward;  //Moving the character to target at a certain rate.
+                sm_AttachedObject.transform.position += sm_CharacterSlideSpeed / (3.3f / sm_DistanceToTarget) * Time.deltaTime * new Vector3(sm_AttachedObject.transform.forward.x, 0, sm_AttachedObject.transform.forward.z);  //Moving the character to target at a certain rate.
+            }
+            else if(sm_DistanceToTarget <= 1.21f)
+            {
+                sm_DidSlide = true;
             }
         }
-        //----------------------------------------------------Snapping End----------------------------------------------------------
+        //----------------------------------------------------Sliding End----------------------------------------------------------
 
-        //sm_AnimationSlideTimer + sm_CombatScript.m_LandingTimes[sm_CurrentAttack]
         if (sm_LandingTime <= 0.0f)  //Check if the landing time is is smaller than 0. Note: Constant is there to guarentee that impact point of the attack has reached its peak and the limb is currenlty being pulled back.
         {
             sm_CombatScript.m_OffensiveColliders[sm_CombatScript.m_LimbName].enabled = false;                     //Disable the correct collider(s) AS SOON AS THE IMPACT POINT IS REACHED.
 
             //TODO: MISSING HIT SOUND LOGIC 
 
-            if (sm_CurrentAttack == "LegSweepKick" && sm_AnimationSlideTimer + sm_LegSweepWaitingConstant <= 0.0f)          //Wait a little bit before restoring the hurtbox back to its original values. Constant at the end is the tested optimal wait time.
+            if (sm_CurrentAttack == "NormalStance_DownKick_1" && sm_AnimationSlideTimer + sm_LegSweepWaitingConstant <= 0.0f)          //Wait a little bit before restoring the hurtbox back to its original values. Constant at the end is the tested optimal wait time.
             {
                 sm_HurtBox.center = sm_CombatScript.m_HurtBoxDimensions; 
             }
-            else if (sm_CurrentAttack == "TopKickRight" && sm_AnimationSlideTimer + sm_TopKickRightWaitingConstant <= 0.0f) //Wait a little bit before restoring the hurtbox back to its original values. Constant at the end is the tested optimal wait time.
+            else if (sm_CurrentAttack == "NormalStance_UpKick_1" && sm_AnimationSlideTimer + sm_TopKickRightWaitingConstant <= 0.0f) //Wait a little bit before restoring the hurtbox back to its original values. Constant at the end is the tested optimal wait time.
             {
                 sm_HurtBox.center = sm_CombatScript.m_HurtBoxDimensions; 
             }
@@ -127,7 +134,7 @@ public class AttackStateMachine : StateMachineBehaviour
             }
         }
         //---------------------------------------------------------------------------------------------------------------------------
-        sm_Movementscript.transform.LookAt(new Vector3(sm_LockTarget.transform.position.x, sm_AttachedObject.transform.position.y, sm_LockTarget.transform.position.z)); //Turn the character towards the target during attacks.
+        sm_AttachedObject.transform.LookAt(new Vector3(sm_LockTarget.transform.position.x, sm_AttachedObject.transform.position.y, sm_LockTarget.transform.position.z)); //Turn the character towards the target during attacks.
     }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -145,12 +152,11 @@ public class AttackStateMachine : StateMachineBehaviour
             sm_CombatScript.m_StateElapesedTime = 0.0f;
             sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Stop();
             sm_CombatScript.m_NormalStance.ResetStance();
-            //Disable all the colliders upon exit.
-            //foreach (var nameColliderPair in sm_CombatScript.m_OffensiveColliders)
-            //{
-            //    nameColliderPair.Value.enabled = false;
-            //}
         }
-
+        //Disable all the colliders upon exit.
+        foreach (var nameColliderPair in sm_CombatScript.m_OffensiveColliders)
+        {
+            nameColliderPair.Value.enabled = false;
+        }
     }
 }

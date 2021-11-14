@@ -43,7 +43,7 @@ public abstract class MovementBehaviour : MonoBehaviour
             {
                 movementSpeed = m_RetreatMovementSpeed; //Decrease speed to discourage running away while fighting.
             }
-            m_MovementDirection = new Vector3(m_MovementDirection.x, 0, m_MovementDirection.z);
+            m_MovementDirection = new Vector3(m_MovementDirection.x, 0, m_MovementDirection.z); //Zero out y.
             transform.position += movementSpeed * Time.deltaTime * m_MovementDirection.normalized;
         }
         else // If the movement vector is zero, meaning the character is not moving.

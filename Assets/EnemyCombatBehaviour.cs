@@ -154,7 +154,7 @@ public class EnemyCombatBehaviour : CombatBehaviour
 
     void Update()
     {
-        //Debug.Log(m_ConsecutiveAttackCount);
+        Debug.Log(m_IsGettingHit);
         //Debug.Log(m_PreventAttacktInputs);
         if (m_Animator.GetBool("isDead")) //Check if the character is dead at the start.
         {
@@ -196,7 +196,7 @@ public class EnemyCombatBehaviour : CombatBehaviour
         else if(!m_IsStunned)
         {
            ObservePlayer(); 
-           if (Vector3.Distance(m_Player.transform.position, transform.position) < 2.6f)
+           if (Vector3.Distance(m_Player.transform.position, transform.position) < 3.3f)
            {
                 EnemyMovementBehaviour downcast = (EnemyMovementBehaviour)m_MovementScript;
                 //if (!m_PreventAttacktInputs) //AI is allowed to combo during frenzy.
@@ -319,34 +319,41 @@ public class EnemyCombatBehaviour : CombatBehaviour
                 break; //If we hit this control path and changed the previous preffered attack. Break out the loop.
             }
         }
-        switch (choice)
+        //if(Random.Range(0.0f, 100.0f) <= 50.0f)
+        //{
+        //    choice = Random.Range(1, 5);
+        //}
+        if(!m_IsInCoroutine)
         {
-            case 0:
-                //if (!m_IsParryingFull)
-                //    Parry();
-                break;
-            case 1:
-                switch (Random.Range(0,3))
-                {
-                    case 0: ThrowAttack(m_NormalStance.UpKick, m_Kicks[m_NormalStance.UpKick.Head]); break;
-                    case 1: ThrowAttack(m_NormalStance.LeftKick,  m_Kicks[m_NormalStance.LeftKick.Head]); break;
-                    case 2: ThrowAttack(m_NormalStance.DownKick, m_Kicks[m_NormalStance.DownKick.Head]); break;
-                }
-                break;
-            case 2:
-                switch (Random.Range(0, 2))
-                {
-                    case 0: ThrowAttack(m_NormalStance.UpPunch, m_Punches[m_NormalStance.UpPunch.Head]); break;
-                    case 1: ThrowAttack(m_NormalStance.UpPunch, m_Punches[m_NormalStance.UpPunch.Head]); break;
-                }
-                break;
-            case 3:
-                StartCoroutine(DelayedParry(Random.Range(0.0f, 0.9f))); //You can adjust the parry timing here to increase the difficulty of the AI.
-                break;
-            case 4:
-                StartCoroutine(Guard());
-                break;
-        }                
+            switch (choice)
+            {
+                case 0:
+                    //if (!m_IsParryingFull)
+                    //    Parry();
+                    break;
+                case 1:
+                    switch (Random.Range(0,3))
+                    {
+                        case 0: ThrowAttack(m_NormalStance.UpKick, m_Kicks[m_NormalStance.UpKick.Head]); break;
+                        case 1: ThrowAttack(m_NormalStance.LeftKick,  m_Kicks[m_NormalStance.LeftKick.Head]); break;
+                        case 2: ThrowAttack(m_NormalStance.DownKick, m_Kicks[m_NormalStance.DownKick.Head]); break;
+                    }
+                    break;
+                case 2:
+                    switch (Random.Range(0, 2))
+                    {
+                        case 0: ThrowAttack(m_NormalStance.UpPunch, m_Punches[m_NormalStance.UpPunch.Head]); break;
+                        case 1: ThrowAttack(m_NormalStance.UpPunch, m_Punches[m_NormalStance.UpPunch.Head]); break;
+                    }
+                    break;
+                case 3:
+                    StartCoroutine(DelayedParry(Random.Range(0.0f, 0.4f))); //You can adjust the parry timing here to increase the difficulty of the AI.
+                    break;
+                case 4:
+                    StartCoroutine(Guard());
+                    break;
+            }                
+        }
     }
     void ObservePlayer() //Gets the current state of the player.
     {
@@ -381,15 +388,12 @@ public class EnemyCombatBehaviour : CombatBehaviour
     {
         if(!m_IsInCoroutine)
         {
-            if (!m_PreventAttacktInputs)
+            if (!m_IsAttacking && !m_IsGettingHit && !m_IsParryingFull && !m_IsStunned)
             {
                 m_IsInCoroutine = true;
-                m_IsIdle = false;
-                m_IsGuarding = true;
-                m_PreventAttacktInputs = true;
-                m_Animator.SetBool("isGuarding", true);
+                GuardUp();
                 yield return new WaitForSecondsRealtime(1.0f);
-                m_Animator.SetBool("isGuarding", false);
+                GuardReleased();
                 m_IsInCoroutine = false;
             }
             else

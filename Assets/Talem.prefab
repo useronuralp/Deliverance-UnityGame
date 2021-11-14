@@ -248,8 +248,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.34, y: 0.1, z: 0.1}
-  m_Center: {x: 0.42, y: 0, z: 0}
+  m_Size: {x: 0.4, y: 0.1, z: 0.1}
+  m_Center: {x: 0.34, y: 0, z: 0}
 --- !u!114 &4976038797851668582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1240,7 +1240,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.4
+  m_Radius: 0.6
   m_Height: 1.87
   m_Direction: 1
   m_Center: {x: 0, y: 0.95, z: 0}
@@ -1291,6 +1291,7 @@ MonoBehaviour:
   m_StunDuration: 0
   m_HurtBoxDimensions: {x: 0, y: 0, z: 0}
   m_DistanceToTarget: 0
+  m_RecievedAttack: 
 --- !u!114 &594304253360316894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1598,7 +1599,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.1, z: 0.1}
+  m_Size: {x: 0.4, y: 0.1, z: 0.1}
   m_Center: {x: -0.34, y: 0, z: 0}
 --- !u!114 &392452534158479340
 MonoBehaviour:

@@ -124,7 +124,7 @@ public class PlayerMovementBehaviour : MovementBehaviour
                     RotateCharacterTowards(m_TurnRotation);
                 }
                 transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0); // Zero out x, z rotations. So that the character doesn't start to float. We only want to rotate in Y axis. (THIS IS A BUG FIX)
-                transform.position += m_MovementSpeed * Time.deltaTime * transform.forward;
+                transform.position += m_MovementSpeed * Time.deltaTime * new Vector3(transform.forward.x, 0, transform.forward.z);
             }
             else //Standing still
             {
@@ -137,7 +137,7 @@ public class PlayerMovementBehaviour : MovementBehaviour
         if (m_LockTarget) //If there is already a lock target, release it.
         {
             SetCenteringValues(1.5f, 2.0f, 0);
-            SetCameraPosition(new CinemachineRig(3.0f, 4.0f), new CinemachineRig(1.5f, 5.0f), new CinemachineRig(0.1f, 4.0f));
+            SetCameraPosition(new CinemachineRig(3.0f, 5.0f), new CinemachineRig(1.5f, 6.0f), new CinemachineRig(0.1f, 5.0f));
             SetTrackedTargetOffset(1.2f);
             m_LockTarget = null;
             m_FreeLookCamera.LookAt = m_FreeLookCamera.Follow;
@@ -153,7 +153,7 @@ public class PlayerMovementBehaviour : MovementBehaviour
                 SetCameraCenteringTo(true);
                 SetTrackedTargetOffset(0.5f);
                 SetCenteringValues(0.0f, 0.0f, -35);
-                SetCameraPosition(new CinemachineRig(1.7f, 3.0f), new CinemachineRig(1.7f, 3.0f), new CinemachineRig(1.7f, 3.0f));
+                SetCameraPosition(new CinemachineRig(2.0f, 4.0f), new CinemachineRig(2.0f, 4.0f), new CinemachineRig(2.0f, 4.0f));
             }
         }
     }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerCombatBehaviour : CombatBehaviour
 {
-
     private State m_AIState = State.NONE;
     private FileIO m_Recorder;
     protected override void Awake()
@@ -18,7 +17,11 @@ public class PlayerCombatBehaviour : CombatBehaviour
     }
     void Update()
     {
-        Debug.Log(m_IsGettingHit);
+        if(Input.GetKey(KeyCode.T))
+        {
+            MenuManager.RestartLevel(0);
+        }
+        //Debug.Log(m_IsGettingHit);
         ObserveAI();
         //Debug.Log(m_AIState);
         //if(!m_Animator.GetBool("isAttacking"))
