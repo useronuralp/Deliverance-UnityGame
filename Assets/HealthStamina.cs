@@ -71,7 +71,7 @@ public class HealthStamina : MonoBehaviour
     public void ReduceStamina(float amount)                          //Change the current stamina first, then pass the percentage to the coroutine.
     {
         m_StaminaRechargeTimer = m_StaminaRechardgeCooldown;         //Reset the recharge timer every time stamina is reduced, meaning whenever the character throws an attack.
-        //m_CurrentStamina -= amount;
+        m_CurrentStamina -= amount;
         StartCoroutine(ChangeStaminaTo(m_CurrentStamina / m_MaxStamina));
     }
     public void GetHit(float damage)                                 //Change the current health first, then pass the percentage to the coroutine.

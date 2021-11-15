@@ -6,7 +6,7 @@ public class ComboBar : MonoBehaviour
 {
     private CombatBehaviour m_PlayerCombatScript;
     public Image m_ComboBarImage;
-    private float m_ComboWindowDuration;
+    public Image m_BackgroundImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +16,14 @@ public class ComboBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(m_ComboBarImage.fillAmount == 0.0f)
+        {
+            m_BackgroundImage.enabled = false;
+        }
+        else
+        {
+            m_BackgroundImage.enabled = true;
+        }
         //Debug.Log(m_PlayerCombatScript.m_ComboWindowStart);
         if(m_PlayerCombatScript.m_IsAttacking && !m_PlayerCombatScript.m_LockAttacking)
         {

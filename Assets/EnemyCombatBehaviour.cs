@@ -46,7 +46,7 @@ public class EnemyCombatBehaviour : CombatBehaviour
         m_Frenzy                 = false;                                      //This will set to true when AI is allowed to chain / combo attacks.
         m_TrainingData           = new List<TrainingData>(); 
         m_FileIO                 = new FileIO(); 
-        List<string> data        = m_FileIO.ReadFromFile("TrainingDataAggressive.txt");  //Get the data from the .txt line by line.
+        List<string> data        = m_FileIO.ReadFromFile("TrainingDataDefensive.txt");  //Get the data from the .txt line by line.
         m_NeuralNetwork          = new NeuralNetwork(new int[]{5, 25, 25, 5}); //Create the correct layout for the NN.
         m_PlayerCombatScript     = m_Player.GetComponent<CombatBehaviour>();
         m_EnemyMovementScript    = (EnemyMovementBehaviour)m_MovementScript;   //Downcast.
@@ -154,7 +154,7 @@ public class EnemyCombatBehaviour : CombatBehaviour
 
     void Update()
     {
-        Debug.Log(m_IsGettingHit);
+        //Debug.Log(m_IsGettingHit);
         //Debug.Log(m_PreventAttacktInputs);
         if (m_Animator.GetBool("isDead")) //Check if the character is dead at the start.
         {
@@ -299,15 +299,15 @@ public class EnemyCombatBehaviour : CombatBehaviour
         }
 
         
-        //foreach (var element in neurons.Reverse())
-        //{
-        //    Debug.Log(element.Key);
-        //}
-        //
-        //foreach (int number in possibleChoices)
-        //{
-        //    Debug.Log(number);
-        //}
+        foreach (var element in neurons.Reverse())
+        {
+            Debug.Log(element.Key);
+        }
+        
+        foreach (int number in possibleChoices)
+        {
+            Debug.Log(number);
+        }
 
         int choice = possibleChoices[0]; //Set the choice to the highest action decided by the AI first.
 
