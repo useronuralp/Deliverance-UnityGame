@@ -26,7 +26,7 @@ public class AttackStateMachine : StateMachineBehaviour
     private const float       sm_TopKickRightWaitingConstant = 0.25f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
     private bool              sm_DidSlide;
 
-
+    
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Do these first-----
@@ -49,7 +49,7 @@ public class AttackStateMachine : StateMachineBehaviour
         sm_CombatScript.m_PreventAttacktInputs = true;  
         sm_Movementscript.m_DisableMovement    = true;
         sm_CombatScript.m_IsIdle               = false;
-        //sm_CombatScript.m_CanCombo             = false;
+        sm_CombatScript.m_CanCombo             = false;
         sm_CharacterSlideSpeed                 = 10.0f;
         sm_AnimationSnapCooldownTimer          = sm_CombatScript.m_SnapStarTimers[sm_CombatScript.m_CurrentAttack];  //Get the current animations SNAP cooldown from the cache.
         sm_AnimationSlideTimer                 = sm_CombatScript.m_SlideTimes[sm_CombatScript.m_CurrentAttack];     //Get the current animations SLIDE duration from the cache.
@@ -68,12 +68,14 @@ public class AttackStateMachine : StateMachineBehaviour
         //TODO: Make particles glow.
         sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Emit(2); //Emit particles during the attack.
         //Debug.Log(sm_ComboWindow);
-        sm_CombatScript.m_IsAttacking       = true;
-        sm_CombatScript.m_IsIdle            = false;
-        sm_LandingTime                     -= Time.deltaTime;
-        sm_AnimationSnapCooldownTimer      -= Time.deltaTime; //Snap cooldown timer for animation.
-        sm_ElapsedTime                     += Time.deltaTime; //starts when the attack animation starts. 
-        sm_CombatScript.m_StateElapesedTime = sm_ElapsedTime; //Propogate the elapsed time info to the combat script.
+        sm_CombatScript.m_PreventAttacktInputs = true;
+        sm_Movementscript.m_DisableMovement    = true;
+        sm_CombatScript.m_IsAttacking          = true;
+        sm_CombatScript.m_IsIdle               = false;
+        sm_LandingTime                         -= Time.deltaTime;
+        sm_AnimationSnapCooldownTimer          -= Time.deltaTime; //Snap cooldown timer for animation.
+        sm_ElapsedTime                         += Time.deltaTime; //starts when the attack animation starts. 
+        sm_CombatScript.m_StateElapesedTime    = sm_ElapsedTime; //Propogate the elapsed time info to the combat script.
 
         if (sm_AnimationSnapCooldownTimer <= 0)          //When snap cooldown ends.
         {
@@ -95,11 +97,11 @@ public class AttackStateMachine : StateMachineBehaviour
         //---------------------------------------------------Sliding Start---------------------------------------------------------
         if (sm_LockTarget)                                                                                                           //Where we apply the snapping mechanic of the attacks..
         {
-            if ((sm_DistanceToTarget > 1.21f && sm_DistanceToTarget < 3.3f) && sm_AnimationSnapCooldownTimer < 0 && sm_AnimationSlideTimer  > 0.0f && !sm_DidSlide) //Checking for the necessary conditions. I think the variable names are self explanatory.
+            if ((sm_DistanceToTarget > 1.25f && sm_DistanceToTarget < 3.3f) && sm_AnimationSnapCooldownTimer < 0 && sm_AnimationSlideTimer  > 0.0f && !sm_DidSlide) //Checking for the necessary conditions. I think the variable names are self explanatory.
             {
                 sm_AttachedObject.transform.position += sm_CharacterSlideSpeed / (3.3f / sm_DistanceToTarget) * Time.deltaTime * new Vector3(sm_AttachedObject.transform.forward.x, 0, sm_AttachedObject.transform.forward.z);  //Moving the character to target at a certain rate.
             }
-            else if(sm_DistanceToTarget <= 1.21f)
+            else if(sm_DistanceToTarget <= 1.25f)
             {
                 sm_DidSlide = true;
             }
@@ -145,16 +147,25 @@ public class AttackStateMachine : StateMachineBehaviour
     {
         sm_HurtBox.center  = sm_CombatScript.m_HurtBoxDimensions; //Restore the HurtBox back to its original values. Note : This should already be taken care of by the time the finite state reaches here, but still, I am setting it here again just in case.
 
-        if(sm_CurrentAttack == sm_CombatScript.m_CurrentAttack) //The case where the character left this state without comboing.
+        if(sm_CombatScript.m_IsGettingHit)
         {
-            sm_CombatScript.m_IsIdle = true;
-            sm_CombatScript.m_IsAttacking = false;
-            sm_CombatScript.m_PreventAttacktInputs = false;
-            sm_Movementscript.m_DisableMovement = false;
-            sm_CombatScript.m_CanCombo = false;
+            sm_CombatScript.m_IsAttacking   = false;
+            sm_CombatScript.m_CanCombo      = false;
             sm_CombatScript.m_LockAttacking = false;
             sm_CombatScript.m_CurrentAttack = "None";
-            sm_CombatScript.m_StateElapesedTime = 0.0f;
+            sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Stop();
+            sm_CombatScript.m_NormalStance.ResetStance();
+        }
+        else if(sm_CurrentAttack == sm_CombatScript.m_CurrentAttack) //The case where the character left this state without comboing.
+        {
+            sm_CombatScript.m_IsIdle               = true;
+            sm_CombatScript.m_IsAttacking          = false;
+            sm_CombatScript.m_PreventAttacktInputs = false;
+            sm_Movementscript.m_DisableMovement    = false;
+            sm_CombatScript.m_CanCombo             = false;
+            sm_CombatScript.m_LockAttacking        = false;
+            sm_CombatScript.m_CurrentAttack        = "None";
+            sm_CombatScript.m_StateElapesedTime    = 0.0f;
             sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Stop();
             sm_CombatScript.m_NormalStance.ResetStance();
         }

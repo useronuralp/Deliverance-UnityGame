@@ -372,16 +372,16 @@ public abstract class CombatBehaviour : MonoBehaviour
     }
     protected void GuardUp()
     {
-        m_IsIdle = false;
-        m_IsGuarding = true;
-        m_PreventAttacktInputs = true;
         m_Animator.SetBool("isGuarding", true);
+        m_IsIdle               = false;
+        m_IsGuarding           = true;
+        m_PreventAttacktInputs = true;
     }
     protected void GuardReleased()
     {
         m_Animator.SetBool("isGuarding", false);
-        m_IsGuarding = false;
+        m_IsIdle               = true;
+        m_IsGuarding           = false;
         m_PreventAttacktInputs = false;
-        m_IsIdle = true;
     }
 }

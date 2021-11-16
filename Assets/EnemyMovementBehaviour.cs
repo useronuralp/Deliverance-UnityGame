@@ -1,30 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class EnemyMovementBehaviour : MovementBehaviour
 {
     private GameObject m_Player;
     private Vector3 m_WayPoint;
     public  bool  m_WantToWander;
-    private float m_ResetTime = 5.0f;
-    private float m_TimeOutDuration;
     private CombatBehaviour m_CombatScript;
+    private NavMeshAgent m_NavMeshAgent;
+    private float m_WanderRadius = 5.0f;
     protected override void Awake()
     {
         base.Awake();
         m_CombatScript = GetComponent<CombatBehaviour>();
         m_Player = GameObject.FindWithTag("Player");
-        m_TimeOutDuration = m_ResetTime;
     }
     private void Start()
     {
         m_WantToWander = false;
-        if(m_WantToWander)
-            PickWanderWaypoint(5);
+        m_NavMeshAgent = GetComponent<NavMeshAgent>();
     }
     void Update()
     {
+        if (m_WantToWander)
+        {
+            if ((transform.position - m_WayPoint).magnitude >= m_WanderRadius)
+            {
+                PickWanderWaypoint(m_WanderRadius);
+            }
+        }
         //Debug.Log(m_WantToWander);
         if (m_Animator.GetBool("isDead"))
         {
@@ -34,21 +39,9 @@ public class EnemyMovementBehaviour : MovementBehaviour
         //Debug.Log("Is Getting hit:" + m_Animator.GetComponent<ICombatBehaviour>().m_IsGettingHit);
         //Debug.Log("Prevent attacks: " + m_Animator.GetComponent<ICombatBehaviour>().m_PreventAttacktInputs);
 
-        if(m_WantToWander) 
-        {
-            m_TimeOutDuration -= Time.deltaTime; //This is a safeguard for wandering. If the AI hasn't reached the destination by the time this variable hits zero. Pick a new waypoint. 
-            if (m_TimeOutDuration <= 0.0f)
-            {
-                PickWanderWaypoint(5);
-            }
-        }
-
-        //m_MovementDirection.Normalize();
-
         if (m_MovementDirection != Vector3.zero)
             m_TurnRotation = Quaternion.LookRotation(m_MovementDirection, Vector3.up);
 
-        //Debug.Log(m_MovementDirection);
         if(!m_CombatScript.m_IsStunned)
         {
             Movement(m_MovementDirection.normalized.x, m_MovementDirection.normalized.z);
@@ -67,26 +60,45 @@ public class EnemyMovementBehaviour : MovementBehaviour
             {
                 m_Animator.SetBool("isLockedOn", true);
                 transform.LookAt(new Vector3(m_LockTarget.transform.position.x, transform.position.y, m_LockTarget.transform.position.z));
-
-
-                Vector3 direction = m_MovementDirection;
                 if (m_WantToWander) //AI chills and wanders around.
                 {
-                    if ((transform.position - m_WayPoint).magnitude < 3)
-                        PickWanderWaypoint(5);
+                    m_NavMeshAgent.isStopped = false;
+                    if ((transform.position - m_WayPoint).magnitude < 2.0f)
+                    {
+                        PickWanderWaypoint(m_WanderRadius);
+                    }
+                    if(!m_CombatScript.m_IsAttacking)
+                    {
+                        m_Animator.SetBool("isMoving", true); 
+                        m_NavMeshAgent.speed = m_LockedOnMovementSpeed;
+                        m_NavMeshAgent.destination = m_WayPoint;
+                        float degree = Vector3.SignedAngle(transform.forward, (m_WayPoint - transform.position).normalized, Vector3.up); //Angle between the waypoint and facing direction.
+                        float rad = degree * Mathf.Deg2Rad; //Convert the degree to radians.
 
-                    //TODO: This part does not work correctly, 
-                    LockedOnMovement(horizontal, vertical);
+                        m_Animator.SetFloat("PosX", Mathf.Sin(rad) , 1.0f, Time.deltaTime * 20.0f); //Sinus of the degree gives me the local x axis direction.
+                        m_Animator.SetFloat("PosY", Mathf.Cos(rad), 1.0f, Time.deltaTime * 20.0f);  //Cosine of the degree gives me the local y axis direction.
+                    }
+                    else
+                    {
+                        m_NavMeshAgent.isStopped = true;
+                    }
                 }
                 else //AI becomes the aggressor.
                 {
-                    if (Vector3.Distance(transform.position, m_Player.transform.position) > 2.6f)
+                    if (Vector3.Distance(transform.position, m_Player.transform.position) > 3.3f)
                     {
-                        //m_Player.transform.position - transform.position;
-                        m_MovementDirection = m_Player.transform.position - transform.position;
-                        direction = new Vector3(0,0,1); //Straight forward walking animation.
-                        direction.Normalize();
-                        LockedOnMovement(direction.x, direction.z);
+                        m_NavMeshAgent.speed = m_LockedOnMovementSpeed;
+                        m_NavMeshAgent.isStopped = false;
+                        m_Animator.SetBool("isMoving", true);
+                        m_Animator.SetFloat("PosX", 0.0f, 1.0f, Time.deltaTime * 20.0f);
+                        m_Animator.SetFloat("PosY", 1.0f, 1.0f, Time.deltaTime * 20.0f);
+
+                        m_NavMeshAgent.destination = m_Player.transform.position;
+                    }
+                    else
+                    {
+                        //m_Animator.SetBool("isMoving", false);
+                        //m_NavMeshAgent.isStopped = true;
                     }
                 }
             }
@@ -99,7 +111,7 @@ public class EnemyMovementBehaviour : MovementBehaviour
                     transform.rotation = Quaternion.RotateTowards(transform.rotation, m_TurnRotation, 1000 * Time.deltaTime);
 
                     if ((transform.position - m_WayPoint).magnitude < 3)
-                        PickWanderWaypoint(5);
+                        PickWanderWaypoint(m_WanderRadius);
                     
                     transform.position += m_MovementSpeed * Time.deltaTime * new Vector3(transform.forward.x, 0, transform.forward.z);
                 }
@@ -110,16 +122,21 @@ public class EnemyMovementBehaviour : MovementBehaviour
                 transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0); //Zero out x and z.
             }
         }
+        else
+        {
+            m_NavMeshAgent.isStopped = true;
+        }
     }
 
     //TODO: Improve wandering algortihm.
-    void PickWanderWaypoint(float wanderRadius)
-    { 
-        m_TimeOutDuration = m_ResetTime;
-        m_WayPoint = new Vector3(Random.Range(transform.position.x - wanderRadius, transform.position.x + wanderRadius), transform.position.y, Random.Range(transform.position.z - wanderRadius, transform.position.z + wanderRadius))
-        {
-            y = 1
-        };
+    public void PickWanderWaypoint(float wanderRadius) //Get a random point in a radius of 180 degrees between the bot.
+    {
+        int angle = Random.Range(-90, 91);
+        float rad = angle * Mathf.Deg2Rad;
+        Vector3 position = new Vector3(Mathf.Sin(rad), 0, Mathf.Cos(rad));
+        position *= wanderRadius;
+
+        m_WayPoint = transform.TransformPoint(-position);
         m_MovementDirection = (m_WayPoint - transform.position).normalized;        
     }
 }

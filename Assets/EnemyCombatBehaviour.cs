@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Text.RegularExpressions;
 using System.Linq;
+using UnityEngine.AI;
 public class EnemyCombatBehaviour : CombatBehaviour
 {
     private GameObject             m_Player;
@@ -20,6 +21,7 @@ public class EnemyCombatBehaviour : CombatBehaviour
     private bool                   m_IsInCoroutine = false;
     private CombatBehaviour        m_PlayerCombatScript;
     private EnemyMovementBehaviour m_EnemyMovementScript;
+    private NavMeshAgent           m_NavMeshAgent;
     struct TrainingData
     {
         public int   EnemyAction;
@@ -46,10 +48,12 @@ public class EnemyCombatBehaviour : CombatBehaviour
         m_Frenzy                 = false;                                      //This will set to true when AI is allowed to chain / combo attacks.
         m_TrainingData           = new List<TrainingData>(); 
         m_FileIO                 = new FileIO(); 
-        List<string> data        = m_FileIO.ReadFromFile("TrainingDataDefensive.txt");  //Get the data from the .txt line by line.
+        List<string> data        = m_FileIO.ReadFromFile("TrainingDataAggressive.txt");  //Get the data from the .txt line by line.
         m_NeuralNetwork          = new NeuralNetwork(new int[]{5, 25, 25, 5}); //Create the correct layout for the NN.
         m_PlayerCombatScript     = m_Player.GetComponent<CombatBehaviour>();
         m_EnemyMovementScript    = (EnemyMovementBehaviour)m_MovementScript;   //Downcast.
+        m_NavMeshAgent           = GetComponent<NavMeshAgent>();
+
 
 #if true
         //TODO: Remove training at the start. Load an already trained NN.
@@ -154,7 +158,7 @@ public class EnemyCombatBehaviour : CombatBehaviour
 
     void Update()
     {
-        //Debug.Log(m_IsGettingHit);
+        //Debug.Log(m_ConsecutiveAttackCount);
         //Debug.Log(m_PreventAttacktInputs);
         if (m_Animator.GetBool("isDead")) //Check if the character is dead at the start.
         {
@@ -177,10 +181,12 @@ public class EnemyCombatBehaviour : CombatBehaviour
             m_EnemyMovementScript.m_WantToWander = true;
             if (m_WanderTimer <= 0.0f)
             {
+                m_NavMeshAgent.destination = m_Player.transform.position;
                 m_WanderTimer = Random.Range(1, 4); //Random wander durations every time.
                 m_ConsecutiveAttackCount = 0; //Reset the counter for the next check.
                 m_ConsecutiveAttackLimit = Random.Range(3, 8); //Get a new random attack limit.
                 m_EnemyMovementScript.m_WantToWander = false;
+                
             }
         }
         if (m_IsStunned)
@@ -201,6 +207,7 @@ public class EnemyCombatBehaviour : CombatBehaviour
                 EnemyMovementBehaviour downcast = (EnemyMovementBehaviour)m_MovementScript;
                 //if (!m_PreventAttacktInputs) //AI is allowed to combo during frenzy.
                 //    TakeAction();
+                //Debug.Log(downcast.m_WantToWander);
                 if (!downcast.m_WantToWander)
                 {
                     if (m_Frenzy)
@@ -299,15 +306,15 @@ public class EnemyCombatBehaviour : CombatBehaviour
         }
 
         
-        foreach (var element in neurons.Reverse())
-        {
-            Debug.Log(element.Key);
-        }
-        
-        foreach (int number in possibleChoices)
-        {
-            Debug.Log(number);
-        }
+        //foreach (var element in neurons.Reverse())
+        //{
+        //    Debug.Log(element.Key);
+        //}
+        //
+        //foreach (int number in possibleChoices)
+        //{
+        //    Debug.Log(number);
+        //}
 
         int choice = possibleChoices[0]; //Set the choice to the highest action decided by the AI first.
 
@@ -398,14 +405,6 @@ public class EnemyCombatBehaviour : CombatBehaviour
             }
             else
                 yield return null;
-        }
-    }
-    IEnumerator DelayedGuard(float time)
-    {
-        if(!m_PreventAttacktInputs)
-        {
-            yield return new WaitForSeconds(time);
-            StartCoroutine(Guard());
         }
     }
     IEnumerator DelayedParry(float time)

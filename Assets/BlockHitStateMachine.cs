@@ -45,6 +45,10 @@ public class BlockHitStateMachine : StateMachineBehaviour
         sm_CombatScript.m_IsGettingHit         = true;
         sm_CombatScript.m_IsBlocking           = true;
 
+        //Exp
+        sm_CombatScript.m_IsIdle = false;
+        sm_CombatScript.m_IsAttacking = false;
+
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -55,25 +59,50 @@ public class BlockHitStateMachine : StateMachineBehaviour
         if (sm_HealthStaminaScript.m_CurrentStamina <= 0) //During guarding, if the your stamina runs out, the character will get stunned. 
         {
             sm_CombatScript.m_Animator.SetBool("isGuarding", false);
-            sm_HealthStaminaScript.m_StaminaRechargeTimer = 0.0f; //Immedietaly start recharing the stamina.
+            sm_HealthStaminaScript.m_StaminaRechargeTimer = 0.0f; //Immedietaly start recharging the stamina.
             sm_CombatScript.m_Animator.SetBool("isStunned", true);
             sm_CombatScript.m_Animator.SetTrigger("GetStunned");
             sm_CombatScript.m_IsStunned = true;
             sm_CombatScript.m_IsGuarding = false;
+
+            sm_CombatScript.m_IsBlocking           = false;
+            sm_CombatScript.m_PreventAttacktInputs = true;
+            sm_Movementscript.m_DisableMovement    = true;
+            sm_CombatScript.m_IsGettingHit         = false;
         }
-        sm_CombatScript.m_IsBlocking           = true;
-        sm_CombatScript.m_PreventAttacktInputs = true;
-        sm_Movementscript.m_DisableMovement    = true;
-        sm_CombatScript.m_IsGettingHit         = true;
+        else
+        {
+            sm_CombatScript.m_IsBlocking           = true;
+            sm_CombatScript.m_PreventAttacktInputs = true;
+            sm_Movementscript.m_DisableMovement    = true;
+            sm_CombatScript.m_IsGettingHit         = true;
+            //Exp
+            sm_CombatScript.m_IsIdle = false;
+            sm_CombatScript.m_IsAttacking = false;
+        }
 
 
         sm_AttachedObject.transform.LookAt(new Vector3(sm_Movementscript.m_LockTarget.transform.position.x, sm_AttachedObject.transform.position.y, sm_Movementscript.m_LockTarget.transform.position.z));
     }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //if (sm_CombatScript.m_IsGettingHit)
+        //{
+        //    sm_CombatScript.m_IsAttacking = false;
+        //    sm_CombatScript.m_CanCombo = false;
+        //    sm_CombatScript.m_LockAttacking = false;
+        //    sm_CombatScript.m_CurrentAttack = "None";
+        //    sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Stop();
+        //    sm_CombatScript.m_NormalStance.ResetStance();
+        //}
+
         sm_CombatScript.m_IsBlocking           = false;
         sm_CombatScript.m_PreventAttacktInputs = false;
         sm_Movementscript.m_DisableMovement    = false;
         sm_CombatScript.m_IsGettingHit         = false;
+
+        //Exp
+        sm_CombatScript.m_IsIdle = true;
+        sm_CombatScript.m_IsAttacking = false;
     }
 }

@@ -28,27 +28,4 @@ public abstract class MovementBehaviour : MonoBehaviour
         m_Animator = GetComponent<Animator>();
     }
     protected abstract void Movement(float horizontal = 0.0f, float vertical = 0.0f); //Must be implemented by children. This is where the movement code is handled.
-    protected void LockedOnMovement(float horizontal, float vertical) //Called when the character is locked on to its target and in fighting stance.
-    {
-        if(m_MovementDirection != Vector3.zero) //Characater is moving.
-        {
-            float movementSpeed = m_LockedOnMovementSpeed;
-            int generalAngleOfMovement = (int)Vector3.SignedAngle(transform.forward, m_MovementDirection, Vector3.up);
-
-            m_Animator.SetBool("isMoving", true);
-            m_Animator.SetFloat("PosX", horizontal, 1.0f, Time.deltaTime * 20.0f);
-            m_Animator.SetFloat("PosY", vertical, 1.0f, Time.deltaTime * 20.0f);
-
-            if (generalAngleOfMovement >= 134 && generalAngleOfMovement <= 180 || generalAngleOfMovement <= -134 && generalAngleOfMovement > -180)
-            {
-                movementSpeed = m_RetreatMovementSpeed; //Decrease speed to discourage running away while fighting.
-            }
-            m_MovementDirection = new Vector3(m_MovementDirection.x, 0, m_MovementDirection.z); //Zero out y.
-            transform.position += movementSpeed * Time.deltaTime * m_MovementDirection.normalized;
-        }
-        else // If the movement vector is zero, meaning the character is not moving.
-        {
-            m_Animator.SetBool("isMoving", false);
-        }
-    }
 }

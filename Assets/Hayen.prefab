@@ -843,7 +843,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &1574713703145227529
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1222,7 +1222,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &317148679458432396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1520,7 +1520,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &885335546681551607
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2085,7 +2085,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &84022910302206091
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3114,6 +3114,7 @@ GameObject:
   - component: {fileID: -5838699855571865528}
   - component: {fileID: 2623103398646822236}
   - component: {fileID: 6412464817328319612}
+  - component: {fileID: 6825701419335736290}
   m_Layer: 7
   m_Name: Hayen
   m_TagString: EnemyAI
@@ -3236,6 +3237,8 @@ MonoBehaviour:
   m_HurtBoxDimensions: {x: 0, y: 0, z: 0}
   m_DistanceToTarget: 0
   m_RecievedAttack: 
+  m_ComboWindowDuration: 0
+  m_ComboWindowStart: 0
 --- !u!114 &2623103398646822236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3276,7 +3279,28 @@ MonoBehaviour:
   m_HealthImage: {fileID: 4909274670543662470}
   m_StaminaImage: {fileID: 4990831460338334177}
   m_StaminaBackground: {fileID: 1573447619533383487}
-  m_Animator: {fileID: 0}
+--- !u!195 &6825701419335736290
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811353593722595598}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 100
+  avoidancePriority: 50
+  m_AngularSpeed: 0
+  m_StoppingDistance: 1.25
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &9176597873574330437
 GameObject:
   m_ObjectHideFlags: 0

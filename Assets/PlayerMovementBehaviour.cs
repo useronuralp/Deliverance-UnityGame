@@ -106,7 +106,27 @@ public class PlayerMovementBehaviour : MovementBehaviour
             m_Animator.SetBool("isLockedOn", true);
             transform.LookAt(new Vector3(m_LockTarget.transform.position.x, transform.position.y, m_LockTarget.transform.position.z));
 
-            LockedOnMovement(horizontal, vertical);
+            //LockedOnMovement(horizontal, vertical);
+            if (m_MovementDirection != Vector3.zero) //Characater is moving.
+            {
+                float movementSpeed = m_LockedOnMovementSpeed;
+                int generalAngleOfMovement = (int)Vector3.SignedAngle(transform.forward, m_MovementDirection, Vector3.up);
+
+                m_Animator.SetBool("isMoving", true);
+                m_Animator.SetFloat("PosX", horizontal, 1.0f, Time.deltaTime * 20.0f);
+                m_Animator.SetFloat("PosY", vertical, 1.0f, Time.deltaTime * 20.0f);
+
+                if (generalAngleOfMovement >= 134 && generalAngleOfMovement <= 180 || generalAngleOfMovement <= -134 && generalAngleOfMovement > -180)
+                {
+                    movementSpeed = m_RetreatMovementSpeed; //Decrease speed to discourage running away while fighting.
+                }
+                m_MovementDirection = new Vector3(m_MovementDirection.x, 0, m_MovementDirection.z); //Zero out y.
+                transform.position += movementSpeed * Time.deltaTime * m_MovementDirection.normalized;
+            }
+            else // If the movement vector is zero, meaning the character is not moving.
+            {
+                m_Animator.SetBool("isMoving", false);
+            }
         }
         else //Free roaming
         {

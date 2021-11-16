@@ -18,18 +18,25 @@ public class RecieveHitStateMachine : StateMachineBehaviour
         sm_Movementscript = sm_AttachedObject.GetComponent<MovementBehaviour>();
         //-------------------
 
-        sm_CurrentRecievedAttack = sm_Movementscript.m_LockTarget.GetComponent<CombatBehaviour>().m_CurrentAttack;
-        if(sm_CurrentRecievedAttack.Contains("Left"))
+        if(sm_Movementscript.m_LockTarget)
         {
-            sm_KnockbackDirection = Quaternion.AngleAxis(45, sm_AttachedObject.transform.up) * sm_AttachedObject.transform.forward;
-        }
-        else if(sm_CurrentRecievedAttack.Contains("Right"))
-        {
-            sm_KnockbackDirection = Quaternion.AngleAxis(-45, sm_AttachedObject.transform.up) * sm_AttachedObject.transform.forward;
+            sm_CurrentRecievedAttack = sm_Movementscript.m_LockTarget.GetComponent<CombatBehaviour>().m_CurrentAttack;
+            if(sm_CurrentRecievedAttack.Contains("Left"))
+            {
+                sm_KnockbackDirection = Quaternion.AngleAxis(45, sm_AttachedObject.transform.up) * sm_AttachedObject.transform.forward;
+            }
+            else if(sm_CurrentRecievedAttack.Contains("Right"))
+            {
+                sm_KnockbackDirection = Quaternion.AngleAxis(-45, sm_AttachedObject.transform.up) * sm_AttachedObject.transform.forward;
+            }
+            else
+            {
+                sm_KnockbackDirection = new Vector3(sm_AttachedObject.transform.forward.x, 0, sm_AttachedObject.transform.forward.z);
+            }
         }
         else
         {
-            sm_KnockbackDirection = new Vector3(sm_AttachedObject.transform.forward.x, 0, sm_AttachedObject.transform.forward.z);
+            sm_KnockbackDirection = Vector3.zero;
         }
         sm_KnockbackDirection = new Vector3(sm_KnockbackDirection.x, 0, sm_KnockbackDirection.z); //Zero out Y.
 
@@ -42,27 +49,38 @@ public class RecieveHitStateMachine : StateMachineBehaviour
         sm_Movementscript.m_DisableMovement    = true;
         sm_CombatScript.m_IsGettingHit         = true;
 
-        //Experimental
-        sm_CombatScript.m_RecievedAttack       = sm_CurrentRecievedAttack;
 
+        //Exp
+        sm_CombatScript.m_IsIdle               = false;
+        sm_CombatScript.m_IsAttacking          = false;
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        sm_CombatScript.m_IsStunned = false;
+
         sm_CombatScript.m_IsGettingHit = true;
         sm_CombatScript.m_PreventAttacktInputs = true;
         sm_Movementscript.m_DisableMovement = true;
+        //Exp
+        sm_CombatScript.m_IsIdle = false;
+        sm_CombatScript.m_IsAttacking = false;
 
         sm_KnockBackTimer -= Time.deltaTime;                                                                     //Decrease the timer each second.
         if (sm_KnockBackTimer >= 0.0f)
             sm_AttachedObject.transform.position += 15f * Time.deltaTime * -sm_KnockbackDirection;/*-new Vector3(sm_AttachedObject.transform.forward.x , 0, sm_AttachedObject.transform.forward.z);*/ //Slide back the character 
 
-        sm_AttachedObject.transform.LookAt(new Vector3(sm_Movementscript.m_LockTarget.transform.position.x, sm_AttachedObject.transform.position.y, sm_Movementscript.m_LockTarget.transform.position.z));
+        if(sm_Movementscript.m_LockTarget)
+        {
+            sm_AttachedObject.transform.LookAt(new Vector3(sm_Movementscript.m_LockTarget.transform.position.x, sm_AttachedObject.transform.position.y, sm_Movementscript.m_LockTarget.transform.position.z));
+        }
     }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        sm_CombatScript.m_IsStunned            = false;
         sm_CombatScript.m_PreventAttacktInputs = false;
         sm_Movementscript.m_DisableMovement    = false;
         sm_CombatScript.m_IsGettingHit         = false;
+
+        //Exp.
+        sm_CombatScript.m_IsIdle               = true;
     }
 }
