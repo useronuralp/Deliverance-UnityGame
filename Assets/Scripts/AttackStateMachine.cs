@@ -25,6 +25,7 @@ public class AttackStateMachine : StateMachineBehaviour
     private const float       sm_NormalStance_DownKick_1_WaitingConstant     = 0.4f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
     private const float       sm_NormalStance_DownKick_2_WaitingConstant = 0.4f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
     private const float       sm_NormalStance_UpKick_1_WaitingConstant = 0.25f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
+    private const float       sm_NormalStance_UpKick_2_WaitingConstant = 0.25f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
     private bool              sm_DidSlide;
     private float             sm_DistanceToTargetDelta;
     
@@ -76,7 +77,7 @@ public class AttackStateMachine : StateMachineBehaviour
         }
 
         //TODO: Make particles glow.
-        //sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Emit(2); //Emit particles during the attack.
+        sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Emit(2); //Emit particles during the attack.
         //Debug.Log(sm_ComboWindow);
         sm_CombatScript.m_PreventAttacktInputs = true;
         sm_Movementscript.m_DisableMovement    = true;
@@ -104,6 +105,10 @@ public class AttackStateMachine : StateMachineBehaviour
                 else if (sm_CurrentAttack == "NormalStance_DownKick_2")
                 {
                     sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 0.0f, sm_HurtBox.center.z);       //Increase the height of the HurtBox during this attack sine the character is jumping.
+                }
+                else if (sm_CurrentAttack == "NormalStance_UpKick_2")
+                {
+                    sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 1.5f, sm_HurtBox.center.z);       //Increase the height of the HurtBox during this attack sine the character is jumping.
                 }
             }
         }
@@ -151,6 +156,10 @@ public class AttackStateMachine : StateMachineBehaviour
             {
                 sm_HurtBox.center = sm_CombatScript.m_HurtBoxDimensions;
             }
+            else if (sm_CurrentAttack == "NormalStance_UpKick_2" && sm_AnimationSlideTimer + sm_NormalStance_UpKick_2_WaitingConstant <= 0.0f) //Wait a little bit before restoring the hurtbox back to its original values. Constant at the end is the tested optimal wait time.
+            {
+                sm_HurtBox.center = sm_CombatScript.m_HurtBoxDimensions;
+            }
         }
 
         //----------------------------------------------------Animation Cancel / Combo-----------------------------------------------
@@ -181,7 +190,7 @@ public class AttackStateMachine : StateMachineBehaviour
             sm_CombatScript.m_CanCombo      = false;
             sm_CombatScript.m_LockAttacking = false;
             sm_CombatScript.m_CurrentAttack = "None";
-            //sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Stop();
+            sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Stop();
             sm_CombatScript.m_NormalStance.ResetStance();
         }
         else if(sm_CurrentAttack == sm_CombatScript.m_CurrentAttack) //The case where the character left this state without comboing.
@@ -194,7 +203,7 @@ public class AttackStateMachine : StateMachineBehaviour
             sm_CombatScript.m_LockAttacking        = false;
             sm_CombatScript.m_CurrentAttack        = "None";
             sm_CombatScript.m_StateElapesedTime    = 0.0f;
-            //sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Stop();
+            sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Stop();
             sm_CombatScript.m_NormalStance.ResetStance();
         }
         //Disable all the colliders upon exit.

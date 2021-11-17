@@ -148,6 +148,13 @@ public class PlayerCombatBehaviour : CombatBehaviour
             //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
 
         }
+        else if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            ThrowAttack(m_NormalStance.LeftPunch, m_Punches[m_NormalStance.LeftPunch.Head]);
+            ObserveAI();
+            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
+
+        }
         //Debug.Log(m_NormalStance.UpPunch.Head);
     }
 }
