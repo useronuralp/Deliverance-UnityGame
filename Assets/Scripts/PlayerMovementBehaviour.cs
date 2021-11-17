@@ -115,7 +115,7 @@ public class PlayerMovementBehaviour : MovementBehaviour
             SetCenteringValues(m_FreeLookCamera, 0, 0, -35);
             m_Animator.SetBool("isLockedOn", true);
             var q = Quaternion.LookRotation(m_LockTarget.transform.position - transform.position);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 1000 * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 500 * Time.deltaTime);
 
             if (m_MovementDirection != Vector3.zero) //Characater is moving.
             {

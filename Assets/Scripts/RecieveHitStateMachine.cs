@@ -48,7 +48,7 @@ public class RecieveHitStateMachine : StateMachineBehaviour
         sm_CombatScript.m_PreventAttacktInputs = true;
         sm_Movementscript.m_DisableMovement    = true;
         sm_CombatScript.m_IsGettingHit         = true;
-
+        sm_CombatScript.m_StateElapesedTime    = 0.0f;
 
         //Exp
         sm_CombatScript.m_IsIdle               = false;

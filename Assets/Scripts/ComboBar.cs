@@ -16,15 +16,19 @@ public class ComboBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(m_PlayerCombatScript.m_StateElapesedTime >= m_PlayerCombatScript.m_ComboWindowStart + m_PlayerCombatScript.m_ComboWindowDuration)
+        {
+            m_ComboBarImage.color = new Color32(79, 79, 79, 179);
+        }
         if(m_ComboBarImage.fillAmount == 0.0f)
         {
+            m_ComboBarImage.color = new Color32(255, 255, 255, 179);
             m_BackgroundImage.enabled = false;
         }
         else
         {
             m_BackgroundImage.enabled = true;
         }
-        //Debug.Log(m_PlayerCombatScript.m_ComboWindowStart);
         if(m_PlayerCombatScript.m_IsAttacking && !m_PlayerCombatScript.m_LockAttacking)
         {
             m_ComboBarImage.fillAmount = m_PlayerCombatScript.m_StateElapesedTime / (m_PlayerCombatScript.m_ComboWindowStart);

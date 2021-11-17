@@ -351,7 +351,7 @@ public class EnemyCombatBehaviour : CombatBehaviour
                     switch (Random.Range(0, 2))
                     {
                         case 0: ThrowAttack(m_NormalStance.UpPunch, m_Punches[m_NormalStance.UpPunch.Head]); break;
-                        case 1: ThrowAttack(m_NormalStance.UpPunch, m_Punches[m_NormalStance.UpPunch.Head]); break;
+                        case 1: ThrowAttack(m_NormalStance.RightPunch, m_Punches[m_NormalStance.RightPunch.Head]); break;
                     }
                     break;
                 case 3:

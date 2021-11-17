@@ -22,8 +22,9 @@ public class AttackStateMachine : StateMachineBehaviour
     private float             sm_DistanceToTarget;
     private float             sm_LandingTime;
     private GameObject        sm_LockTarget;
-    private const float       sm_LegSweepWaitingConstant     = 0.4f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
-    private const float       sm_TopKickRightWaitingConstant = 0.25f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
+    private const float       sm_NormalStance_DownKick_1_WaitingConstant     = 0.4f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
+    private const float       sm_NormalStance_DownKick_2_WaitingConstant = 0.4f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
+    private const float       sm_NormalStance_UpKick_1_WaitingConstant = 0.25f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
     private bool              sm_DidSlide;
     private float             sm_DistanceToTargetDelta;
     
@@ -50,6 +51,12 @@ public class AttackStateMachine : StateMachineBehaviour
         sm_Movementscript.m_DisableMovement    = true;
         sm_CombatScript.m_IsIdle               = false;
         sm_CombatScript.m_CanCombo             = false;
+        sm_CombatScript.m_IsGuarding           = false;
+        sm_CombatScript.m_IsParrying = false;
+        sm_CombatScript.m_IsParryingFull = false;
+        sm_CombatScript.m_IsGettingHit = false;
+        sm_CombatScript.m_IsBlocking = false;
+        sm_CombatScript.m_IsStunned = false;
         sm_CharacterSlideSpeed                 = 7.0f;
         sm_AnimationSnapCooldownTimer          = sm_CombatScript.m_SnapStarTimers[sm_CombatScript.m_CurrentAttack];  //Get the current animations SNAP cooldown from the cache.
         sm_AnimationSlideTimer                 = sm_CombatScript.m_SlideTimes[sm_CombatScript.m_CurrentAttack];     //Get the current animations SLIDE duration from the cache.
@@ -65,7 +72,6 @@ public class AttackStateMachine : StateMachineBehaviour
 
         if (sm_ElapsedTime >= sm_CombatScript.m_LandingTimes[sm_CurrentAttack] - 0.15f)
         {
-            Debug.Log(sm_CombatScript.m_LimbName);
             sm_CombatScript.m_OffensiveColliders[sm_CombatScript.m_LimbName].enabled = true;  //ENABLE collider.
         }
 
@@ -94,6 +100,10 @@ public class AttackStateMachine : StateMachineBehaviour
                 else if (sm_CurrentAttack == "NormalStance_UpKick_1")
                 {
                     sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 1.5f, sm_HurtBox.center.z);       //Increase the height of the HurtBox during this attack sine the character is jumping.
+                }
+                else if (sm_CurrentAttack == "NormalStance_DownKick_2")
+                {
+                    sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 0.0f, sm_HurtBox.center.z);       //Increase the height of the HurtBox during this attack sine the character is jumping.
                 }
             }
         }
@@ -129,13 +139,17 @@ public class AttackStateMachine : StateMachineBehaviour
             }
             //TODO: MISSING HIT SOUND LOGIC 
 
-            if (sm_CurrentAttack == "NormalStance_DownKick_1" && sm_AnimationSlideTimer + sm_LegSweepWaitingConstant <= 0.0f)          //Wait a little bit before restoring the hurtbox back to its original values. Constant at the end is the tested optimal wait time.
+            if (sm_CurrentAttack == "NormalStance_DownKick_1" && sm_AnimationSlideTimer + sm_NormalStance_DownKick_1_WaitingConstant <= 0.0f)          //Wait a little bit before restoring the hurtbox back to its original values. Constant at the end is the tested optimal wait time.
             {
                 sm_HurtBox.center = sm_CombatScript.m_HurtBoxDimensions; 
             }
-            else if (sm_CurrentAttack == "NormalStance_UpKick_1" && sm_AnimationSlideTimer + sm_TopKickRightWaitingConstant <= 0.0f) //Wait a little bit before restoring the hurtbox back to its original values. Constant at the end is the tested optimal wait time.
+            else if (sm_CurrentAttack == "NormalStance_UpKick_1" && sm_AnimationSlideTimer + sm_NormalStance_UpKick_1_WaitingConstant <= 0.0f) //Wait a little bit before restoring the hurtbox back to its original values. Constant at the end is the tested optimal wait time.
             {
                 sm_HurtBox.center = sm_CombatScript.m_HurtBoxDimensions; 
+            }
+            else if (sm_CurrentAttack == "NormalStance_DownKick_2" && sm_AnimationSlideTimer + sm_NormalStance_DownKick_2_WaitingConstant <= 0.0f) //Wait a little bit before restoring the hurtbox back to its original values. Constant at the end is the tested optimal wait time.
+            {
+                sm_HurtBox.center = sm_CombatScript.m_HurtBoxDimensions;
             }
         }
 
@@ -167,7 +181,7 @@ public class AttackStateMachine : StateMachineBehaviour
             sm_CombatScript.m_CanCombo      = false;
             sm_CombatScript.m_LockAttacking = false;
             sm_CombatScript.m_CurrentAttack = "None";
-            sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Stop();
+            //sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Stop();
             sm_CombatScript.m_NormalStance.ResetStance();
         }
         else if(sm_CurrentAttack == sm_CombatScript.m_CurrentAttack) //The case where the character left this state without comboing.

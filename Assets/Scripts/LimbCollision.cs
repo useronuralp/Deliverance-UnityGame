@@ -80,6 +80,8 @@ public class LimbCollision : MonoBehaviour
             case "NormalStance_UpKick_1": SoundManager.PlaySound("GetHit"); break;
             case "NormalStance_DownKick_1": SoundManager.PlaySound("GetHitBody"); break;
             case "NormalStance_RightKick_1": SoundManager.PlaySound("GetHitBody"); break;
+            case "NormalStance_DownKick_2": SoundManager.PlaySound("GetHitBody"); break;
+            case "NormalStance_RightPunch_1": SoundManager.PlaySound("GetHitBody"); break;
         }
     }
     void DealDamage(CombatBehaviour targetCombatScript, string attackToDealDamageWith, Collider other)
