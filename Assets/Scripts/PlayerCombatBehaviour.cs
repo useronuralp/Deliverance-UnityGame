@@ -6,7 +6,8 @@ public class PlayerCombatBehaviour : CombatBehaviour
 {
     private State m_AIState = State.NONE;
     private FileIO m_Recorder;
-    private float m_GuardLockDuration;
+    private bool m_DisableAllInput;
+    private GameObject m_LockTarget;
     protected override void Awake()
     {
         base.Awake();
@@ -14,12 +15,15 @@ public class PlayerCombatBehaviour : CombatBehaviour
     }
     private void Start()
     {
-        m_GuardLockDuration = 0.5f;
-        //m_Recorder         = new FileIO("TrainingData.txt");
+        m_LockTarget = null;
+        m_DisableAllInput = false;
+        EventManager.GetInstance().OnPlayerLockedOnToTarget += OnLockOnTarget; //Subscribe to event.
+        EventManager.GetInstance().OnPlayerReleasedLockOnTarget += OnReleaseLockOnTarget; //Subscribe to event.
+        //m_Recorder = new FileIO("TrainingData.txt");
     }
     void Update()
     {
-        Debug.Log(m_StateElapesedTime);
+        //Debug.Log(m_StateElapesedTime);
         if(Input.GetKey(KeyCode.T))
         {
             MenuManager.RestartLevel(0);
@@ -51,13 +55,16 @@ public class PlayerCombatBehaviour : CombatBehaviour
         }
         else if(!m_IsStunned)
         {
-            ProcessAttackInput();
-
-            if (!m_IsAttacking && !m_IsGettingHit && !m_IsParryingFull && !m_IsStunned)
+            if(!m_DisableAllInput)
             {
-                if (Input.GetKey(KeyCode.Space))
+                ProcessAttackInput();
+
+                if (!m_IsAttacking && !m_IsGettingHit && !m_IsParryingFull && !m_IsStunned)
                 {
-                    GuardUp();
+                    if (Input.GetKey(KeyCode.Space))
+                    {
+                        GuardUp();
+                    }
                 }
             }
         }
@@ -69,32 +76,32 @@ public class PlayerCombatBehaviour : CombatBehaviour
     void RecordState(State move)
     {
         ObserveAI();
-        m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)move);
+        m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)move);
     }
     void ObserveAI()
     {
         if(GetComponent<MovementBehaviour>().m_LockTarget)
         {
-            if (m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_IsParryingFull)
+            if (m_LockTarget.GetComponent<CombatBehaviour>().m_IsParryingFull)
             {
                 m_AIState = State.PARRY;
             }
-            else if (m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_IsGuarding || m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_IsBlocking)
+            else if (m_LockTarget.GetComponent<CombatBehaviour>().m_IsGuarding || m_LockTarget.GetComponent<CombatBehaviour>().m_IsBlocking)
             {
                 m_AIState = State.GUARD;
             }
-            else if (m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_IsAttacking)
+            else if (m_LockTarget.GetComponent<CombatBehaviour>().m_IsAttacking)
             {
-                if (m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_CurrentAttack.Contains("Kick"))
+                if (m_LockTarget.GetComponent<CombatBehaviour>().m_CurrentAttack.Contains("Kick"))
                 {
                     m_AIState = State.KICK;
                 }
-                else if (m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_CurrentAttack.Contains("Punch"))
+                else if (m_LockTarget.GetComponent<CombatBehaviour>().m_CurrentAttack.Contains("Punch"))
                 {
                     m_AIState = State.PUNCH;
                 }
             }
-            else if (m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_IsIdle)
+            else if (m_LockTarget.GetComponent<CombatBehaviour>().m_IsIdle)
             {
                 m_AIState = State.IDLE;
             }
@@ -106,55 +113,63 @@ public class PlayerCombatBehaviour : CombatBehaviour
         {
             Parry();
             ObserveAI();
-            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.PARRY);
+            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.PARRY);
 
         }
         if (Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.Mouse1))
         {
-            ThrowAttack(m_NormalStance.UpKick, m_Kicks[m_NormalStance.UpKick.Head]);
+            ThrowAttack(m_NormalStance.UpKick, m_Kicks[m_NormalStance.UpKick.Head], m_LockTarget);
             ObserveAI();
-            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
+            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
         }
         else if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.Mouse1))
         {
-            ThrowAttack(m_NormalStance.LeftKick, m_Kicks[m_NormalStance.LeftKick.Head]);
+            ThrowAttack(m_NormalStance.LeftKick, m_Kicks[m_NormalStance.LeftKick.Head], m_LockTarget);
             ObserveAI();
-            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
+            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
 
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Mouse1))
         {
-            ThrowAttack(m_NormalStance.DownKick, m_Kicks[m_NormalStance.DownKick.Head]);
+            ThrowAttack(m_NormalStance.DownKick, m_Kicks[m_NormalStance.DownKick.Head], m_LockTarget);
             ObserveAI();
-            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
+            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
 
         }
         else if(Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.Mouse1))
         {
-            ThrowAttack(m_NormalStance.RightKick, m_Kicks[m_NormalStance.RightKick.Head]);
+            ThrowAttack(m_NormalStance.RightKick, m_Kicks[m_NormalStance.RightKick.Head], m_LockTarget);
             ObserveAI();
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKeyDown(KeyCode.Mouse0))
         {
-            ThrowAttack(m_NormalStance.UpPunch, m_Punches[m_NormalStance.UpPunch.Head]);
+            ThrowAttack(m_NormalStance.UpPunch, m_Punches[m_NormalStance.UpPunch.Head], m_LockTarget);
             ObserveAI();
-            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
+            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
 
         }
         else if (Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.Mouse0))
         {
-            ThrowAttack(m_NormalStance.RightPunch, m_Punches[m_NormalStance.RightPunch.Head]);
+            ThrowAttack(m_NormalStance.RightPunch, m_Punches[m_NormalStance.RightPunch.Head], m_LockTarget);
             ObserveAI();
-            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
+            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
 
         }
         else if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.Mouse0))
         {
-            ThrowAttack(m_NormalStance.LeftPunch, m_Punches[m_NormalStance.LeftPunch.Head]);
+            ThrowAttack(m_NormalStance.LeftPunch, m_Punches[m_NormalStance.LeftPunch.Head], m_LockTarget);
             ObserveAI();
-            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_MovementScript.m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
+            //m_Recorder.WriteToFile((int)m_AIState, GetComponent<HealthStamina>().m_CurrentStamina, m_LockTarget.GetComponent<CombatBehaviour>().m_StateElapesedTime, (int)Moves.KICK);
 
         }
         //Debug.Log(m_NormalStance.UpPunch.Head);
+    }
+    private void OnLockOnTarget(GameObject lockTarget)
+    {
+        m_LockTarget = lockTarget;
+    }
+    private void OnReleaseLockOnTarget()
+    {
+        m_LockTarget = null;
     }
 }

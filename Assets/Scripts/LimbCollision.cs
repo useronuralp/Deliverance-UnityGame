@@ -7,7 +7,6 @@ using UnityEngine;
 /// </summary>
 public class LimbCollision : MonoBehaviour
 {
-    private bool m_IsColliding = false;
     private void OnTriggerEnter(Collider other)
     {
         if(other.GetType() == typeof(BoxCollider))
@@ -32,7 +31,7 @@ public class LimbCollision : MonoBehaviour
                 //Combat scripts
                 CombatBehaviour selfCombatScript = transform.root.GetComponent<CombatBehaviour>();
                 CombatBehaviour targetCombatScript = GameObject.FindWithTag(target).GetComponent<CombatBehaviour>();
-
+                MovementBehaviour selfMovementScript = transform.root.GetComponent<MovementBehaviour>();
                 //Debug.Log(targetCombatScript.m_IsGettingHit);
 
                 string curAttack = selfCombatScript.m_CurrentAttack; //Name of the attack that the character is currently throwing.
@@ -66,10 +65,6 @@ public class LimbCollision : MonoBehaviour
             }
         }
     }
-    private void Update()
-    {
-        m_IsColliding = false;
-    }
     void PlayGettingHitSound(string attack)
     {
         switch (attack) //Play the hit sound here.
@@ -85,6 +80,9 @@ public class LimbCollision : MonoBehaviour
             case "NormalStance_RightKick_2": SoundManager.PlaySound("GetHitBody"); break;
             case "NormalStance_UpKick_2": SoundManager.PlaySound("GetHitBody"); break;
             case "NormalStance_LeftPunch_1": SoundManager.PlaySound("GetHitBody"); break;
+            case "NormalStance_LeftPunch_2": SoundManager.PlaySound("GetHitBody"); break;
+            case "NormalStance_RightPunch_2": SoundManager.PlaySound("GetHitBody"); break;
+            case "NormalStance_LeftKick_2": SoundManager.PlaySound("GetHitBody"); break;
         }
     }
     void DealDamage(CombatBehaviour targetCombatScript, string attackToDealDamageWith, Collider other)

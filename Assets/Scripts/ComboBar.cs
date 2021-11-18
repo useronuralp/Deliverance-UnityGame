@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class ComboBar : MonoBehaviour
 {
     private CombatBehaviour m_PlayerCombatScript;
-    public Image m_ComboBarImage;
-    public Image m_BackgroundImage;
+    public Image            m_ComboBarImage;
+    public Image            m_BackgroundImage;
     // Start is called before the first frame update
     void Start()
     {

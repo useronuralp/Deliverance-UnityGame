@@ -19,14 +19,11 @@ public class AttackStateMachine : StateMachineBehaviour
     private float             sm_ElapsedTime;                        //Counting the elapsed time when an attack animaiton starts. This is that timer.
     private float             sm_ComboWindowTimer;                   //For the duration of this variable, player will be able to input an attack that the previous attack chains into.
 
-    private float             sm_DistanceToTarget;
     private float             sm_LandingTime;
-    private GameObject        sm_LockTarget;
-    private const float       sm_NormalStance_DownKick_1_WaitingConstant     = 0.4f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
-    private const float       sm_NormalStance_DownKick_2_WaitingConstant = 0.4f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
-    private const float       sm_NormalStance_UpKick_1_WaitingConstant = 0.25f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
-    private const float       sm_NormalStance_UpKick_2_WaitingConstant = 0.25f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxes to their original sizes.
-    private bool              sm_DidSlide;
+    private const float       sm_NormalStance_DownKick_1_WaitingConstant = 0.4f;  //HurtBox related waiting time constants. Used during the restoration of the HurtBoxe dimensions back to their original sizes.
+    private const float       sm_NormalStance_DownKick_2_WaitingConstant = 0.4f;  //HurtBox related waiting time constants. Used during the restoration of the HurtBoxe dimensions back to their original sizes.
+    private const float       sm_NormalStance_UpKick_1_WaitingConstant   = 0.25f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxe dimensions back to their original sizes.
+    private const float       sm_NormalStance_UpKick_2_WaitingConstant   = 0.25f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxe dimensions back to their original sizes.
     private float             sm_DistanceToTargetDelta;
     
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -35,29 +32,25 @@ public class AttackStateMachine : StateMachineBehaviour
         sm_AttachedObject = animator.gameObject;
         sm_CombatScript   = sm_AttachedObject.GetComponent<CombatBehaviour>();
         sm_Movementscript = sm_AttachedObject.GetComponent<MovementBehaviour>();
-        sm_LockTarget     = sm_Movementscript.m_LockTarget;
         sm_HurtBox        = sm_AttachedObject.GetComponent<BoxCollider>();
         //-------------------
-
-         
-        sm_DistanceToTarget                    = sm_CombatScript.m_DistanceToTarget;
+        
         sm_HurtBox.center                      = sm_CombatScript.m_HurtBoxDimensions;
         sm_ComboWindowTimer                    = sm_CombatScript.m_ComboWindowDuration;
         sm_ElapsedTime                         = 0.0f;
         sm_CombatScript.m_StateElapesedTime    = 0.0f;
         sm_CurrentAttack                       = sm_CombatScript.m_CurrentAttack;
-        sm_DidSlide                            = false;
         sm_CombatScript.m_IsAttacking          = true;
         sm_CombatScript.m_PreventAttacktInputs = true;  
         sm_Movementscript.m_DisableMovement    = true;
         sm_CombatScript.m_IsIdle               = false;
         sm_CombatScript.m_CanCombo             = false;
         sm_CombatScript.m_IsGuarding           = false;
-        sm_CombatScript.m_IsParrying = false;
-        sm_CombatScript.m_IsParryingFull = false;
-        sm_CombatScript.m_IsGettingHit = false;
-        sm_CombatScript.m_IsBlocking = false;
-        sm_CombatScript.m_IsStunned = false;
+        sm_CombatScript.m_IsParrying           = false;
+        sm_CombatScript.m_IsParryingFull       = false;
+        sm_CombatScript.m_IsGettingHit         = false;
+        sm_CombatScript.m_IsBlocking           = false;
+        sm_CombatScript.m_IsStunned            = false;
         sm_CharacterSlideSpeed                 = 7.0f;
         sm_AnimationSnapCooldownTimer          = sm_CombatScript.m_SnapStarTimers[sm_CombatScript.m_CurrentAttack];  //Get the current animations SNAP cooldown from the cache.
         sm_AnimationSlideTimer                 = sm_CombatScript.m_SlideTimes[sm_CombatScript.m_CurrentAttack];     //Get the current animations SLIDE duration from the cache.
@@ -78,7 +71,6 @@ public class AttackStateMachine : StateMachineBehaviour
 
         //TODO: Make particles glow.
         sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Emit(2); //Emit particles during the attack.
-        //Debug.Log(sm_ComboWindow);
         sm_CombatScript.m_PreventAttacktInputs = true;
         sm_Movementscript.m_DisableMovement    = true;
         sm_CombatScript.m_IsAttacking          = true;
@@ -127,9 +119,8 @@ public class AttackStateMachine : StateMachineBehaviour
             sm_DistanceToTargetDelta = Vector3.Distance(sm_AttachedObject.transform.position, sm_Movementscript.m_LockTarget.transform.position);
             if ( sm_AnimationSnapCooldownTimer < 0 && sm_AnimationSlideTimer  > 0.0f && sm_DistanceToTargetDelta >= 1.1f) //Checking for the necessary conditions. I think the variable names are self explanatory.
             {
-                sm_AttachedObject.transform.position += sm_CharacterSlideSpeed *  /*(sm_DistanceToTarget / sm_DistanceToTargetDelta) **/ Time.deltaTime * new Vector3(sm_AttachedObject.transform.forward.x, 0, sm_AttachedObject.transform.forward.z);  //Moving the character to target at a certain rate.
+                sm_AttachedObject.transform.position += sm_CharacterSlideSpeed * Time.deltaTime * new Vector3(sm_AttachedObject.transform.forward.x, 0, sm_AttachedObject.transform.forward.z);  //Moving the character to target at a certain rate.
             }
-            //Debug.Log(sm_DistanceToTargetDelta);
         }
         //----------------------------------------------------Sliding End----------------------------------------------------------
 
@@ -144,7 +135,7 @@ public class AttackStateMachine : StateMachineBehaviour
             }
             //TODO: MISSING HIT SOUND LOGIC 
 
-            if (sm_CurrentAttack == "NormalStance_DownKick_1" && sm_AnimationSlideTimer + sm_NormalStance_DownKick_1_WaitingConstant <= 0.0f)          //Wait a little bit before restoring the hurtbox back to its original values. Constant at the end is the tested optimal wait time.
+            if (sm_CurrentAttack == "NormalStance_DownKick_1" && sm_AnimationSlideTimer + sm_NormalStance_DownKick_1_WaitingConstant <= 0.0f) //Wait a little bit before restoring the hurtbox back to its original values. Constant at the end is the tested optimal wait time.
             {
                 sm_HurtBox.center = sm_CombatScript.m_HurtBoxDimensions; 
             }

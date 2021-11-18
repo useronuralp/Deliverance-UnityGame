@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public abstract class MovementBehaviour : MonoBehaviour
 {
-    public Quaternion        m_TurnRotation;           //Target rotation for player to turn to in the next frame.
+    public Quaternion        m_TurnRotation;           //Target rotation for the character to turn to in the next frame.
     public GameObject        m_LockTarget;             //GameObject that the character will lock onto.
     public bool              m_DisableMovement;        //This is being set by the attack animaitons in the game. Prevents player from moving during certain actions like attacks.
     protected readonly float m_MovementSpeed;          //Movement speed when the character is free roaming.

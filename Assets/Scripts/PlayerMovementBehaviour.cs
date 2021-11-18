@@ -13,13 +13,11 @@ public class PlayerMovementBehaviour : MovementBehaviour
     private Vector3             m_PlayerForwardDirection;                     //Forward vector of the player character. 
     public  CinemachineFreeLook m_FreeLookCamera;                             //Free look camera that is attached to player character.
     public  CinemachineFreeLook m_LockedOnCamera;                             //Free look camera that is attached to player character.
-    private CombatBehaviour     m_CombatScript; //TODO: High coupling.
-    private bool                m_IsUsingFreeLookCamera;
+    private bool                m_IsUsingFreeLookCamera;                      //A flag to jump between cameras.
     protected override void Awake()
     {
         base.Awake();
         m_IsUsingFreeLookCamera = true;
-        m_CombatScript = GetComponent<CombatBehaviour>();
     }
     void Start()
     {
@@ -45,6 +43,7 @@ public class PlayerMovementBehaviour : MovementBehaviour
     }
     void Update()
     {
+        //Debug.Log(m_CombatScript.m_IsStunned);
         if (m_Animator.GetBool("isDead")) //Handling death on top before everything else.
         {
             m_FreeLookCamera.LookAt = transform;
@@ -78,7 +77,7 @@ public class PlayerMovementBehaviour : MovementBehaviour
             LockOnEnemy();
         }
 
-        if (!m_CombatScript.m_IsStunned && !m_DisableMovement) //Handle Movement.
+        if (!m_DisableMovement) //Handle Movement.
         {
             Movement(horizontal, vertical);
         }
@@ -171,6 +170,7 @@ public class PlayerMovementBehaviour : MovementBehaviour
             m_LockedOnCamera.Priority = 0;
             m_LockTarget = null;
             m_LockedOnCamera.LookAt = null;
+            EventManager.GetInstance().PlayerReleasedLockOnTarget();
             return;
         }
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("EnemyAI");
@@ -182,6 +182,7 @@ public class PlayerMovementBehaviour : MovementBehaviour
                 m_LockedOnCamera.LookAt = m_LockTarget.transform;
                 m_FreeLookCamera.Priority = 0;
                 m_LockedOnCamera.Priority = 1;
+                EventManager.GetInstance().PlayerLockedOnToTarget(enemy);
                 break;
             }
         }

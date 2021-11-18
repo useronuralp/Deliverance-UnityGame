@@ -4,22 +4,25 @@ using UnityEngine;
 using UnityEngine.AI;
 public class EnemyMovementBehaviour : MovementBehaviour
 {
-    private GameObject m_Player;
-    private Vector3 m_WayPoint;
-    public  bool  m_WantToWander;
-    private CombatBehaviour m_CombatScript; //TODO: High Coupling.
-    private NavMeshAgent m_NavMeshAgent;
+    private GameObject     m_Player;
+    private Vector3        m_WayPoint;
+    public bool            m_WantToWander;
+    private NavMeshAgent   m_NavMeshAgent;
     private readonly float m_WanderRadius = 5.0f;
+    private bool           m_IsAttacking;
     protected override void Awake()
     {
         base.Awake();
-        m_CombatScript = GetComponent<CombatBehaviour>();
         m_Player = GameObject.FindWithTag("Player");
     }
     private void Start()
     {
-        m_WantToWander = false;
+        EventManager.GetInstance().OnAIStartsWandering += OnAIStartsWandering;
+        EventManager.GetInstance().OnAIIsAttacking     += OnAIIsAttacking;
+        EventManager.GetInstance().OnAIIsNotAttacking  += OnAIIsNotAttacking;
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
+        m_WantToWander = false;
+        m_IsAttacking = false;
     }
     void Update()
     {
@@ -30,7 +33,7 @@ public class EnemyMovementBehaviour : MovementBehaviour
                 PickWanderWaypoint(m_WanderRadius);
             }
         }
-        //Debug.Log(m_WantToWander);
+        //Debug.Log(m_IsAttacking);
         if (m_Animator.GetBool("isDead"))
         {
             enabled = false;
@@ -39,10 +42,9 @@ public class EnemyMovementBehaviour : MovementBehaviour
         if (m_MovementDirection != Vector3.zero)
             m_TurnRotation = Quaternion.LookRotation(m_MovementDirection, Vector3.up);
 
-        if(!m_CombatScript.m_IsStunned)
-        {
-            Movement(m_MovementDirection.normalized.x, m_MovementDirection.normalized.z);
-        }
+
+        Movement(m_MovementDirection.normalized.x, m_MovementDirection.normalized.z);
+
     }
     protected override void Movement(float horizontal = 0.0f, float vertical = 0.0f)
     {
@@ -65,7 +67,7 @@ public class EnemyMovementBehaviour : MovementBehaviour
                     {
                         PickWanderWaypoint(m_WanderRadius);
                     }
-                    if(!m_CombatScript.m_IsAttacking)
+                    if(!m_IsAttacking)
                     {
                         m_Animator.SetBool("isMoving", true); 
                         m_NavMeshAgent.speed = m_LockedOnMovementSpeed;
@@ -131,5 +133,25 @@ public class EnemyMovementBehaviour : MovementBehaviour
 
         m_WayPoint = transform.TransformPoint(-position);
         m_MovementDirection = (m_WayPoint - transform.position).normalized;        
+    }
+    IEnumerator Wander(float wanderTime)
+    {
+        m_WantToWander = true;
+        yield return new WaitForSeconds(wanderTime);
+        m_NavMeshAgent.destination = m_Player.transform.position;
+        m_WantToWander = false;
+        EventManager.GetInstance().AIWantsToAttackPlayer();
+    }
+    private void OnAIStartsWandering()
+    {
+        StartCoroutine(Wander(Random.Range(1,4)));
+    }
+    private void OnAIIsAttacking()
+    {
+        m_IsAttacking = true;
+    }
+    private void OnAIIsNotAttacking()
+    {
+        m_IsAttacking = false;
     }
 }

@@ -8,77 +8,95 @@ using UnityEngine;
 public abstract class CombatBehaviour : MonoBehaviour
 {
     //----------------------------Start Timers-------------------------------
-    private const float s_NormalStance_LeftKick_1_SnapStart    = 0.17f;
-    private const float s_NormalStance_UpKick_1_SnapStart   = 0.5f;
+    private const float s_NormalStance_LeftKick_1_SnapStart   = 0.17f;
+    private const float s_NormalStance_UpKick_1_SnapStart     = 0.5f;
     private const float s_NormalStance_DownKick_1_SnapStart   = 0.25f;
-    private const float s_NormalStance_UpPunch_1_SnapStart   = 0.1f;
-    private const float s_NormalStance_UpPunch_2_SnapStart  = 0.2f;
-    private const float s_NormalStance_RightKick_1_SnapStart = 0.2f;
-    private const float s_NormalStance_DownKick_2_SnapStart = 0.2f;
+    private const float s_NormalStance_UpPunch_1_SnapStart    = 0.1f;
+    private const float s_NormalStance_UpPunch_2_SnapStart    = 0.2f;
+    private const float s_NormalStance_RightKick_1_SnapStart  = 0.2f;
+    private const float s_NormalStance_DownKick_2_SnapStart   = 0.2f;
     private const float s_NormalStance_RightPunch_1_SnapStart = 0.0f;
-    private const float s_NormalStance_RightKick_2_SnapStart = 0.15f;
-    private const float s_NormalStance_UpKick_2_SnapStart = 0.4f;
-    private const float s_NormalStance_LeftPunch_1_SnapStart = 0.1f;
+    private const float s_NormalStance_RightKick_2_SnapStart  = 0.15f;
+    private const float s_NormalStance_UpKick_2_SnapStart     = 0.4f;
+    private const float s_NormalStance_LeftPunch_1_SnapStart  = 0.1f;
+    private const float s_NormalStance_LeftPunch_2_SnapStart  = 0.1f;
+    private const float s_NormalStance_RightPunch_2_SnapStart = 0.1f;
+    private const float s_NormalStance_LeftKick_2_SnapStart   = 0.1f;
     //----------------------------Slide Times--------------------------------
-    private const float s_NormalStance_LeftKick_1_SlideTime         = 0.3f;
-    private const float s_NormalStance_UpKick_1_SlideTime        = 0.3f;
-    private const float s_NormalStance_DownKick_1_SlideTime        = 0.3f;
-    private const float s_NormalStance_UpPunch_1_SlideTime        = 0.2f;
-    private const float s_NormalStance_UpPunch_2_SlideTime       = 0.15f;
-    private const float s_NormalStance_RightKick_1_SlideTime        = 0.3f;
-    private const float s_NormalStance_DownKick_2_SlideTime = 0.3f;
+    private const float s_NormalStance_LeftKick_1_SlideTime   = 0.25f;
+    private const float s_NormalStance_UpKick_1_SlideTime     = 0.3f;
+    private const float s_NormalStance_DownKick_1_SlideTime   = 0.3f;
+    private const float s_NormalStance_UpPunch_1_SlideTime    = 0.2f;
+    private const float s_NormalStance_UpPunch_2_SlideTime    = 0.15f;
+    private const float s_NormalStance_RightKick_1_SlideTime  = 0.3f;
+    private const float s_NormalStance_DownKick_2_SlideTime   = 0.3f;
     private const float s_NormalStance_RightPunch_1_SlideTime = 0.2f;
-    private const float s_NormalStance_RightKick_2_SlideTime = 0.2f;
-    private const float s_NormalStance_UpKick_2_SlideTime = 0.3f;
-    private const float s_NormalStance_LeftPunch_1_SlideTime = 0.15f;
+    private const float s_NormalStance_RightKick_2_SlideTime  = 0.2f;
+    private const float s_NormalStance_UpKick_2_SlideTime     = 0.3f;
+    private const float s_NormalStance_LeftPunch_1_SlideTime  = 0.2f;
+    private const float s_NormalStance_LeftPunch_2_SlideTime  = 0.2f;
+    private const float s_NormalStance_RightPunch_2_SlideTime = 0.2f;
+    private const float s_NormalStance_LeftKick_2_SlideTime   = 0.25f;
     //-------------------------Damage Numebers-------------------------------
-    private const float s_NormalStance_LeftKick_1_Damage            = 10.0f;
-    private const float s_NormalStance_UpKick_1_Damage           = 20.0f;
-    private const float s_NormalStance_DownKick_1_Damage           = 5.0f;
-    private const float s_NormalStance_UpPunch_1_Damage           = 5.0f;
-    private const float s_NormalStance_UpPunch_2_Damage          = 5.0f;
-    private const float s_NormalStance_RightKick_1_Damage       = 5.0f;
-    private const float s_NormalStance_DownKick_2_Damage = 5.0f;
-    private const float s_NormalStance_RightPunch_1_Damage = 5.0f;
-    private const float s_NormalStance_RightKick_2_Damage = 5.0f;
-    private const float s_NormalStance_UpKick_2_Damage = 5.0f;
-    private const float s_NormalStance_LeftPunch_1_Damage = 5.0f;
+    private const float s_NormalStance_LeftKick_1_Damage      = 10.0f;
+    private const float s_NormalStance_UpKick_1_Damage        = 20.0f;
+    private const float s_NormalStance_DownKick_1_Damage      = 10.0f;
+    private const float s_NormalStance_UpPunch_1_Damage       = 5.0f;
+    private const float s_NormalStance_UpPunch_2_Damage       = 10.0f;
+    private const float s_NormalStance_RightKick_1_Damage     = 10.0f;
+    private const float s_NormalStance_DownKick_2_Damage      = 5.0f;
+    private const float s_NormalStance_RightPunch_1_Damage    = 5.0f;
+    private const float s_NormalStance_RightKick_2_Damage     = 15.0f;
+    private const float s_NormalStance_UpKick_2_Damage        = 30.0f;
+    private const float s_NormalStance_LeftPunch_1_Damage     = 5.0f;
+    private const float s_NormalStance_LeftPunch_2_Damage     = 10.0f;
+    private const float s_NormalStance_RightPunch_2_Damage    = 10.0f;
+    private const float s_NormalStance_LeftKick_2_Damage      = 15.0f;
     //-------------------------Stamina Costs---------------------------------
-    private const float s_NormalStance_LeftKick_1_Stamina           = 5.0f;
-    private const float s_NormalStance_UpKick_1_Stamina          = 5.0f;
-    private const float s_NormalStance_DownKick_1_Stamina          = 5.0f;
-    private const float s_NormalStance_UpPunch_1_Stamina          = 5.0f;
-    private const float s_NormalStance_UpPunch_2_Stamina         = 5.0f;
-    private const float s_NormalStance_RightKick_1_Stamina      = 5.0f;
-    private const float s_NormalStance_DownKick_2_Stamina = 5.0f;
-    private const float s_NormalStance_RightPunch_1_Stamina = 5.0f;
-    private const float s_NormalStance_RightKick_2_Stamina = 5.0f;
-    private const float s_NormalStance_UpKick_2_Stamina = 5.0f;
-    private const float s_NormalStance_LeftPunch_1_Stamina = 5.0f;
+    private const float s_NormalStance_LeftKick_1_Stamina     = 5.0f;
+    private const float s_NormalStance_UpKick_1_Stamina       = 5.0f;
+    private const float s_NormalStance_DownKick_1_Stamina     = 5.0f;
+    private const float s_NormalStance_UpPunch_1_Stamina      = 5.0f;
+    private const float s_NormalStance_UpPunch_2_Stamina      = 5.0f;
+    private const float s_NormalStance_RightKick_1_Stamina    = 5.0f;
+    private const float s_NormalStance_DownKick_2_Stamina     = 5.0f;
+    private const float s_NormalStance_RightPunch_1_Stamina   = 5.0f;
+    private const float s_NormalStance_RightKick_2_Stamina    = 5.0f;
+    private const float s_NormalStance_UpKick_2_Stamina       = 5.0f;
+    private const float s_NormalStance_LeftPunch_1_Stamina    = 5.0f;
+    private const float s_NormalStance_LeftPunch_2_Stamina    = 5.0f;
+    private const float s_NormalStance_RightPunch_2_Stamina   = 5.0f;
+    private const float s_NormalStance_LeftKick_2_Stamina     = 5.0f;
     //-------------------------Cancel Cooldowns------------------------------
-    private const float s_NormalStance_LeftKick_1_Cancel            = 0.6f;
-    private const float s_NormalStance_UpKick_1_Cancel           = 1.0f;
-    private const float s_NormalStance_DownKick_1_Cancel           = 0.62f;
-    private const float s_NormalStance_UpPunch_1_Cancel           = 0.35f;
-    private const float s_NormalStance_UpPunch_2_Cancel          = 0.35f;
-    private const float s_NormalStance_RightKick_1_Cancel       = 0.6f;
-    private const float s_NormalStance_DownKick_2_Cancel = 0.8f;
-    private const float s_NormalStance_RightPunch_1_Cancel = 0.45f;
-    private const float s_NormalStance_RightKick_2_Cancel = 0.6f;
-    private const float s_NormalStance_UpKick_2_Cancel = 0.95f;
-    private const float s_NormalStance_LeftPunch_1_Cancel = 0.55f;
+    private const float s_NormalStance_LeftKick_1_Cancel      = 0.6f;
+    private const float s_NormalStance_UpKick_1_Cancel        = 1.0f;
+    private const float s_NormalStance_DownKick_1_Cancel      = 0.62f;
+    private const float s_NormalStance_UpPunch_1_Cancel       = 0.35f;
+    private const float s_NormalStance_UpPunch_2_Cancel       = 0.35f;
+    private const float s_NormalStance_RightKick_1_Cancel     = 0.6f;
+    private const float s_NormalStance_DownKick_2_Cancel      = 0.8f;
+    private const float s_NormalStance_RightPunch_1_Cancel    = 0.45f;
+    private const float s_NormalStance_RightKick_2_Cancel     = 0.6f;
+    private const float s_NormalStance_UpKick_2_Cancel        = 0.95f;
+    private const float s_NormalStance_LeftPunch_1_Cancel     = 0.55f;
+    private const float s_NormalStance_LeftPunch_2_Cancel     = 0.5f;
+    private const float s_NormalStance_RightPunch_2_Cancel    = 0.65f;
+    private const float s_NormalStance_LeftKick_2_Cancel      = 0.75f;
     //-------------------------Landing Times---------------------------------
-    private const float s_NormalStance_LeftKick_1_Landing           = 0.5f;
-    private const float s_NormalStance_UpKick_1_Landing          = 0.8f;
-    private const float s_NormalStance_DownKick_1_Landing          = 0.60f;
-    private const float s_NormalStance_UpPunch_1_Landing          = 0.35f;
-    private const float s_NormalStance_UpPunch_2_Landing         = 0.35f;
-    private const float s_NormalStance_RightKick_1_Landing      = 0.55f;
-    private const float s_NormalStance_DownKick_2_Landing = 0.70f;
-    private const float s_NormalStance_RightPunch_1_Landing = 0.35f;
-    private const float s_NormalStance_RightKick_2_Landing = 0.45f;
-    private const float s_NormalStance_UpKick_2_Landing = 0.8f;
-    private const float s_NormalStance_LeftPunch_1_Landing = 0.45f;
+    private const float s_NormalStance_LeftKick_1_Landing     = 0.5f;
+    private const float s_NormalStance_UpKick_1_Landing       = 0.8f;
+    private const float s_NormalStance_DownKick_1_Landing     = 0.60f;
+    private const float s_NormalStance_UpPunch_1_Landing      = 0.35f;
+    private const float s_NormalStance_UpPunch_2_Landing      = 0.35f;
+    private const float s_NormalStance_RightKick_1_Landing    = 0.55f;
+    private const float s_NormalStance_DownKick_2_Landing     = 0.70f;
+    private const float s_NormalStance_RightPunch_1_Landing   = 0.35f;
+    private const float s_NormalStance_RightKick_2_Landing    = 0.45f;
+    private const float s_NormalStance_UpKick_2_Landing       = 0.8f;
+    private const float s_NormalStance_LeftPunch_1_Landing    = 0.45f;
+    private const float s_NormalStance_LeftPunch_2_Landing    = 0.4f;
+    private const float s_NormalStance_RightPunch_2_Landing   = 0.55f;
+    private const float s_NormalStance_LeftKick_2_Landing     = 0.60f;
     //----------------------------------Maps---------------------------------
     public Dictionary<string, Collider>       m_OffensiveColliders;   //This dictionary maps all the collider names with their actual "Collider" objects. (Colliders: LeftHand, RightHand, LeftLeg, RightLeg)
     public Dictionary<string, string>         m_HitLocations;         //This dictionary maps all the attack names with their where-to-GET-HIT locations in mecanim.
@@ -113,7 +131,6 @@ public abstract class CombatBehaviour : MonoBehaviour
     public float                              m_StunDuration;         //The stun duration. Character stays stunned for the duration of this variable.
     public Vector3                            m_HurtBoxDimensions;    //X, Y and Z sizes of the hurtbox collider.
     public float                              m_DistanceToTarget;     //The distance between this character and its target (lock target).
-    protected MovementBehaviour               m_MovementScript;       //TODO: This creates coupling. Consider removing this.
     private ActiveStance                      m_ActiveStance;
     protected int                             m_ConsecutiveAttackCount;
     public Stance                             m_NormalStance;
@@ -206,6 +223,7 @@ public abstract class CombatBehaviour : MonoBehaviour
             { "NormalStance_DownKick_2", "LeftLeg"},
             { "NormalStance_RightKick_2", "RightLeg"},
             { "NormalStance_UpKick_2", "LeftLeg"},
+            { "NormalStance_LeftKick_2", "LeftLeg"},
         };
         m_Punches = new Dictionary<string, string>()
         {
@@ -213,6 +231,8 @@ public abstract class CombatBehaviour : MonoBehaviour
             { "NormalStance_UpPunch_2",  "RightHand" },
             { "NormalStance_RightPunch_1",  "RightHand" },
             { "NormalStance_LeftPunch_1",  "RightHand" },
+            { "NormalStance_LeftPunch_2", "RightHand"},
+            { "NormalStance_RightPunch_2", "RightHand"},
         };
         m_BlockLocations = new Dictionary<string, string>()
         {
@@ -227,6 +247,9 @@ public abstract class CombatBehaviour : MonoBehaviour
             { "NormalStance_RightKick_2", "BlockTopLeft" },
             { "NormalStance_UpKick_2",  "BlockTopLeft" },
             { "NormalStance_LeftPunch_1", "BlockTopLeft" },
+            { "NormalStance_LeftPunch_2", "BlockTopLeft" },
+            { "NormalStance_RightPunch_2", "BlockTopLeft" },
+            { "NormalStance_LeftKick_2", "BlockTopLeft" },
         };
         m_HitLocations = new Dictionary<string, string>()
         {
@@ -241,6 +264,9 @@ public abstract class CombatBehaviour : MonoBehaviour
             { "NormalStance_RightKick_2", "GetHitTopLeft" },
             { "NormalStance_UpKick_2", "GetHitTopLeft" },
             { "NormalStance_LeftPunch_1", "GetHitTopLeft" },
+            { "NormalStance_LeftPunch_2", "GetHitTopLeft" },
+            { "NormalStance_RightPunch_2", "GetHitTopLeft" },
+            { "NormalStance_LeftKick_2", "GetHitTopLeft" },
         };
         m_SnapStarTimers = new Dictionary<string, float>()
         {
@@ -255,6 +281,9 @@ public abstract class CombatBehaviour : MonoBehaviour
             { "NormalStance_RightKick_2",  s_NormalStance_RightKick_2_SnapStart  },
             { "NormalStance_UpKick_2",  s_NormalStance_UpKick_2_SnapStart  },
             { "NormalStance_LeftPunch_1",  s_NormalStance_LeftPunch_1_SnapStart  },
+            { "NormalStance_LeftPunch_2",  s_NormalStance_LeftPunch_2_SnapStart  },
+            { "NormalStance_RightPunch_2",  s_NormalStance_RightPunch_2_SnapStart  },
+            { "NormalStance_LeftKick_2",  s_NormalStance_LeftKick_2_SnapStart  },
         };
         m_SlideTimes = new Dictionary<string, float>()
         {
@@ -269,6 +298,9 @@ public abstract class CombatBehaviour : MonoBehaviour
             { "NormalStance_RightKick_2",  s_NormalStance_RightKick_2_SlideTime  },
             { "NormalStance_UpKick_2",  s_NormalStance_UpKick_2_SlideTime  },
             { "NormalStance_LeftPunch_1",  s_NormalStance_LeftPunch_1_SlideTime  },
+            { "NormalStance_LeftPunch_2",  s_NormalStance_LeftPunch_2_SlideTime  },
+            { "NormalStance_RightPunch_2",  s_NormalStance_RightPunch_2_SlideTime  },
+            { "NormalStance_LeftKick_2",  s_NormalStance_LeftKick_2_SlideTime  },
         };
         m_DamageNumbers = new Dictionary<string, float>()
         {
@@ -283,6 +315,9 @@ public abstract class CombatBehaviour : MonoBehaviour
             { "NormalStance_RightKick_2",  s_NormalStance_RightKick_2_Damage     },
             { "NormalStance_UpKick_2",  s_NormalStance_UpKick_2_Damage     },
             { "NormalStance_LeftPunch_1",  s_NormalStance_LeftPunch_1_Damage     },
+            { "NormalStance_LeftPunch_2",  s_NormalStance_LeftPunch_2_Damage     },
+            { "NormalStance_RightPunch_2",  s_NormalStance_RightPunch_2_Damage     },
+            { "NormalStance_LeftKick_2",  s_NormalStance_LeftKick_2_Damage     },
         };
         m_StaminaCosts = new Dictionary<string, float>()
         {
@@ -297,6 +332,9 @@ public abstract class CombatBehaviour : MonoBehaviour
             { "NormalStance_RightKick_2",  s_NormalStance_RightKick_2_Stamina    },
             { "NormalStance_UpKick_2",  s_NormalStance_UpKick_2_Stamina    },
             { "NormalStance_LeftPunch_1",  s_NormalStance_LeftPunch_1_Stamina    },
+            { "NormalStance_LeftPunch_2",  s_NormalStance_LeftPunch_2_Stamina    },
+            { "NormalStance_RightPunch_2",  s_NormalStance_RightPunch_2_Stamina    },
+            { "NormalStance_LeftKick_2",  s_NormalStance_LeftKick_2_Stamina    },
         };
         m_CancelCooldowns = new Dictionary<string, float>()
         {
@@ -311,6 +349,9 @@ public abstract class CombatBehaviour : MonoBehaviour
             { "NormalStance_RightKick_2",  s_NormalStance_RightKick_2_Cancel     },
             { "NormalStance_UpKick_2",  s_NormalStance_UpKick_2_Cancel     },
             { "NormalStance_LeftPunch_1",  s_NormalStance_LeftPunch_1_Cancel     },
+            { "NormalStance_LeftPunch_2",  s_NormalStance_LeftPunch_2_Cancel     },
+            { "NormalStance_RightPunch_2",  s_NormalStance_RightPunch_2_Cancel     },
+            { "NormalStance_LeftKick_2",  s_NormalStance_LeftKick_2_Cancel     },
         };
         m_LandingTimes = new Dictionary<string, float>()
         {
@@ -325,16 +366,19 @@ public abstract class CombatBehaviour : MonoBehaviour
             { "NormalStance_RightKick_2",    s_NormalStance_RightKick_2_Landing  },
             { "NormalStance_UpKick_2",    s_NormalStance_UpKick_2_Landing  },
             { "NormalStance_LeftPunch_1",    s_NormalStance_LeftPunch_1_Landing  },
+            { "NormalStance_LeftPunch_2",    s_NormalStance_LeftPunch_2_Landing  },
+            { "NormalStance_RightPunch_2",    s_NormalStance_RightPunch_2_Landing  },
+            { "NormalStance_LeftKick_2",    s_NormalStance_LeftKick_2_Landing  },
         };
         //-----Stance initilizations----------------------------------------
         m_NormalStance = new Stance
         {
             UpPunch    = new AttackPair("NormalStance_UpPunch_1", "NormalStance_UpPunch_2"),
             UpKick     = new AttackPair("NormalStance_UpKick_1", "NormalStance_UpKick_2"),
-            LeftPunch  = new AttackPair("NormalStance_LeftPunch_1",         "None"),
-            LeftKick   = new AttackPair("NormalStance_LeftKick_1",  "None"),
+            LeftPunch  = new AttackPair("NormalStance_LeftPunch_1", "NormalStance_LeftPunch_2"),
+            LeftKick   = new AttackPair("NormalStance_LeftKick_1", "NormalStance_LeftKick_2"),
             RightKick  = new AttackPair("NormalStance_RightKick_1", "NormalStance_RightKick_2"),
-            RightPunch = new AttackPair("NormalStance_RightPunch_1",         "None"),
+            RightPunch = new AttackPair("NormalStance_RightPunch_1", "NormalStance_RightPunch_2"),
             DownPunch  = new AttackPair("None",         "None"),
             DownKick   = new AttackPair("NormalStance_DownKick_1", "NormalStance_DownKick_2")
         };
@@ -360,7 +404,6 @@ public abstract class CombatBehaviour : MonoBehaviour
         m_StunTimer                    = m_StunDuration;
         m_Animator                     = GetComponent<Animator>();
         m_HurtBoxDimensions            = GetComponent<BoxCollider>().center;
-        m_MovementScript               = GetComponent<MovementBehaviour>();
         m_ComboWindowStart             = 0.0f;
         foreach (Collider collider in gameObject.GetComponentsInChildren<Collider>())
         {
@@ -411,7 +454,7 @@ public abstract class CombatBehaviour : MonoBehaviour
         }
         //Debug.Log(m_HitParticles["RightLeg"]);
     }
-    protected bool ThrowAttack(AttackPair duo, string colliderName)
+    protected bool ThrowAttack(AttackPair duo, string colliderName, GameObject target)
     {
         if (m_CanCombo && duo.Head == m_CurrentAttack)                                    //Eliminates the possibility of abusing combo with the same attack over and over again. (BUG FIX / WAS ADDED LATER IN DEVELOPMENT)
         {
@@ -430,8 +473,7 @@ public abstract class CombatBehaviour : MonoBehaviour
             if(GetComponent<HealthStamina>().m_CurrentStamina > m_StaminaCosts[duo.Head]) //Current stamina amount must be larger than tha cost of the attack.
             {
                 m_ConsecutiveAttackCount++;
-                m_DistanceToTarget                 = Vector3.Distance(transform.position, m_MovementScript.m_LockTarget.transform.position);
-                m_MovementScript.m_DisableMovement = true;
+                m_DistanceToTarget                 = Vector3.Distance(transform.position, target.transform.position);
                 m_IsAttacking                      = true;
                 m_IsIdle                           = false;
                 m_PreventAttacktInputs             = true;
@@ -450,7 +492,6 @@ public abstract class CombatBehaviour : MonoBehaviour
     {
         if(!m_PreventAttacktInputs && !m_CanCombo)
         {
-            m_MovementScript.m_DisableMovement = true;
             m_IsIdle                           = false;
             m_PreventAttacktInputs             = true;
             m_IsParrying                       = true;
