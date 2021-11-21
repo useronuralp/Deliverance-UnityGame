@@ -8,16 +8,12 @@ using Cinemachine;
 /// </summary>
 public class PlayerMovementBehaviour : MovementBehaviour
 {
-    private readonly float      m_PlayerRotationSpeedInEulerAngles = 1000.0f; //Rotation speed of the player.
-    private Vector3             m_CameraDirection;                            //Forward vector of the main camera. 
-    private Vector3             m_PlayerForwardDirection;                     //Forward vector of the player character. 
+    private readonly float      m_PlayerRotationSpeedInEulerAngles = 500.0f; //Rotation speed of the player.
     public  CinemachineFreeLook m_FreeLookCamera;                             //Free look camera that is attached to player character.
     public  CinemachineFreeLook m_LockedOnCamera;                             //Free look camera that is attached to player character.
-    private bool                m_IsUsingFreeLookCamera;                      //A flag to jump between cameras.
     protected override void Awake()
     {
         base.Awake();
-        m_IsUsingFreeLookCamera = true;
     }
     void Start()
     {
@@ -31,7 +27,6 @@ public class PlayerMovementBehaviour : MovementBehaviour
         CameraBindingMode(m_FreeLookCamera, CinemachineTransposer.BindingMode.WorldSpace);
         m_FreeLookCamera.Follow = transform;
         m_FreeLookCamera.LookAt = transform;
-
         //Default values for the fight / locked on camera.
         SetTrackedTargetOffset(m_LockedOnCamera, 0.5f);
         SetCenteringValues(m_LockedOnCamera, 0.0f, 0.0f, -35);
@@ -39,7 +34,9 @@ public class PlayerMovementBehaviour : MovementBehaviour
         IsCameraCenteringActive(m_LockedOnCamera, true);
         CameraBindingMode(m_LockedOnCamera, CinemachineTransposer.BindingMode.WorldSpace);
         m_LockedOnCamera.Follow = transform;
-        
+
+
+        m_RigidBody = GetComponent<Rigidbody>();
     }
     void Update()
     {
@@ -49,11 +46,13 @@ public class PlayerMovementBehaviour : MovementBehaviour
             m_FreeLookCamera.LookAt = transform;
             enabled = false;
         }
-
-        //TODO: Check out FixedUpdata & LateUpdate.
-        m_CameraDirection = m_FreeLookCamera.transform.forward; /*--*/ m_CameraDirection.y = 0; 
-        m_PlayerForwardDirection = transform.forward;           /*--*/ m_PlayerForwardDirection.y = 0;
-
+        if (Input.GetKeyDown(KeyCode.Mouse2)) //Handle locking on target.
+        {
+            LockOnEnemy();
+        }
+    }
+    private void FixedUpdate()
+    {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -61,51 +60,18 @@ public class PlayerMovementBehaviour : MovementBehaviour
         {
             m_MovementDirection = transform.forward * vertical + transform.right * horizontal;
         }
-        else             //If free roaming, then the movement is based on the camera forward direction.
+        else //If free roaming, then the movement is based on the camera forward direction.
         {
             m_MovementDirection = m_FreeLookCamera.transform.forward * vertical + m_FreeLookCamera.transform.right * horizontal;
         }
         m_MovementDirection.Normalize();
 
-        if (m_MovementDirection != Vector3.zero) //Handle turn direction                          
-        {
-            m_TurnRotation = Quaternion.LookRotation(m_MovementDirection, Vector3.up); //As long as there is movement, we want to set m_CharacterToTurnRotation to the direction of m_MovementDirection.
-        }
-
-        if (Input.GetKeyDown(KeyCode.Mouse2)) //Handle locking on target.
-        {
-            LockOnEnemy();
-        }
-
         if (!m_DisableMovement) //Handle Movement.
         {
             Movement(horizontal, vertical);
         }
+    }
 
-    }
-    struct CinemachineRig  //Custom container for two floats.
-    {
-        public CinemachineRig(float height, float radius)
-        {
-            Height = height;
-            Radius = radius;
-        }
-        public float Height;
-        public float Radius;
-    }
-    public float GetAxisCustom(string axisName) //Custom Axis reading function that is passed to the cinemachine delegate (function pointer). If the player has locked onto a target then stop getting input from mouse / joystick.
-    {
-        if (!m_LockTarget)
-        {
-            if (axisName == "Mouse X")
-                return Input.GetAxis("Mouse X");
-            else if (axisName == "Mouse Y")
-                return Input.GetAxis("Mouse Y");
-        }
-        else
-            return 0;
-        return 0;
-    }
     protected override void Movement(float horizontal = 0.0f, float vertical = 0.0f)
     {
         if (m_LockTarget) //Locked onto a target and fighting.
@@ -113,8 +79,9 @@ public class PlayerMovementBehaviour : MovementBehaviour
             IsCameraCenteringActive(m_FreeLookCamera, true);
             SetCenteringValues(m_FreeLookCamera, 0, 0, -35);
             m_Animator.SetBool("isLockedOn", true);
-            var q = Quaternion.LookRotation(m_LockTarget.transform.position - transform.position);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 500 * Time.deltaTime);
+
+
+            TurnCharacterTowards(m_LockTarget, m_PlayerRotationSpeedInEulerAngles);
 
             if (m_MovementDirection != Vector3.zero) //Characater is moving.
             {
@@ -129,8 +96,7 @@ public class PlayerMovementBehaviour : MovementBehaviour
                 {
                     movementSpeed = m_RetreatMovementSpeed; //Decrease speed to discourage running away while fighting.
                 }
-                m_MovementDirection = new Vector3(m_MovementDirection.x, 0, m_MovementDirection.z); //Zero out y.
-                transform.position += movementSpeed * Time.deltaTime * m_MovementDirection.normalized;
+                m_RigidBody.MovePosition(transform.position + movementSpeed * Time.deltaTime * m_MovementDirection.normalized);
             }
             else // If the movement vector is zero, meaning the character is not moving.
             {
@@ -147,17 +113,23 @@ public class PlayerMovementBehaviour : MovementBehaviour
                 m_Animator.SetBool("isRunning", true);
                 if (new Vector3(horizontal, 0, vertical) == Vector3.forward) //Check if the player is moving straight forward.
                 {
-                    RotateCharacterTowards(m_FreeLookCamera.transform.rotation);
+                    Vector3 turnRotationVector = m_FreeLookCamera.transform.forward; 
+                    turnRotationVector = new Vector3(turnRotationVector.x, 0, turnRotationVector.z);
+                    Quaternion turnRotationQuaternion = Quaternion.LookRotation(turnRotationVector);
+                    m_RigidBody.MoveRotation(turnRotationQuaternion);
                 }
                 else
                 {
-                    RotateCharacterTowards(m_TurnRotation);
+                    Vector3 turnRotationVector = m_FreeLookCamera.transform.forward * vertical + m_FreeLookCamera.transform.right * horizontal;
+                    turnRotationVector = new Vector3(turnRotationVector.x, 0, turnRotationVector.z);
+                    Quaternion turnRotationQuaternion = Quaternion.LookRotation(turnRotationVector);
+                    m_RigidBody.MoveRotation(turnRotationQuaternion);
                 }
-                transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y, 0); // Zero out x, z rotations. So that the character doesn't start to float. We only want to rotate in Y axis. (THIS IS A BUG FIX)
-                transform.position += m_MovementSpeed * Time.deltaTime * new Vector3(transform.forward.x, 0, transform.forward.z);
+                m_RigidBody.MovePosition(transform.position + m_MovementSpeed * Time.deltaTime * transform.forward);
             }
             else //Standing still
             {
+                //Debug.Log("Not Moving");
                 m_Animator.SetBool("isRunning", false);
             }
         }
@@ -186,6 +158,29 @@ public class PlayerMovementBehaviour : MovementBehaviour
                 break;
             }
         }
+    }
+    struct CinemachineRig  //Custom container for two floats.
+    {
+        public CinemachineRig(float height, float radius)
+        {
+            Height = height;
+            Radius = radius;
+        }
+        public float Height;
+        public float Radius;
+    }
+    public float GetAxisCustom(string axisName) //Custom Axis reading function that is passed to the cinemachine delegate (function pointer). If the player has locked onto a target then stop getting input from mouse / joystick.
+    {
+        if (!m_LockTarget)
+        {
+            if (axisName == "Mouse X")
+                return Input.GetAxis("Mouse X");
+            else if (axisName == "Mouse Y")
+                return Input.GetAxis("Mouse Y");
+        }
+        else
+            return 0;
+        return 0;
     }
     void SetCameraPosition(CinemachineFreeLook camera, CinemachineRig top, CinemachineRig middle, CinemachineRig bottom)
     {
@@ -223,23 +218,5 @@ public class PlayerMovementBehaviour : MovementBehaviour
     void IsCameraCenteringActive(CinemachineFreeLook camera, bool isActive)
     {
         camera.m_RecenterToTargetHeading.m_enabled = isActive;
-    }
-    void RotateCharacterTowards(Quaternion targetRotation)
-    {
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, m_PlayerRotationSpeedInEulerAngles * Time.deltaTime);
-    }
-    private void SwitchCameraPriority()
-    {
-        if (m_IsUsingFreeLookCamera)
-        {
-            m_FreeLookCamera.Priority = 0;
-            m_LockedOnCamera.Priority = 1;
-        }
-        else
-        {
-            m_FreeLookCamera.Priority = 1;
-            m_LockedOnCamera.Priority = 0;
-        }
-        m_IsUsingFreeLookCamera = !m_IsUsingFreeLookCamera;
     }
 }

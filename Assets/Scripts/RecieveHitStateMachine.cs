@@ -10,15 +10,17 @@ public class RecieveHitStateMachine : StateMachineBehaviour
     private float             sm_KnockBackTimer;  //The object that gets hit will be staggered backwards FOR the duration of this variable.
     private string            sm_CurrentRecievedAttack;
     private Vector3           sm_KnockbackDirection;
+    private Rigidbody         sm_RigidBody;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Do these first-----
         sm_AttachedObject = animator.gameObject;
         sm_CombatScript   = sm_AttachedObject.GetComponent<CombatBehaviour>();
         sm_Movementscript = sm_AttachedObject.GetComponent<MovementBehaviour>();
+        sm_RigidBody      = sm_AttachedObject.GetComponent<Rigidbody>();
         //-------------------
 
-        if(sm_Movementscript.m_LockTarget)
+        if (sm_Movementscript.m_LockTarget)
         {
             sm_CurrentRecievedAttack = sm_Movementscript.m_LockTarget.GetComponent<CombatBehaviour>().m_CurrentAttack;
             if(sm_CurrentRecievedAttack.Contains("Left"))
@@ -66,7 +68,7 @@ public class RecieveHitStateMachine : StateMachineBehaviour
 
         sm_KnockBackTimer -= Time.deltaTime;                                                                     //Decrease the timer each second.
         if (sm_KnockBackTimer >= 0.0f)
-            sm_AttachedObject.transform.position += 15f * Time.deltaTime * -sm_KnockbackDirection;/*-new Vector3(sm_AttachedObject.transform.forward.x , 0, sm_AttachedObject.transform.forward.z);*/ //Slide back the character 
+            sm_RigidBody.MovePosition(sm_AttachedObject.transform.position + 15.0f * Time.deltaTime * -sm_KnockbackDirection.normalized);
 
         if(sm_Movementscript.m_LockTarget)
         {

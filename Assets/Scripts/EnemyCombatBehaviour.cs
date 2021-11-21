@@ -302,15 +302,15 @@ public class EnemyCombatBehaviour : CombatBehaviour
         }
 
         
-        foreach (var element in neurons.Reverse())
-        {
-            Debug.Log(element.Key);
-        }
-        
-        foreach (int number in possibleChoices)
-        {
-            Debug.Log(number);
-        }
+        //foreach (var element in neurons.Reverse())
+        //{
+        //    Debug.Log(element.Key);
+        //}
+        //
+        //foreach (int number in possibleChoices)
+        //{
+        //    Debug.Log(number);
+        //}
 
         int choice = possibleChoices[0]; //Set the choice to the highest action decided by the AI first.
 

@@ -26,6 +26,7 @@ public class EnemyMovementBehaviour : MovementBehaviour
     }
     void Update()
     {
+        Debug.Log(m_NavMeshAgent.isStopped);
         if (m_WantToWander)
         {
             if ((transform.position - m_WayPoint).magnitude >= m_WanderRadius)
@@ -58,8 +59,8 @@ public class EnemyMovementBehaviour : MovementBehaviour
             if(m_LockTarget)
             {
                 m_Animator.SetBool("isLockedOn", true);
-                var q = Quaternion.LookRotation(m_LockTarget.transform.position - transform.position);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 1000 * Time.deltaTime);
+                TurnCharacterTowards(m_LockTarget, 500.0f);
+
                 if (m_WantToWander) //AI chills and wanders around.
                 {
                     m_NavMeshAgent.isStopped = false;
@@ -95,6 +96,10 @@ public class EnemyMovementBehaviour : MovementBehaviour
 
                         m_NavMeshAgent.destination = m_Player.transform.position;
                     }
+                    else
+                    {
+                        m_NavMeshAgent.isStopped = true;
+                    }
                 }
             }
             else 
@@ -103,12 +108,13 @@ public class EnemyMovementBehaviour : MovementBehaviour
                 if (m_WantToWander)
                 {
                     m_Animator.SetBool("isRunning", true);
-                    transform.rotation = Quaternion.RotateTowards(transform.rotation, m_TurnRotation, 1000 * Time.deltaTime);
+                    Debug.Log(m_MovementDirection);
+                    TurnCharacterTowards(m_MovementDirection.normalized, 1000.0f);
 
                     if ((transform.position - m_WayPoint).magnitude < 3)
                         PickWanderWaypoint(m_WanderRadius);
-                    
-                    transform.position += m_MovementSpeed * Time.deltaTime * new Vector3(transform.forward.x, 0, transform.forward.z);
+
+                    m_RigidBody.MovePosition(transform.position + m_MovementSpeed * Time.deltaTime * transform.forward);
                 }
                 else //Standing still
                 {

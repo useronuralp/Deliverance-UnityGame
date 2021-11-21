@@ -25,7 +25,8 @@ public class AttackStateMachine : StateMachineBehaviour
     private const float       sm_NormalStance_UpKick_1_WaitingConstant   = 0.25f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxe dimensions back to their original sizes.
     private const float       sm_NormalStance_UpKick_2_WaitingConstant   = 0.25f; //HurtBox related waiting time constants. Used during the restoration of the HurtBoxe dimensions back to their original sizes.
     private float             sm_DistanceToTargetDelta;
-    
+
+    private Rigidbody         sm_AttachedObjectRigidBody;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Do these first-----
@@ -52,14 +53,14 @@ public class AttackStateMachine : StateMachineBehaviour
         sm_CombatScript.m_IsBlocking           = false;
         sm_CombatScript.m_IsStunned            = false;
         sm_CharacterSlideSpeed                 = 7.0f;
-        sm_AnimationSnapCooldownTimer          = sm_CombatScript.m_SnapStarTimers[sm_CombatScript.m_CurrentAttack];  //Get the current animations SNAP cooldown from the cache.
+        sm_AnimationSnapCooldownTimer          = sm_CombatScript.m_SnapStarTimers[sm_CombatScript.m_CurrentAttack]; //Get the current animations SNAP cooldown from the cache.
         sm_AnimationSlideTimer                 = sm_CombatScript.m_SlideTimes[sm_CombatScript.m_CurrentAttack];     //Get the current animations SLIDE duration from the cache.
         sm_LandingTime                         = sm_CombatScript.m_LandingTimes[sm_CurrentAttack];
 
+        sm_AttachedObjectRigidBody = sm_AttachedObject.GetComponent<Rigidbody>();
+
+
         sm_CombatScript.m_ComboWindowStart     = sm_CombatScript.m_CancelCooldowns[sm_CurrentAttack];
-        var q = Quaternion.LookRotation(sm_Movementscript.m_LockTarget.transform.position - sm_AttachedObject.transform.position);
-        //sm_AttachedObject.transform.rotation = Quaternion.RotateTowards(sm_AttachedObject.transform.rotation, q, 500 * Time.deltaTime);
-        //sm_AttachedObject.transform.LookAt(new Vector3(sm_LockTarget.transform.position.x, sm_AttachedObject.transform.position.y, sm_LockTarget.transform.position.z)); //Turn the character towards the target during attacks.
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -78,29 +79,28 @@ public class AttackStateMachine : StateMachineBehaviour
         sm_LandingTime                         -= Time.deltaTime;
         sm_AnimationSnapCooldownTimer          -= Time.deltaTime; //Snap cooldown timer for animation.
         sm_ElapsedTime                         += Time.deltaTime; //starts when the attack animation starts. 
-        sm_CombatScript.m_StateElapesedTime    = sm_ElapsedTime; //Propogate the elapsed time info to the combat script.
+        sm_CombatScript.m_StateElapesedTime    = sm_ElapsedTime;  //Propogate the elapsed time info to the combat script.
 
-        if (sm_AnimationSnapCooldownTimer <= 0)          //When snap cooldown ends.
+        if (sm_AnimationSnapCooldownTimer <= 0)  //When snap cooldown ends.
         {
-            sm_AnimationSlideTimer -= Time.deltaTime;                                                  //Another timer, starts only when the above "sm_AnimationSnapCooldownTimer" ends.
-            //Two special attacks for which we have to adjust the HurtBoxes.
+            sm_AnimationSlideTimer -= Time.deltaTime;  //Another timer, starts only when the above "sm_AnimationSnapCooldownTimer" ends.
             if(sm_CurrentAttack == sm_CombatScript.m_CurrentAttack)
             {
                 if (sm_CurrentAttack == "NormalStance_DownKick_1")
                 {
-                    sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 0.0f, sm_HurtBox.center.z);       //Decrease the height of the HurtBox during this attack.
+                    sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 0.0f, sm_HurtBox.center.z); //Decrease the height of the HurtBox during this attack.
                 }
                 else if (sm_CurrentAttack == "NormalStance_UpKick_1")
                 {
-                    sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 1.5f, sm_HurtBox.center.z);       //Increase the height of the HurtBox during this attack sine the character is jumping.
+                    sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 1.5f, sm_HurtBox.center.z); //Increase the height of the HurtBox during this attack sine the character is jumping.
                 }
                 else if (sm_CurrentAttack == "NormalStance_DownKick_2")
                 {
-                    sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 0.0f, sm_HurtBox.center.z);       //Increase the height of the HurtBox during this attack sine the character is jumping.
+                    sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 0.0f, sm_HurtBox.center.z); //Increase the height of the HurtBox during this attack sine the character is jumping.
                 }
                 else if (sm_CurrentAttack == "NormalStance_UpKick_2")
                 {
-                    sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 1.5f, sm_HurtBox.center.z);       //Increase the height of the HurtBox during this attack sine the character is jumping.
+                    sm_HurtBox.center = new Vector3(sm_HurtBox.center.x, 1.5f, sm_HurtBox.center.z); //Increase the height of the HurtBox during this attack sine the character is jumping.
                 }
             }
         }
@@ -108,30 +108,28 @@ public class AttackStateMachine : StateMachineBehaviour
         {
             if(sm_Movementscript.m_LockTarget)
             {
-                var q = Quaternion.LookRotation(sm_Movementscript.m_LockTarget.transform.position - sm_AttachedObject.transform.position);
-                sm_AttachedObject.transform.rotation = Quaternion.RotateTowards(sm_AttachedObject.transform.rotation, q, 500 * Time.deltaTime);
+                RotateTowards(sm_Movementscript.m_LockTarget, 400.0f);
             }
         }
 
         //---------------------------------------------------Sliding Start---------------------------------------------------------
-        if (sm_Movementscript.m_LockTarget)                                                                                                           //Where we apply the snapping mechanic of the attacks..
+        if (sm_Movementscript.m_LockTarget)  //Where we apply the snapping mechanic of the attacks..
         {
             sm_DistanceToTargetDelta = Vector3.Distance(sm_AttachedObject.transform.position, sm_Movementscript.m_LockTarget.transform.position);
             if ( sm_AnimationSnapCooldownTimer < 0 && sm_AnimationSlideTimer  > 0.0f && sm_DistanceToTargetDelta >= 1.1f) //Checking for the necessary conditions. I think the variable names are self explanatory.
             {
-                sm_AttachedObject.transform.position += sm_CharacterSlideSpeed * Time.deltaTime * new Vector3(sm_AttachedObject.transform.forward.x, 0, sm_AttachedObject.transform.forward.z);  //Moving the character to target at a certain rate.
+                sm_AttachedObjectRigidBody.MovePosition(sm_AttachedObject.transform.position + sm_CharacterSlideSpeed * Time.deltaTime * sm_AttachedObject.transform.forward);
             }
         }
         //----------------------------------------------------Sliding End----------------------------------------------------------
 
         if (sm_LandingTime <= 0.0f)  //Check if the landing time is is smaller than 0.
         {
-            sm_CombatScript.m_OffensiveColliders[sm_CombatScript.m_LimbName].enabled = false;                     //Disable the correct collider(s) AS SOON AS THE IMPACT POINT IS REACHED.
+            sm_CombatScript.m_OffensiveColliders[sm_CombatScript.m_LimbName].enabled = false; //Disable the correct collider(s) AS SOON AS THE IMPACT POINT IS REACHED.
 
             if(sm_Movementscript.m_LockTarget)
             {
-                var q = Quaternion.LookRotation(sm_Movementscript.m_LockTarget.transform.position - sm_AttachedObject.transform.position);
-                sm_AttachedObject.transform.rotation = Quaternion.RotateTowards(sm_AttachedObject.transform.rotation, q, 100 * Time.deltaTime);
+                RotateTowards(sm_Movementscript.m_LockTarget, 400.0f);
             }
             //TODO: MISSING HIT SOUND LOGIC 
 
@@ -156,12 +154,12 @@ public class AttackStateMachine : StateMachineBehaviour
         //----------------------------------------------------Animation Cancel / Combo-----------------------------------------------
         if(sm_ElapsedTime >= sm_CombatScript.m_CancelCooldowns[sm_CurrentAttack]) //Check if the elapsed time until the start of the animation has reached the animation cancel window.
         {
-            sm_ComboWindowTimer -= Time.deltaTime;                                //Decrease cancel window timer every frame. 
-            if (sm_ComboWindowTimer > 0.0f)                                       //This is the duration of the window that where we give the player a chance to input a combo attack.
+            sm_ComboWindowTimer -= Time.deltaTime;  //Decrease cancel window timer every frame. 
+            if (sm_ComboWindowTimer > 0.0f) //This is the duration of the window that where we give the player a chance to input a combo attack.
             {                                                                            
-                if(sm_CombatScript.m_CurrentAttack == sm_CurrentAttack)           //If the attack in this state and the one in the actual character script are same, then it means that user has not input an attack yet and thus we let him input during this window. 
+                if(sm_CombatScript.m_CurrentAttack == sm_CurrentAttack) //If the attack in this state and the one in the actual character script are same, then it means that user has not input an attack yet and thus we let him input during this window. 
                 {                                                                 
-                    if(!sm_CombatScript.m_LockAttacking)                          //Check if the user is spamming the attack before the combo window timer is reached. If so, just punish him and take his comboin abilty away by locking this state.
+                    if(!sm_CombatScript.m_LockAttacking) //Check if the user is spamming the attack before the combo window timer is reached. If so, just punish him and take his comboin abilty away by locking this state.
                     {
                         sm_CombatScript.m_PreventAttacktInputs = false;
                         sm_CombatScript.m_CanCombo = true;
@@ -202,5 +200,11 @@ public class AttackStateMachine : StateMachineBehaviour
         {
             nameColliderPair.Value.enabled = false;
         }
+    }
+    private void RotateTowards(GameObject targetObject, float turnSpeed)
+    {
+        Vector3 targetRotation = targetObject.transform.position - sm_AttachedObject.transform.position;
+        targetRotation = new Vector3(targetRotation.x, 0, targetRotation.z); //Zero out Y axis.
+        sm_AttachedObjectRigidBody.MoveRotation(Quaternion.RotateTowards(sm_AttachedObjectRigidBody.rotation, Quaternion.LookRotation(targetRotation), turnSpeed * Time.deltaTime));
     }
 }

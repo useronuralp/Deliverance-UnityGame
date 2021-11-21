@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3784430768400012714}
-  m_LocalRotation: {x: -0.16414101, y: 0.2973555, z: -0.04476502, w: 0.9394858}
+  m_LocalRotation: {x: -0.21913092, y: 0.29947346, z: -0.02719299, w: 0.92820144}
   m_LocalPosition: {x: 75.678795, y: -18.637783, z: -75.2752}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -129,7 +129,7 @@ PrefabInstance:
     - target: {fileID: 203480141307782238, guid: 5ea96736de118824eb94da91dc318d1c,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.173913
+      value: 1.0144928
       objectReference: {fileID: 0}
     - target: {fileID: 350788593939033532, guid: 5ea96736de118824eb94da91dc318d1c,
         type: 3}
@@ -194,7 +194,47 @@ PrefabInstance:
     - target: {fileID: 2112113770842058254, guid: 5ea96736de118824eb94da91dc318d1c,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.173913
+      value: 1.0144928
+      objectReference: {fileID: 0}
+    - target: {fileID: 2154937814933478619, guid: 5ea96736de118824eb94da91dc318d1c,
+        type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.0144928
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424053726502212476, guid: 5ea96736de118824eb94da91dc318d1c,
+        type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.0144928
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303848886366228210, guid: 5ea96736de118824eb94da91dc318d1c,
+        type: 3}
+      propertyPath: m_YAxis.m_AccelTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303848886366228210, guid: 5ea96736de118824eb94da91dc318d1c,
+        type: 3}
+      propertyPath: m_YAxis.m_DecelTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303848886366228210, guid: 5ea96736de118824eb94da91dc318d1c,
+        type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.0144928
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992041005802420892, guid: 5ea96736de118824eb94da91dc318d1c,
+        type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.0144928
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730957310249001846, guid: 5ea96736de118824eb94da91dc318d1c,
+        type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.0144928
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762851939992861066, guid: 5ea96736de118824eb94da91dc318d1c,
+        type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.0144928
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ea96736de118824eb94da91dc318d1c, type: 3}

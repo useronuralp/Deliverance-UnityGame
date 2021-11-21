@@ -15,6 +15,7 @@ public abstract class MovementBehaviour : MonoBehaviour
     protected Vector3        m_MovementDirection;      //The calculate movement direction of the character. Depending on whether the character is locked on and fighting or free roaming, it changes.
     protected float          m_RetreatMovementSpeed;   //When the character moves in general backward direction, this speed is applied.
     protected Animator       m_Animator;
+    protected Rigidbody      m_RigidBody;
     protected MovementBehaviour()
     {
         m_MovementSpeed         = 3.5f;
@@ -25,7 +26,19 @@ public abstract class MovementBehaviour : MonoBehaviour
     }
     protected virtual void Awake()
     {
+        m_RigidBody = GetComponent<Rigidbody>();
         m_Animator = GetComponent<Animator>();
     }
     protected abstract void Movement(float horizontal = 0.0f, float vertical = 0.0f); //Must be implemented by children. This is where the movement code is handled.
+    protected void TurnCharacterTowards(GameObject targetObject, float turnSpeed)
+    {
+        Vector3 targetRotation = targetObject.transform.position - transform.position;
+        targetRotation = new Vector3(targetRotation.x, 0, targetRotation.z); //Zero out Y axis.
+        m_RigidBody.MoveRotation(Quaternion.RotateTowards(m_RigidBody.rotation, Quaternion.LookRotation(targetRotation), turnSpeed * Time.deltaTime));
+    }
+    protected void TurnCharacterTowards(Vector3 direction, float turnSpeed)
+    {
+        Quaternion turnDirectionQuaternion = Quaternion.LookRotation(direction, Vector3.up);
+        m_RigidBody.MoveRotation(Quaternion.RotateTowards(transform.rotation, turnDirectionQuaternion, turnSpeed * Time.deltaTime));
+    }
 }
