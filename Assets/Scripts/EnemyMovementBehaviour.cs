@@ -26,7 +26,7 @@ public class EnemyMovementBehaviour : MovementBehaviour
     }
     void Update()
     {
-        Debug.Log(m_NavMeshAgent.isStopped);
+        //Debug.Log(m_NavMeshAgent.isStopped);
         if (m_WantToWander)
         {
             if ((transform.position - m_WayPoint).magnitude >= m_WanderRadius)

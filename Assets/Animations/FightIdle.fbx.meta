@@ -28,9 +28,9 @@ ModelImporter:
       name: Mat.3
     second: {fileID: 2100000, guid: 675cf20a9ea2b054aa5a717d6f8278f3, type: 2}
   materials:
-    materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialImportMode: 1
+    materialName: 2
+    materialSearch: 2
     materialLocation: 0
   animations:
     legacyGenerateAnimations: 4

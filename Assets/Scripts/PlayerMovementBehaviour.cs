@@ -115,15 +115,13 @@ public class PlayerMovementBehaviour : MovementBehaviour
                 {
                     Vector3 turnRotationVector = m_FreeLookCamera.transform.forward; 
                     turnRotationVector = new Vector3(turnRotationVector.x, 0, turnRotationVector.z);
-                    Quaternion turnRotationQuaternion = Quaternion.LookRotation(turnRotationVector);
-                    m_RigidBody.MoveRotation(turnRotationQuaternion);
+                    TurnCharacterTowards(turnRotationVector, 700.0f);
                 }
                 else
                 {
                     Vector3 turnRotationVector = m_FreeLookCamera.transform.forward * vertical + m_FreeLookCamera.transform.right * horizontal;
                     turnRotationVector = new Vector3(turnRotationVector.x, 0, turnRotationVector.z);
-                    Quaternion turnRotationQuaternion = Quaternion.LookRotation(turnRotationVector);
-                    m_RigidBody.MoveRotation(turnRotationQuaternion);
+                    TurnCharacterTowards(turnRotationVector, 700.0f);
                 }
                 m_RigidBody.MovePosition(transform.position + m_MovementSpeed * Time.deltaTime * transform.forward);
             }
