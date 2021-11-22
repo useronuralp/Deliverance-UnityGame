@@ -1191,7 +1191,7 @@ Animator:
   m_GameObject: {fileID: 3545266512976612249}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c93c1103431432546bb04c1795acb572, type: 3}
-  m_Controller: {fileID: 9100000, guid: c1786b8fd68b6f5419acbca611f2279f, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -1215,7 +1215,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &3511954873318797020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1293,6 +1293,7 @@ MonoBehaviour:
   m_DistanceToTarget: 0
   m_ComboWindowDuration: 0
   m_ComboWindowStart: 0
+  m_RecievedAttack: None
 --- !u!114 &594304253360316894
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,8 +13,8 @@ public class EventManager : MonoBehaviour
     public event Action OnAIIsNotAttacking;
     public event Action<GameObject> OnPlayerLockedOnToTarget;
     public event Action OnPlayerReleasedLockOnTarget;
-
-
+    public event Action OnPlayerStepsIntoTalkRange;
+    public event Action OnPlayerLeavingTalkRange;
     private void Awake()
     {
         s_Instance = this;
@@ -46,6 +46,14 @@ public class EventManager : MonoBehaviour
     public void PlayerReleasedLockOnTarget()
     {
         OnPlayerReleasedLockOnTarget?.Invoke();
+    }
+    public void PlayerStepsIntoTalkRange()
+    {
+        OnPlayerStepsIntoTalkRange?.Invoke();
+    }
+    public void PlayerLeftTalkRange()
+    {
+        OnPlayerLeavingTalkRange?.Invoke();
     }
     //Singleton getter---------------------
     public static EventManager GetInstance()

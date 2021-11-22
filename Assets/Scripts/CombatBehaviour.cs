@@ -138,6 +138,7 @@ public abstract class CombatBehaviour : MonoBehaviour
 
     //Experimental
     public float                              m_ComboWindowStart;
+    public string                             m_RecievedAttack = "None"; 
     public class AttackPair //Two attacks that each direction will have in a stance..
     {
         public string Head; //Pointer to the next attack that the character will throw in this direction.

@@ -27,16 +27,19 @@ public class LimbCollision : MonoBehaviour
         {
             if (collidedObject.GetType() == typeof(BoxCollider)) //Apply hit, only if you collide with the Hurt Box, not with hit boxes or move boxes (Capsule Collider). //TODO : Do not collide with limb colliders.
             {
-                //Debug.Log(collidedObject.tag);   
                 //Combat scripts
                 CombatBehaviour selfCombatScript = transform.root.GetComponent<CombatBehaviour>();
-                CombatBehaviour targetCombatScript = GameObject.FindWithTag(target).GetComponent<CombatBehaviour>();
-                MovementBehaviour selfMovementScript = transform.root.GetComponent<MovementBehaviour>();
-                //Debug.Log(targetCombatScript.m_IsGettingHit);
+                CombatBehaviour targetCombatScript;
+                if (target == "Player")
+                {
+                    targetCombatScript = GameObject.FindWithTag(target).GetComponent<CombatBehaviour>();
+                }
+                else
+                {
+                    targetCombatScript = GameObject.Find(collidedObject.transform.root.name).GetComponent<CombatBehaviour>();
+                }
 
                 string curAttack = selfCombatScript.m_CurrentAttack; //Name of the attack that the character is currently throwing.
-                //if (curAttack == "None")
-                //    Debug.DebugBreak();
                 if (!targetCombatScript.m_IsGettingHit)  //
                 {
                     if (targetCombatScript.m_IsParrying) //Check if the opponent is parrying.
@@ -90,6 +93,7 @@ public class LimbCollision : MonoBehaviour
         PlayGettingHitSound(attackToDealDamageWith);
         if(attackToDealDamageWith != "None")
         {
+            targetCombatScript.m_RecievedAttack = attackToDealDamageWith;
             targetCombatScript.m_IsGettingHit = true;
             other.transform.root.GetComponent<HealthStamina>().GetHit(targetCombatScript.m_DamageNumbers[attackToDealDamageWith]);
             targetCombatScript.m_Animator.SetTrigger(targetCombatScript.m_HitLocations[attackToDealDamageWith]);
@@ -102,12 +106,14 @@ public class LimbCollision : MonoBehaviour
         {
             if(attackName.Contains("Kick") || attackName.Contains("kick"))
             {
+                targetCombatScript.m_RecievedAttack = attackName;
                 targetCombatScript.m_Animator.SetBool("isGuarding", true); // Added to fix a bug.
                 targetCombatScript.m_IsGettingHit = true;
                 other.transform.root.GetComponent<HealthStamina>().ReduceStamina(20.0f);
             }
             else
             {
+                targetCombatScript.m_RecievedAttack = attackName;
                 targetCombatScript.m_Animator.SetBool("isGuarding", true); // Added to fix a bug.
                 targetCombatScript.m_IsGettingHit = true;
                 other.transform.root.GetComponent<HealthStamina>().ReduceStamina(10.0f);

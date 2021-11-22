@@ -108,7 +108,7 @@ public class EnemyMovementBehaviour : MovementBehaviour
                 if (m_WantToWander)
                 {
                     m_Animator.SetBool("isRunning", true);
-                    Debug.Log(m_MovementDirection);
+                    //Debug.Log(m_MovementDirection);
                     TurnCharacterTowards(m_MovementDirection.normalized, 1000.0f);
 
                     if ((transform.position - m_WayPoint).magnitude < 3)

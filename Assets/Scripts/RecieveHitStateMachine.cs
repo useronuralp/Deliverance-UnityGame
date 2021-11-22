@@ -22,7 +22,7 @@ public class RecieveHitStateMachine : StateMachineBehaviour
 
         if (sm_Movementscript.m_LockTarget)
         {
-            sm_CurrentRecievedAttack = sm_Movementscript.m_LockTarget.GetComponent<CombatBehaviour>().m_CurrentAttack;
+            sm_CurrentRecievedAttack = sm_CombatScript.m_RecievedAttack;
             if(sm_CurrentRecievedAttack.Contains("Left"))
             {
                 sm_KnockbackDirection = Quaternion.AngleAxis(45, sm_AttachedObject.transform.up) * sm_AttachedObject.transform.forward;

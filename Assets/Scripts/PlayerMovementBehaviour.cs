@@ -40,7 +40,7 @@ public class PlayerMovementBehaviour : MovementBehaviour
     }
     void Update()
     {
-        //Debug.Log(m_CombatScript.m_IsStunned);
+        //Debug.Log(m_LockTarget);
         if (m_Animator.GetBool("isDead")) //Handling death on top before everything else.
         {
             m_FreeLookCamera.LookAt = transform;
@@ -49,6 +49,10 @@ public class PlayerMovementBehaviour : MovementBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse2)) //Handle locking on target.
         {
             LockOnEnemy();
+        }
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            SwitchTargets();
         }
     }
     private void FixedUpdate()
@@ -143,18 +147,81 @@ public class PlayerMovementBehaviour : MovementBehaviour
             EventManager.GetInstance().PlayerReleasedLockOnTarget();
             return;
         }
+        else
+        {
+            m_LockTarget = AcquireTarget();
+        }
+        
+    }
+    void SwitchTargets()
+    {
+        if (m_LockTarget) 
+        {
+            m_LockTarget = AcquireTarget(m_LockTarget);
+        }
+    }
+    GameObject AcquireTarget()
+    {
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("EnemyAI");
+        float closestDistance = float.MaxValue;
+        GameObject lockTarget = null;
         foreach (GameObject enemy in allEnemies)
         {
-            if (Vector3.Distance(transform.position, enemy.transform.position) < 10.0f)
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distance < 10.0f)
             {
-                m_LockTarget = enemy;
-                m_LockedOnCamera.LookAt = m_LockTarget.transform;
-                m_FreeLookCamera.Priority = 0;
-                m_LockedOnCamera.Priority = 1;
-                EventManager.GetInstance().PlayerLockedOnToTarget(enemy);
-                break;
+                if(distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    lockTarget = enemy;
+                }
             }
+        }
+        if(lockTarget)
+        {
+            m_LockTarget = lockTarget;
+            m_LockedOnCamera.LookAt = m_LockTarget.transform;
+            m_FreeLookCamera.Priority = 0;
+            m_LockedOnCamera.Priority = 1;
+            EventManager.GetInstance().PlayerLockedOnToTarget(lockTarget);
+            return lockTarget;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    GameObject AcquireTarget(GameObject lockOnTarget)
+    {
+        GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("EnemyAI");
+        float closestDistance = float.MaxValue;
+        GameObject lockTarget = null;
+        foreach (GameObject enemy in allEnemies)
+        {
+            if (enemy.name == lockOnTarget.name)
+                continue;
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distance < 10.0f)
+            {
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    lockTarget = enemy;
+                }
+            }
+        }
+        if (lockTarget)
+        {
+            m_LockTarget = lockTarget;
+            m_LockedOnCamera.LookAt = m_LockTarget.transform;
+            m_FreeLookCamera.Priority = 0;
+            m_LockedOnCamera.Priority = 1;
+            EventManager.GetInstance().PlayerLockedOnToTarget(lockTarget);
+            return lockTarget;
+        }
+        else
+        {
+            return null;
         }
     }
     struct CinemachineRig  //Custom container for two floats.
