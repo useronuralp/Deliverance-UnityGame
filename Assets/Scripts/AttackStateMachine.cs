@@ -52,19 +52,22 @@ public class AttackStateMachine : StateMachineBehaviour
         sm_CombatScript.m_IsGettingHit         = false;
         sm_CombatScript.m_IsBlocking           = false;
         sm_CombatScript.m_IsStunned            = false;
+        sm_CombatScript.m_DidHitLand           = false;
         sm_CharacterSlideSpeed                 = 7.0f;
         sm_AnimationSnapCooldownTimer          = sm_CombatScript.m_SnapStarTimers[sm_CombatScript.m_CurrentAttack]; //Get the current animations SNAP cooldown from the cache.
         sm_AnimationSlideTimer                 = sm_CombatScript.m_SlideTimes[sm_CombatScript.m_CurrentAttack];     //Get the current animations SLIDE duration from the cache.
         sm_LandingTime                         = sm_CombatScript.m_LandingTimes[sm_CurrentAttack];
+        sm_CombatScript.m_ConsecutiveAttackCount++;
 
         sm_AttachedObjectRigidBody = sm_AttachedObject.GetComponent<Rigidbody>();
-
-
         sm_CombatScript.m_ComboWindowStart     = sm_CombatScript.m_CancelCooldowns[sm_CurrentAttack];
+
+        //Exp
+        sm_CombatScript.m_DidThrowAnAttack = false;
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        sm_CombatScript.m_DidHitLand = false;
         if (sm_ElapsedTime >= sm_CombatScript.m_LandingTimes[sm_CurrentAttack] - 0.15f)
         {
             sm_CombatScript.m_OffensiveColliders[sm_CombatScript.m_LimbName].enabled = true;  //ENABLE collider.
@@ -126,6 +129,8 @@ public class AttackStateMachine : StateMachineBehaviour
         if (sm_LandingTime <= 0.0f)  //Check if the landing time is is smaller than 0.
         {
             sm_CombatScript.m_OffensiveColliders[sm_CombatScript.m_LimbName].enabled = false; //Disable the correct collider(s) AS SOON AS THE IMPACT POINT IS REACHED.
+            sm_CombatScript.m_DidHitLand = true; //Tell the combat script that the threating part of the animaiton has ended.
+
 
             if(sm_Movementscript.m_LockTarget)
             {
@@ -164,6 +169,11 @@ public class AttackStateMachine : StateMachineBehaviour
                         sm_CombatScript.m_PreventAttacktInputs = false;
                         sm_CombatScript.m_CanCombo = true;
                     }
+                    else
+                    {
+                        sm_CombatScript.m_PreventAttacktInputs = true;
+                        sm_CombatScript.m_CanCombo = false;
+                    }
                 }
             }
         }
@@ -193,6 +203,7 @@ public class AttackStateMachine : StateMachineBehaviour
             sm_CombatScript.m_CurrentAttack        = "None";
             sm_CombatScript.m_StateElapesedTime    = 0.0f;
             sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Stop();
+            //Debug.Log(sm_CombatScript.m_PreventAttacktInputs);
             sm_CombatScript.m_NormalStance.ResetStance();
         }
         //Disable all the colliders upon exit.

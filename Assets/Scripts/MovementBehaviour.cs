@@ -7,8 +7,11 @@ using UnityEngine;
 /// </summary>
 public abstract class MovementBehaviour : MonoBehaviour
 {
+    [HideInInspector]
     public Quaternion        m_TurnRotation;           //Target rotation for the character to turn to in the next frame.
+    [HideInInspector]
     public GameObject        m_LockTarget;             //GameObject that the character will lock onto.
+    [HideInInspector]
     public bool              m_DisableMovement;        //This is being set by the attack animaitons in the game. Prevents player from moving during certain actions like attacks.
     protected readonly float m_MovementSpeed;          //Movement speed when the character is free roaming.
     protected readonly float m_LockedOnMovementSpeed;  //When the character is locked on and fighting it's target, this speed is applied.

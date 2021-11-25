@@ -6,10 +6,13 @@ public class EnemyMovementBehaviour : MovementBehaviour
 {
     private GameObject     m_Player;
     private Vector3        m_WayPoint;
+    //[HideInInspector]
     public bool            m_WantToWander;
     private NavMeshAgent   m_NavMeshAgent;
-    private readonly float m_WanderRadius = 5.0f;
     private bool           m_IsAttacking;
+
+    //AI difficulty---------
+    public float m_WanderRadius = 5.0f;
     protected override void Awake()
     {
         base.Awake();
@@ -26,7 +29,7 @@ public class EnemyMovementBehaviour : MovementBehaviour
     }
     void Update()
     {
-        //Debug.Log(m_NavMeshAgent.isStopped);
+        //Debug.Log(m_WantToWander);
         if (m_WantToWander)
         {
             if ((transform.position - m_WayPoint).magnitude >= m_WanderRadius)
@@ -54,7 +57,14 @@ public class EnemyMovementBehaviour : MovementBehaviour
             if (Vector3.Distance(transform.position, m_Player.transform.position) <= 10.0f) //TODO: When AI leaves this radius, it bugs out.
                 m_LockTarget = m_Player;
             else
+            {
+                m_NavMeshAgent.isStopped = true;
+                m_Animator.SetBool("isMoving", false);
+                m_Animator.SetFloat("PosX", 0.0f, 1.0f, Time.deltaTime * 20.0f);
+                m_Animator.SetFloat("PosY", 0.0f, 1.0f, Time.deltaTime * 20.0f);
+                m_WantToWander = false;
                 m_LockTarget = null;
+            }
 
             if(m_LockTarget)
             {
@@ -81,7 +91,11 @@ public class EnemyMovementBehaviour : MovementBehaviour
                     }
                     else
                     {
+                        //m_NavMeshAgent.velocity = Vector3.zero;
                         m_NavMeshAgent.isStopped = true;
+                        m_Animator.SetBool("isMoving", false);
+                        m_Animator.SetFloat("PosX", 0.0f, 1.0f, Time.deltaTime * 20.0f);
+                        m_Animator.SetFloat("PosY", 0.0f, 1.0f, Time.deltaTime * 20.0f);
                     }
                 }
                 else //AI becomes the aggressor.
@@ -98,7 +112,11 @@ public class EnemyMovementBehaviour : MovementBehaviour
                     }
                     else
                     {
+                        //m_NavMeshAgent.velocity = Vector3.zero;
                         m_NavMeshAgent.isStopped = true;
+                        m_Animator.SetBool("isMoving", false);
+                        m_Animator.SetFloat("PosX", 0.0f, 1.0f, Time.deltaTime * 20.0f);
+                        m_Animator.SetFloat("PosY", 0.0f, 1.0f, Time.deltaTime * 20.0f);
                     }
                 }
             }
@@ -125,7 +143,11 @@ public class EnemyMovementBehaviour : MovementBehaviour
         }
         else
         {
+            //m_NavMeshAgent.velocity = Vector3.zero;
             m_NavMeshAgent.isStopped = true;
+            m_Animator.SetBool("isMoving", false);
+            m_Animator.SetFloat("PosX", 0.0f, 1.0f, Time.deltaTime * 20.0f);
+            m_Animator.SetFloat("PosY", 0.0f, 1.0f, Time.deltaTime * 20.0f);
         }
     }
 

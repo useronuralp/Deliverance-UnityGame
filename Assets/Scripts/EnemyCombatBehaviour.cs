@@ -12,15 +12,25 @@ public class EnemyCombatBehaviour : CombatBehaviour
     private List<TrainingData>     m_TrainingData;
     private NeuralNetwork          m_NeuralNetwork;
     private bool                   m_Frenzy;
-    private bool                   m_DidFrenzy;
-    private float                  m_FrenzyTimer;
-    private float                  m_FrenzyDuration = 5.0f;
     private HealthStamina          m_HealthStaminaScript;
     private int                    m_ConsecutiveAttackLimit;
     private bool                   m_IsInCoroutine = false;
     private CombatBehaviour        m_PlayerCombatScript; 
     private bool                   m_WantToWander;
     private EventManager           s_EventManager;
+
+
+    //AI difficulty
+    public float ParryLowerBound = 0.0f;
+    public float ParryUpperBound = 0.4f;
+
+
+    public int ConsecutiveAttackLowerBound = 3;
+    public int ConsecutiveAttackUpperBound = 8;
+
+
+    public bool CanFrenzy = false;
+    public bool CanParry = false;
     protected override void Awake()
     {
         base.Awake();
@@ -48,10 +58,8 @@ public class EnemyCombatBehaviour : CombatBehaviour
 
         m_WantToWander                     = false;
         m_IsInCoroutine                    = false;                                      //Check to see whether a coroutine is running.
-        m_ConsecutiveAttackLimit           = Random.Range(3, 8);                         //Target integer that after which AI will stop attacking and recover stamina.
-        m_DidFrenzy                        = false; 
+        m_ConsecutiveAttackLimit           = Random.Range(ConsecutiveAttackLowerBound, ConsecutiveAttackUpperBound); //Target integer that after which AI will stop attacking and recover stamina.
         m_HealthStaminaScript              = GetComponent<HealthStamina>();
-        m_FrenzyTimer                      = m_FrenzyDuration; 
         m_Frenzy                           = false;                                      //This will set to true when AI is allowed to chain / combo attacks.
         m_TrainingData                     = new List<TrainingData>(); 
         m_FileIO                           = new FileIO(); 
@@ -157,7 +165,6 @@ public class EnemyCombatBehaviour : CombatBehaviour
 
     void Update()
     {
-        //Debug.Log(m_ConsecutiveAttackCount);
         //Debug.Log(m_PreventAttacktInputs);
         if (m_Animator.GetBool("isDead")) //Check if the character is dead at the start.
         {
@@ -165,21 +172,14 @@ public class EnemyCombatBehaviour : CombatBehaviour
         }
         if(m_HealthStaminaScript.m_CurrentHealth <= 50) //AI goes into a frenzy mode (starts to chain attacks) if it's health drops below 50.
         {
-            //m_DidFrenzy = true;
             m_Frenzy = true;
         }
-        //if (m_Frenzy)
-        //{
-        //    m_FrenzyTimer -= Time.deltaTime;
-        //    if (m_FrenzyTimer <= 0.0f)
-        //        m_Frenzy = false;
-        //}
         if(m_ConsecutiveAttackCount == m_ConsecutiveAttackLimit) //After throwing a random number of attacks in range 3-8, AI starts to wander a bit to let the player breathe.
         {
             m_WantToWander = true;
             s_EventManager.AIWantsToWander(); //Trigger the event.
             m_ConsecutiveAttackCount = 0; //Reset the counter for the next check.
-            m_ConsecutiveAttackLimit = Random.Range(3, 8); //Get a new random attack limit.
+            m_ConsecutiveAttackLimit = Random.Range(ConsecutiveAttackLowerBound, ConsecutiveAttackUpperBound); //Get a new random attack limit.
         }
         if (m_IsStunned)
         {
@@ -198,10 +198,18 @@ public class EnemyCombatBehaviour : CombatBehaviour
            {
                 if (!m_WantToWander)
                 {
-                    if (m_Frenzy)
+                    if(CanFrenzy)
                     {
-                        if (!m_PreventAttacktInputs) //AI is allowed to combo during frenzy.
+                        if (m_Frenzy)
+                        {
+
+                            if (!m_PreventAttacktInputs) //AI is allowed to combo during frenzy.
+                                TakeAction();
+                        }
+                        else
+                        {
                             TakeAction();
+                        }
                     }
                     else
                     {
@@ -328,6 +336,7 @@ public class EnemyCombatBehaviour : CombatBehaviour
         //}
         if(!m_IsInCoroutine)
         {
+            
             switch (choice)
             {
                 case 0:
@@ -335,12 +344,16 @@ public class EnemyCombatBehaviour : CombatBehaviour
                     //    Parry();
                     break;
                 case 1:
-                    switch (Random.Range(0,4))
+                    switch (Random.Range(0,3))
                     {
-                        case 0: ThrowAttack(m_NormalStance.UpKick, m_Kicks[m_NormalStance.UpKick.Head], m_Player); break;
-                        case 1: ThrowAttack(m_NormalStance.LeftKick,  m_Kicks[m_NormalStance.LeftKick.Head], m_Player); break;
-                        case 2: ThrowAttack(m_NormalStance.DownKick, m_Kicks[m_NormalStance.DownKick.Head], m_Player); break;
-                        case 3: ThrowAttack(m_NormalStance.RightKick, m_Kicks[m_NormalStance.RightKick.Head], m_Player); break;
+                        
+                        //case 0: ThrowAttack(m_NormalStance.UpKick, m_Kicks[m_NormalStance.UpKick.Head], m_Player); break;
+                        //case 1: ThrowAttack(m_NormalStance.LeftKick,  m_Kicks[m_NormalStance.LeftKick.Head], m_Player); break;
+                        //case 2: ThrowAttack(m_NormalStance.DownKick, m_Kicks[m_NormalStance.DownKick.Head], m_Player); break;
+                        //case 3: ThrowAttack(m_NormalStance.RightKick, m_Kicks[m_NormalStance.RightKick.Head], m_Player); break;
+                        case 0: ThrowAttack(m_NormalStance.UpPunch, m_Punches[m_NormalStance.UpPunch.Head], m_Player); break;
+                        case 1: ThrowAttack(m_NormalStance.RightPunch, m_Punches[m_NormalStance.RightPunch.Head], m_Player); break;
+                        case 2: ThrowAttack(m_NormalStance.LeftPunch, m_Punches[m_NormalStance.LeftPunch.Head], m_Player); break;
                     }
                     break;
                 case 2:
@@ -352,10 +365,10 @@ public class EnemyCombatBehaviour : CombatBehaviour
                     }
                     break;
                 case 3:
-                    StartCoroutine(DelayedParry(Random.Range(0.0f, 0.4f))); //You can adjust the parry timing here to increase the difficulty of the AI.
+                    if (CanParry && m_IsIdle) StartCoroutine(DelayedParry(Random.Range(ParryLowerBound, ParryUpperBound))); //You can adjust the parry timing here to increase the difficulty of the AI.
                     break;
                 case 4:
-                    StartCoroutine(Guard());
+                    if (m_IsIdle) StartCoroutine(Guard());
                     break;
             }                
         }
@@ -372,7 +385,7 @@ public class EnemyCombatBehaviour : CombatBehaviour
             {
                 m_PlayerState = State.GUARD;
             }
-            else if (m_PlayerCombatScript.m_IsAttacking)
+            else if (m_PlayerCombatScript.m_IsAttacking && !m_PlayerCombatScript.m_DidHitLand)
             {
                 if (m_PlayerCombatScript.m_CurrentAttack.Contains("Kick"))
                 {
@@ -382,6 +395,10 @@ public class EnemyCombatBehaviour : CombatBehaviour
                 {
                     m_PlayerState = State.PUNCH;
                 }
+            }
+            else if(m_PlayerCombatScript.m_IsAttacking && m_PlayerCombatScript.m_DidHitLand)
+            {
+                m_PlayerState = State.IDLE;
             }
             else if (m_PlayerCombatScript.m_IsIdle)
             {

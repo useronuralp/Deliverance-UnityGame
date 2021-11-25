@@ -5,26 +5,40 @@ using UnityEngine.UI;
 
 public class HealthStamina : MonoBehaviour
 {
-    public float    m_MaxHealth                   = 100;
-    public float    m_MaxStamina                  = 100;
-    public float    m_CurrentHealth               = 100;
-    public float    m_CurrentStamina              = 100;
-    public float    m_UpdateSpeedSeconds          = 0.2f;
-    public float    m_StaminaRechardgeCooldown    = 2.0f;
-    public float    m_StaminaBarDisappearTimer    = 2.0f;
-    public float    m_StaminaBarDisappearCooldown = 2.0f;
+    public float     m_MaxHealth                   = 100;
+    public float     m_MaxStamina                  = 100;
+    public float     m_CurrentHealth               = 100;
+    public float     m_CurrentStamina              = 100;
+    [HideInInspector]
+    public float     m_UpdateSpeedSeconds          = 0.2f;
+    [HideInInspector]
+    public float     m_StaminaRechargeCooldown     = 2.0f;
+    [HideInInspector]
+    public float     m_StaminaBarDisappearTimer    = 2.0f;
+    [HideInInspector]
+    public float     m_StaminaBarDisappearCooldown = 2.0f;
+    [HideInInspector]
+    public float     m_StaminaRechargeTimer;
 
-    public float    m_StaminaRechargeTimer;
-    public Image    m_HealthImage;
-    public Image    m_StaminaImage;
-    public Image    m_StaminaBackground;
+
+    public Image     m_HealthImage;
+    public Image     m_HealthBackground;
+    public Image     m_StaminaImage;
+    public Image     m_StaminaBackground;
     private Animator m_Animator;
 
     private void Awake()
     {
         m_StaminaBarDisappearTimer = m_StaminaBarDisappearCooldown;
-        m_StaminaRechargeTimer     = m_StaminaRechardgeCooldown;
+        m_StaminaRechargeTimer     = m_StaminaRechargeCooldown;
         m_Animator                 = GetComponent<Animator>();
+    }
+    private void Start()
+    {
+        m_HealthBackground.enabled = false;
+        m_HealthImage.enabled = false;
+        m_StaminaBackground.enabled = false;
+        m_StaminaImage.enabled = false;
     }
     private void Update()
     {
@@ -38,7 +52,7 @@ public class HealthStamina : MonoBehaviour
         }
         else if(m_CurrentStamina == 100) //If the stamina bar is at full capacity and has not been used for a certain duration, make it disappear.
         {
-            m_StaminaRechargeTimer = m_StaminaRechardgeCooldown; //Fix the recharge timer.
+            m_StaminaRechargeTimer = m_StaminaRechargeCooldown; //Fix the recharge timer.
             m_StaminaBarDisappearTimer -= Time.deltaTime;
             if(m_StaminaBarDisappearTimer <= 0.0f)
             {
@@ -47,6 +61,11 @@ public class HealthStamina : MonoBehaviour
             }
         }
 
+        if(m_CurrentHealth < 100)
+        {
+            m_HealthBackground.enabled = true;
+            m_HealthImage.enabled = true;
+        }
         if(m_StaminaRechargeTimer <= 0) //If the timer is down, recharge the stamina bar.
         {
             if(m_Animator.GetBool("isGuarding"))
@@ -70,13 +89,19 @@ public class HealthStamina : MonoBehaviour
     }
     public void ReduceStamina(float amount)                          //Change the current stamina first, then pass the percentage to the coroutine.
     {
-        m_StaminaRechargeTimer = m_StaminaRechardgeCooldown;         //Reset the recharge timer every time stamina is reduced, meaning whenever the character throws an attack.
+        m_StaminaRechargeTimer = m_StaminaRechargeCooldown;         //Reset the recharge timer every time stamina is reduced, meaning whenever the character throws an attack.
         m_CurrentStamina -= amount;
         StartCoroutine(ChangeStaminaTo(m_CurrentStamina / m_MaxStamina));
     }
+    public void ReduceStaminaSprint(float amount)                   //Change the current stamina first, then pass the percentage to the coroutine.
+    {
+        m_StaminaRechargeTimer = m_StaminaRechargeCooldown;         //Reset the recharge timer every time stamina is reduced, meaning whenever the character throws an attack.
+        m_CurrentStamina -= amount;
+        m_StaminaImage.fillAmount = m_CurrentStamina / m_MaxStamina;
+    }
     public void GetHit(float damage)                                 //Change the current health first, then pass the percentage to the coroutine.
     {
-        m_CurrentHealth -= damage;
+        //m_CurrentHealth -= damage;
         StartCoroutine(ChangeHealthTo(m_CurrentHealth / m_MaxHealth));
     }
     private IEnumerator ChangeHealthTo(float percentage)             //Only reason this is a Coroutine is that changing the health amount looks smooth this way, rather than sharp and instantenous decrease / increase in visuals.

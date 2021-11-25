@@ -9,33 +9,18 @@ public class IdleStateMachine : StateMachineBehaviour
     private MovementBehaviour sm_MovementScript;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Debug.Log("In Idle");
         sm_AttachedObject = animator.gameObject;
         sm_MovementScript = sm_AttachedObject.GetComponent<MovementBehaviour>();
         sm_CombatScript = sm_AttachedObject.GetComponent<CombatBehaviour>();
-
         sm_CombatScript.m_IsIdle = true;
-        sm_CombatScript.m_IsStunned = false;
-        sm_CombatScript.m_IsGuarding = false;
-        sm_CombatScript.m_IsBlocking = false;
-        sm_CombatScript.m_PreventAttacktInputs = false;
-        sm_MovementScript.m_DisableMovement = false;
-        sm_CombatScript.m_IsGettingHit = false;
         sm_CombatScript.m_IsAttacking = false;
-        sm_CombatScript.m_IsParrying = false;
-        sm_CombatScript.m_IsParryingFull = false;
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         sm_CombatScript.m_IsIdle = true;
-        sm_CombatScript.m_IsStunned = false;
-        sm_CombatScript.m_IsGuarding = false;
-        sm_CombatScript.m_IsBlocking = false;
-        sm_CombatScript.m_PreventAttacktInputs = false;
-        sm_MovementScript.m_DisableMovement = false;
-        sm_CombatScript.m_IsGettingHit = false;
         sm_CombatScript.m_IsAttacking = false;
-        sm_CombatScript.m_IsParrying = false;
-        sm_CombatScript.m_IsParryingFull = false;
+        //sm_CombatScript.m_PreventAttacktInputs = false;
     }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

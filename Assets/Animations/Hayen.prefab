@@ -843,7 +843,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!65 &1574713703145227529
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -856,7 +856,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.1, z: 0.1}
-  m_Center: {x: 0.34, y: 0, z: 0}
+  m_Center: {x: 0.45, y: 0, z: 0}
 --- !u!114 &394055991620128009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,7 +1222,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!65 &317148679458432396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1520,7 +1520,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!65 &885335546681551607
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2085,7 +2085,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
 --- !u!65 &84022910302206091
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2098,7 +2098,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.1, z: 0.1}
-  m_Center: {x: -0.34, y: 0, z: 0}
+  m_Center: {x: -0.45, y: 0, z: 0}
 --- !u!114 &7124467616054688048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3153,7 +3153,7 @@ Animator:
   m_GameObject: {fileID: 8811353593722595598}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ecbe386ef026c2d4cbd7d17c505a4fc3, type: 3}
-  m_Controller: {fileID: 9100000, guid: c1786b8fd68b6f5419acbca611f2279f, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -3204,7 +3204,7 @@ CapsuleCollider:
   m_Radius: 0.6
   m_Height: 1.87
   m_Direction: 1
-  m_Center: {x: 0, y: 0.95, z: 0}
+  m_Center: {x: 0, y: 0.87, z: 0}
 --- !u!114 &-5838699855571865528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3236,8 +3236,17 @@ MonoBehaviour:
   m_StunDuration: 0
   m_HurtBoxDimensions: {x: 0, y: 0, z: 0}
   m_DistanceToTarget: 0
+  m_ConsecutiveAttackCount: 0
   m_ComboWindowDuration: 0
+  m_DidHitLand: 0
   m_ComboWindowStart: 0
+  m_RecievedAttack: None
+  ParryLowerBound: 0
+  ParryUpperBound: 0.4
+  ConsecutiveAttackLowerBound: 3
+  ConsecutiveAttackUpperBound: 8
+  CanFrenzy: 0
+  CanParry: 0
 --- !u!114 &2623103398646822236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3254,6 +3263,7 @@ MonoBehaviour:
   m_LockTarget: {fileID: 0}
   m_DisableMovement: 0
   m_WantToWander: 0
+  m_WanderRadius: 5
 --- !u!114 &6412464817328319612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3271,11 +3281,12 @@ MonoBehaviour:
   m_CurrentHealth: 100
   m_CurrentStamina: 100
   m_UpdateSpeedSeconds: 0.2
-  m_StaminaRechardgeCooldown: 2
+  m_StaminaRechargeCooldown: 2
   m_StaminaBarDisappearTimer: 2
   m_StaminaBarDisappearCooldown: 2
   m_StaminaRechargeTimer: 0
   m_HealthImage: {fileID: 4909274670543662470}
+  m_HealthBackground: {fileID: 2006738091528211583}
   m_StaminaImage: {fileID: 4990831460338334177}
   m_StaminaBackground: {fileID: 1573447619533383487}
 --- !u!195 &6825701419335736290
@@ -3605,6 +3616,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2082305993389279087}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2006738091528211583 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 521445510237276944, guid: d3583f9e6efbd194397bbc3ff0ce80ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 2082305993389279087}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4909274670543662470 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6396493599180155625, guid: d3583f9e6efbd194397bbc3ff0ce80ce,
@@ -3762,6 +3785,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670373225960825310, guid: de529577b51c204469620e07d54a5f69,
+        type: 3}
+      propertyPath: SizeModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7670373225960825310, guid: de529577b51c204469620e07d54a5f69,
         type: 3}

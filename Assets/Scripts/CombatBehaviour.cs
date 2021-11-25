@@ -111,33 +111,61 @@ public abstract class CombatBehaviour : MonoBehaviour
     public Dictionary<string, string>         m_Punches;              //Punches and their used limbs.
     public Dictionary<string, ParticleSystem> m_HitParticles;   
     //----------------------------------Flags--------------------------------
+    [HideInInspector]
     public bool                               m_PreventAttacktInputs; //This variable prevents user from inputting during certain animations. (Eg: When gettin hit, we don't want player to have the ability to keep attacking.)
+    [HideInInspector]
     public bool                               m_IsGettingHit;         //This bool tells if the character is currently in a getting-hit animaiton or not.
+    [HideInInspector]
     public bool                               m_IsStunned;            //This variable should stay true as long as the character is in a getting hit animaiton.
+    [HideInInspector]
     public bool                               m_IsParrying;           //This variable should stay true as long as the character is in the parry WINDOW, this is not to be confused with the entire parry animaiton.
+    [HideInInspector]
     public bool                               m_IsParryingFull;       //This variable will stay true during the entire parry animation.
+    [HideInInspector]
     public bool                               m_IsIdle;               //This varialbe will stay true as long as the character is idle state.
+    [HideInInspector]
     public bool                               m_IsGuarding;           //This variable should stay true as long as the character is in a guarding.
+    [HideInInspector]
     public bool                               m_IsAttacking;          //This variable should stay true as long as the character is in an attack animation.
+    [HideInInspector]
     public bool                               m_CanCombo;             //This variable indicates whether player is in a combow window in one of the attacks.
+    [HideInInspector]
     public bool                               m_LockAttacking;        //This variable will be set to false whenever player inputs an attack outside of the combo window during an attack animation. It is a flag to punish player for bad timing.
+    [HideInInspector]
     public bool                               m_IsBlocking;           //This variable will be set to true while the character has blocked a hit while in the guarding stance.
+    [HideInInspector]
+    public bool                               m_DidThrowAnAttack;
     //----------------------------------Others--------------------------------
+    [HideInInspector]
     public Animator                           m_Animator;
+    [HideInInspector]
     public string                             m_CurrentAttack;        //Stores the current attack that the character is performing. If none, then stores "None".
+    [HideInInspector]
     public string                             m_LimbName;             //Name of the collider of the limb (as string) that we will hit the enemy with.
+    [HideInInspector]
     public float                              m_StunTimer;            //This variable is the timer that the game start counting back from when the character gets stunned.
+    [HideInInspector]
     public float                              m_StateElapesedTime;    //The elapsed time while inside one of the state machines in the mecanim. (Eg: Attacking).
+    [HideInInspector]
     public float                              m_StunDuration;         //The stun duration. Character stays stunned for the duration of this variable.
+    [HideInInspector]
     public Vector3                            m_HurtBoxDimensions;    //X, Y and Z sizes of the hurtbox collider.
+    [HideInInspector]
     public float                              m_DistanceToTarget;     //The distance between this character and its target (lock target).
+    [HideInInspector]
     private ActiveStance                      m_ActiveStance;
-    protected int                             m_ConsecutiveAttackCount;
+    [HideInInspector]
+    public int                                m_ConsecutiveAttackCount;
+    [HideInInspector]
     public Stance                             m_NormalStance;
+    [HideInInspector]
     public float                              m_ComboWindowDuration;
-
+    [HideInInspector]
+    public bool                               m_DidHitLand;
     //Experimental
+    [HideInInspector]
     public float                              m_ComboWindowStart;
+    [HideInInspector]
     public string                             m_RecievedAttack = "None"; 
     public class AttackPair //Two attacks that each direction will have in a stance..
     {
@@ -399,6 +427,8 @@ public abstract class CombatBehaviour : MonoBehaviour
         m_PreventAttacktInputs         = false;
         m_IsStunned                    = false;
         m_IsAttacking                  = false;
+        m_DidThrowAnAttack             = false;
+        m_DidHitLand                   = true;
         m_CanCombo                     = false;
         m_LockAttacking                = false;
         m_CurrentAttack                = "None";
@@ -453,7 +483,6 @@ public abstract class CombatBehaviour : MonoBehaviour
                 m_HitParticles["LeftHand"] = sys;
             }
         }
-        //Debug.Log(m_HitParticles["RightLeg"]);
     }
     protected bool ThrowAttack(AttackPair duo, string colliderName, GameObject target)
     {
@@ -465,7 +494,7 @@ public abstract class CombatBehaviour : MonoBehaviour
         {
             m_LockAttacking = true;
         }
-        if (!m_PreventAttacktInputs && m_Animator.GetBool("isLockedOn") && !m_IsGuarding)        //Conditions for a character to be able to throw an attack.
+        if (!m_PreventAttacktInputs && m_Animator.GetBool("isLockedOn") && !m_IsGuarding && !m_DidThrowAnAttack) //Conditions for a character to be able to throw an attack.
         {
             if(duo.Head == "None")
             {
@@ -473,12 +502,12 @@ public abstract class CombatBehaviour : MonoBehaviour
             }
             if(GetComponent<HealthStamina>().m_CurrentStamina > m_StaminaCosts[duo.Head]) //Current stamina amount must be larger than tha cost of the attack.
             {
-                m_ConsecutiveAttackCount++;
                 m_DistanceToTarget                 = Vector3.Distance(transform.position, target.transform.position);
                 m_IsAttacking                      = true;
                 m_IsIdle                           = false;
-                m_PreventAttacktInputs             = true;
+                m_DidHitLand                       = false;
                 m_CanCombo                         = false;
+                m_PreventAttacktInputs             = true;
                 m_CurrentAttack                    = duo.Head;
                 m_LimbName                         = colliderName;
                 GetComponent<HealthStamina>().ReduceStamina(m_StaminaCosts[m_CurrentAttack]);

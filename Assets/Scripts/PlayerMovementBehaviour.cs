@@ -9,6 +9,7 @@ using Cinemachine;
 public class PlayerMovementBehaviour : MovementBehaviour
 {
     private readonly float      m_PlayerRotationSpeedInEulerAngles = 500.0f; //Rotation speed of the player.
+    private HealthStamina       m_HealthStaminaScript;
     public  CinemachineFreeLook m_FreeLookCamera;                             //Free look camera that is attached to player character.
     public  CinemachineFreeLook m_LockedOnCamera;                             //Free look camera that is attached to player character.
     protected override void Awake()
@@ -36,6 +37,8 @@ public class PlayerMovementBehaviour : MovementBehaviour
         m_LockedOnCamera.Follow = transform;
 
 
+        EventManager.GetInstance().OnLockTargetDeath += OnLockTargetDeath;
+        m_HealthStaminaScript = GetComponent<HealthStamina>();
         m_RigidBody = GetComponent<Rigidbody>();
     }
     void Update()
@@ -127,12 +130,22 @@ public class PlayerMovementBehaviour : MovementBehaviour
                     turnRotationVector = new Vector3(turnRotationVector.x, 0, turnRotationVector.z);
                     TurnCharacterTowards(turnRotationVector, 700.0f);
                 }
-                m_RigidBody.MovePosition(transform.position + m_MovementSpeed * Time.deltaTime * transform.forward);
+                if(Input.GetKey(KeyCode.LeftShift) && m_HealthStaminaScript.m_CurrentStamina >= 0.1f)
+                {
+                    m_Animator.SetBool("isSprinting", true);
+                    m_HealthStaminaScript.ReduceStaminaSprint(0.1f);
+                    m_RigidBody.MovePosition(transform.position + m_MovementSpeed * 1.7f * Time.deltaTime * transform.forward);
+                }
+                else
+                {
+                    m_Animator.SetBool("isSprinting", false);
+                    m_RigidBody.MovePosition(transform.position + m_MovementSpeed * Time.deltaTime * transform.forward);
+                }
             }
             else //Standing still
             {
-                //Debug.Log("Not Moving");
                 m_Animator.SetBool("isRunning", false);
+                m_Animator.SetBool("isSprinting", false);
             }
         }
     }
@@ -143,7 +156,7 @@ public class PlayerMovementBehaviour : MovementBehaviour
             m_FreeLookCamera.Priority = 1;
             m_LockedOnCamera.Priority = 0;
             m_LockTarget = null;
-            m_LockedOnCamera.LookAt = null;
+            m_LockedOnCamera.LookAt = transform;
             EventManager.GetInstance().PlayerReleasedLockOnTarget();
             return;
         }
@@ -283,5 +296,16 @@ public class PlayerMovementBehaviour : MovementBehaviour
     void IsCameraCenteringActive(CinemachineFreeLook camera, bool isActive)
     {
         camera.m_RecenterToTargetHeading.m_enabled = isActive;
+    }
+    void OnLockTargetDeath()
+    {
+        if(m_LockTarget)
+        {
+            m_FreeLookCamera.Priority = 1;
+            m_LockedOnCamera.Priority = 0;
+            m_LockTarget = null;
+            m_LockedOnCamera.LookAt = transform;
+            EventManager.GetInstance().PlayerReleasedLockOnTarget();
+        }
     }
 }
