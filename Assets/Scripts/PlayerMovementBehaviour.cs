@@ -43,39 +43,45 @@ public class PlayerMovementBehaviour : MovementBehaviour
     }
     void Update()
     {
-        //Debug.Log(m_LockTarget);
-        if (m_Animator.GetBool("isDead")) //Handling death on top before everything else.
+        Debug.Log(PauseMenu.IsGamePaused);
+        if(!PauseMenu.IsGamePaused)
         {
-            m_FreeLookCamera.LookAt = transform;
-            enabled = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse2)) //Handle locking on target.
-        {
-            LockOnEnemy();
-        }
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            SwitchTargets();
+            if (m_Animator.GetBool("isDead")) //Handling death on top before everything else.
+            {
+                m_FreeLookCamera.LookAt = transform;
+                enabled = false;
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse2)) //Handle locking on target.
+            {
+                LockOnEnemy();
+            }
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                SwitchTargets();
+            }
         }
     }
     private void FixedUpdate()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        if(!PauseMenu.IsGamePaused)
+        {
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
 
-        if (m_LockTarget) //If locked, movement is based on where the character is facing.
-        {
-            m_MovementDirection = transform.forward * vertical + transform.right * horizontal;
-        }
-        else //If free roaming, then the movement is based on the camera forward direction.
-        {
-            m_MovementDirection = m_FreeLookCamera.transform.forward * vertical + m_FreeLookCamera.transform.right * horizontal;
-        }
-        m_MovementDirection.Normalize();
+            if (m_LockTarget) //If locked, movement is based on where the character is facing.
+            {
+                m_MovementDirection = transform.forward * vertical + transform.right * horizontal;
+            }
+            else //If free roaming, then the movement is based on the camera forward direction.
+            {
+                m_MovementDirection = m_FreeLookCamera.transform.forward * vertical + m_FreeLookCamera.transform.right * horizontal;
+            }
+            m_MovementDirection.Normalize();
 
-        if (!m_DisableMovement) //Handle Movement.
-        {
-            Movement(horizontal, vertical);
+            if (!m_DisableMovement) //Handle Movement.
+            {
+                Movement(horizontal, vertical);
+            }
         }
     }
 

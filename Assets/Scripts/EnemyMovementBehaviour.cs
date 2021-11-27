@@ -29,26 +29,28 @@ public class EnemyMovementBehaviour : MovementBehaviour
     }
     void Update()
     {
-        //Debug.Log(m_WantToWander);
-        if (m_WantToWander)
+        if(!PauseMenu.IsGamePaused)
         {
-            if ((transform.position - m_WayPoint).magnitude >= m_WanderRadius)
+            //Debug.Log(m_WantToWander);
+            if (m_WantToWander)
             {
-                PickWanderWaypoint(m_WanderRadius);
+                if ((transform.position - m_WayPoint).magnitude >= m_WanderRadius)
+                {
+                    PickWanderWaypoint(m_WanderRadius);
+                }
             }
+            //Debug.Log(m_IsAttacking);
+            if (m_Animator.GetBool("isDead"))
+            {
+                enabled = false;
+            }
+
+            if (m_MovementDirection != Vector3.zero)
+                m_TurnRotation = Quaternion.LookRotation(m_MovementDirection, Vector3.up);
+
+
+            Movement(m_MovementDirection.normalized.x, m_MovementDirection.normalized.z);
         }
-        //Debug.Log(m_IsAttacking);
-        if (m_Animator.GetBool("isDead"))
-        {
-            enabled = false;
-        }
-
-        if (m_MovementDirection != Vector3.zero)
-            m_TurnRotation = Quaternion.LookRotation(m_MovementDirection, Vector3.up);
-
-
-        Movement(m_MovementDirection.normalized.x, m_MovementDirection.normalized.z);
-
     }
     protected override void Movement(float horizontal = 0.0f, float vertical = 0.0f)
     {

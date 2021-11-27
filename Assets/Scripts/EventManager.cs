@@ -25,6 +25,14 @@ public class EventManager : MonoBehaviour
     public event Action OnPlayerEnteringTutorialTrigger;
     public event Action OnPlayerClosesTutorial;
     public event Action OnPlayerEnteredSprintTrigger;
+
+    public event Action OnLockOnButtonPressed;
+    public event Action OnOffenseButtonPressed;
+    public event Action OnDefenseButtonPressed;
+    public event Action OnResourcesButtonPressed;
+    public event Action OnComboButtonPressed;
+    public event Action OnGameResumed;
+    public event Action OnSeperateWindowClosed;
     private void Awake()
     {
         s_Instance = this;
@@ -104,6 +112,34 @@ public class EventManager : MonoBehaviour
     public void PlayerEnteredSprintTrigger()
     {
         OnPlayerEnteredSprintTrigger?.Invoke();
+    }
+    public void LockOnButtonPressed()
+    {
+        OnLockOnButtonPressed?.Invoke();
+    }
+    public void OffenseButtonPressed()
+    {
+        OnOffenseButtonPressed?.Invoke();
+    }
+    public void DefenseButtonPressed()
+    {
+        OnDefenseButtonPressed?.Invoke();
+    }
+    public void ResourcesButtonPressed()
+    {
+        OnResourcesButtonPressed?.Invoke();
+    }
+    public void ComboButtonPressed()
+    {
+        OnComboButtonPressed?.Invoke();
+    }
+    public void GameResumed()
+    {
+        OnGameResumed?.Invoke();
+    }
+    public void SeperateWindowClosed()
+    {
+        OnSeperateWindowClosed?.Invoke();
     }
     //Singleton getter---------------------
     public static EventManager GetInstance()

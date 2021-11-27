@@ -111,7 +111,7 @@ public class AttackStateMachine : StateMachineBehaviour
         {
             if(sm_Movementscript.m_LockTarget)
             {
-                RotateTowards(sm_Movementscript.m_LockTarget, 400.0f);
+                RotateTowards(sm_Movementscript.m_LockTarget, 700.0f);
             }
         }
 

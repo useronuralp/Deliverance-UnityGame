@@ -9,8 +9,10 @@ public class EnemyCombatBehaviour : CombatBehaviour
     private GameObject             m_Player;
     private State                  m_PlayerState;
     private FileIO                 m_FileIO;
-    private List<TrainingData>     m_TrainingData;
-    private NeuralNetwork          m_NeuralNetwork;
+    private List<TrainingData>     m_TrainingDataAgressive;
+    private List<TrainingData>     m_TrainingDataDefensive;
+    private NeuralNetwork          m_NeuralNetworkAgressive;
+    private NeuralNetwork          m_NeuralNetworkDefensive;
     private bool                   m_Frenzy;
     private HealthStamina          m_HealthStaminaScript;
     private int                    m_ConsecutiveAttackLimit;
@@ -19,10 +21,10 @@ public class EnemyCombatBehaviour : CombatBehaviour
     private bool                   m_WantToWander;
     private EventManager           s_EventManager;
 
-
     //AI difficulty
     public float ParryLowerBound = 0.0f;
     public float ParryUpperBound = 0.4f;
+    public bool  BeAgressive = true; 
 
 
     public int ConsecutiveAttackLowerBound = 3;
@@ -61,172 +63,88 @@ public class EnemyCombatBehaviour : CombatBehaviour
         m_ConsecutiveAttackLimit           = Random.Range(ConsecutiveAttackLowerBound, ConsecutiveAttackUpperBound); //Target integer that after which AI will stop attacking and recover stamina.
         m_HealthStaminaScript              = GetComponent<HealthStamina>();
         m_Frenzy                           = false;                                      //This will set to true when AI is allowed to chain / combo attacks.
-        m_TrainingData                     = new List<TrainingData>(); 
+        m_TrainingDataAgressive            = new List<TrainingData>();
+        m_TrainingDataDefensive            = new List<TrainingData>();
         m_FileIO                           = new FileIO(); 
-        List<string> data                  = m_FileIO.ReadFromFile("TrainingDataAggressive.txt");  //Get the data from the .txt line by line.
-        m_NeuralNetwork                    = new NeuralNetwork(new int[]{5, 25, 25, 5}); //Create the correct layout for the NN.
+        List<string> dataAgressive         = m_FileIO.ReadFromFile("TrainingDataAggressive.txt");  //Get the data from the .txt line by line.
+        List<string> dataDefensive         = m_FileIO.ReadFromFile("TrainingDataDefensive.txt");  //Get the data from the .txt line by line.
+        m_NeuralNetworkAgressive           = new NeuralNetwork(new int[]{5, 25, 25, 5}); //Create the correct layout for the NN.
+        m_NeuralNetworkDefensive            = new NeuralNetwork(new int[] { 5, 25, 25, 5 }); //Create the correct layout for the NN.
         m_PlayerCombatScript               = m_Player.GetComponent<CombatBehaviour>();
 #if true
-        //TODO: Remove training at the start. Load an already trained NN.
-        for (int i = 0; i < data.Count; i++)
-        {
-            if(data[i].Contains("Data"))
-            {
-                var enemyAction  = Regex.Match(data[i + 1], @"\d+").Groups[0].Value;
-                var stamina = Regex.Match(data[i + 2], @"\d+").Groups[0].Value;
-                var reactionTime = Regex.Match(data[i + 3], @"([-+]?[0-9]*\.?[0-9]+)").Groups[0].Value;
-                var action = Regex.Match(data[i + 4], @"\d+").Groups[0].Value;
-
-                m_FileIO.ParseFLOAT(stamina, out float staminaFLOAT);
-                m_FileIO.ParseFLOAT(reactionTime, out float reactionTimeFLOAT);
-                m_FileIO.ParseINT(enemyAction, out int enemyActionINT);
-                m_FileIO.ParseINT(action, out int actionINT);
-
-                m_TrainingData.Add(new TrainingData { EnemyAction = enemyActionINT, Stamina = staminaFLOAT, ReactionTime = reactionTimeFLOAT, Action = actionINT });
-            }
-        }
-        foreach(TrainingData dt in m_TrainingData) //Prepare neurons with the data collected from the .txt file.
-        {
-            //Input Neurons
-            float kick = 0.0f;
-            float punch = 0.0f;
-            float parry = 0.0f;
-            float guard = 0.0f;
-            float idle = 0.0f;
-            //float stamina = 0.0f;
-            //Reaction Ranges
-            //float R1 = 0.0f;
-            //float R2 = 0.0f;
-            //float R3 = 0.0f;
-            //float R4 = 0.0f;
-            //float R5 = 0.0f;
-            //float R6 = 0.0f;
-        
-            //Output Neurons
-            float actionKick = 0.0f;
-            float actionPunch = 0.0f;
-            float actionParry = 0.0f;
-            float actionIdle = 0.0f;
-            float actionGuard = 0.0f;
-
-            //Setup
-            switch (dt.EnemyAction)
-            {
-                case 0: idle = 1.0f; break;
-                case 1: kick = 1.0f; break;
-                case 2: punch = 1.0f; break;
-                case 3: parry = 1.0f; break;
-                case 4: guard = 1.0f; break;
-            }
-
-            //if (dt.Stamina >= 10.0f)
-            //    stamina = 1.0f;
-            //if(dt.ReactionTime >= 0.0f && dt.ReactionTime < 0.1f)
-            //{
-            //    R1 = 1.0f;
-            //}
-            //else if(dt.ReactionTime >= 0.1f && dt.ReactionTime < 0.2f)
-            //{
-            //    R2 = 1.0f;
-            //}
-            //else if (dt.ReactionTime >= 0.2f && dt.ReactionTime < 0.3f)
-            //{
-            //    R3 = 1.0f;
-            //}
-            //else if (dt.ReactionTime >= 0.3f && dt.ReactionTime < 0.4f)
-            //{
-            //    R4 = 1.0f;
-            //}
-            //else if (dt.ReactionTime >= 0.4f && dt.ReactionTime < 0.5f)
-            //{
-            //    R5 = 1.0f;
-            //}
-            //else if (dt.ReactionTime >= 0.5)
-            //{
-            //    R6 = 1.0f;
-            //}
-        
-            switch (dt.Action)
-            {
-                case 0: actionIdle = 1.0f; break;
-                case 1: actionKick = 1.0f; break;
-                case 2: actionPunch = 1.0f; break;
-                case 3: actionParry = 1.0f; break;
-                case 4: actionGuard = 1.0f; break;
-            }
-        
-            //Train the network.
-            m_NeuralNetwork.FeedForward(new float[] { idle, kick, punch, parry, guard});
-            m_NeuralNetwork.BackProp(new float[] { actionIdle, actionKick, actionPunch, actionParry, actionGuard });
-        }      
+        TrainNeuralNetwork(dataAgressive, m_TrainingDataAgressive, m_NeuralNetworkAgressive);
+        TrainNeuralNetwork(dataDefensive, m_TrainingDataDefensive, m_NeuralNetworkDefensive);
 #endif
     }
 
 
     void Update()
     {
-        //Debug.Log(m_PreventAttacktInputs);
-        if (m_Animator.GetBool("isDead")) //Check if the character is dead at the start.
+        if(!PauseMenu.IsGamePaused)
         {
-            enabled = false;
-        }
-        if(m_HealthStaminaScript.m_CurrentHealth <= 50) //AI goes into a frenzy mode (starts to chain attacks) if it's health drops below 50.
-        {
-            m_Frenzy = true;
-        }
-        if(m_ConsecutiveAttackCount == m_ConsecutiveAttackLimit) //After throwing a random number of attacks in range 3-8, AI starts to wander a bit to let the player breathe.
-        {
-            m_WantToWander = true;
-            s_EventManager.AIWantsToWander(); //Trigger the event.
-            m_ConsecutiveAttackCount = 0; //Reset the counter for the next check.
-            m_ConsecutiveAttackLimit = Random.Range(ConsecutiveAttackLowerBound, ConsecutiveAttackUpperBound); //Get a new random attack limit.
-        }
-        if (m_IsStunned)
-        {
-            m_StunTimer -= Time.deltaTime;
-            if (m_StunTimer <= 0)
+            //Debug.Log(m_PreventAttacktInputs);
+            if (m_Animator.GetBool("isDead")) //Check if the character is dead at the start.
             {
-                m_Animator.SetBool("isStunned", false);
-                m_StunTimer = m_StunDuration;
-                m_IsStunned = false;
+                enabled = false;
             }
-        }
-        else if(!m_IsStunned)
-        {
-           ObservePlayer(); 
-           if (Vector3.Distance(m_Player.transform.position, transform.position) < 3.3f)
-           {
-                if (!m_WantToWander)
+            if(m_HealthStaminaScript.m_CurrentHealth <= 50) //AI goes into a frenzy mode (starts to chain attacks) if it's health drops below 50.
+            {
+                m_Frenzy = true;
+            }
+            if(m_ConsecutiveAttackCount == m_ConsecutiveAttackLimit) //After throwing a random number of attacks in range 3-8, AI starts to wander a bit to let the player breathe.
+            {
+                m_WantToWander = true;
+                s_EventManager.AIWantsToWander(); //Trigger the event.
+                m_ConsecutiveAttackCount = 0; //Reset the counter for the next check.
+                m_ConsecutiveAttackLimit = Random.Range(ConsecutiveAttackLowerBound, ConsecutiveAttackUpperBound); //Get a new random attack limit.
+            }
+            if (m_IsStunned)
+            {
+                m_StunTimer -= Time.deltaTime;
+                if (m_StunTimer <= 0)
                 {
-                    if(CanFrenzy)
+                    m_Animator.SetBool("isStunned", false);
+                    m_StunTimer = m_StunDuration;
+                    m_IsStunned = false;
+                }
+            }
+            else if(!m_IsStunned)
+            {
+               ObservePlayer(); 
+               if (Vector3.Distance(m_Player.transform.position, transform.position) < 3.3f)
+               {
+                    if (!m_WantToWander)
                     {
-                        if (m_Frenzy)
+                        if(CanFrenzy)
                         {
+                            if (m_Frenzy)
+                            {
 
-                            if (!m_PreventAttacktInputs) //AI is allowed to combo during frenzy.
+                                if (!m_PreventAttacktInputs) //AI is allowed to combo during frenzy.
+                                    TakeAction();
+                            }
+                            else
+                            {
                                 TakeAction();
+                            }
                         }
                         else
                         {
                             TakeAction();
                         }
                     }
-                    else
-                    {
-                        TakeAction();
-                    }
-                }
-           }
+               }
+            }
+            if(m_IsAttacking)
+            {
+                s_EventManager.AIIsAttacking();
+            }
+            else
+            {
+                s_EventManager.AIIsNotAttacking();
+            }
+            //HardCodedAI();
         }
-        if(m_IsAttacking)
-        {
-            s_EventManager.AIIsAttacking();
-        }
-        else
-        {
-            s_EventManager.AIIsNotAttacking();
-        }
-        //HardCodedAI();
     }
     void TakeAction()
     {
@@ -287,7 +205,15 @@ public class EnemyCombatBehaviour : CombatBehaviour
         //}
 
         //Feed the data to the NN and get a result.
-        float[] output = m_NeuralNetwork.FeedForward(new float[] { idle, kick, punch, parry, guard });
+        float[] output;
+        if(BeAgressive)
+        {
+            output = m_NeuralNetworkAgressive.FeedForward(new float[] { idle, kick, punch, parry, guard });
+        }
+        else
+        {
+            output = m_NeuralNetworkDefensive.FeedForward(new float[] { idle, kick, punch, parry, guard });
+        }
 
 
         //Order of the nodes will always be:  0 - > IDLE, 1 - > KICK, 2 - > PUNCH, 3 - > PARRY, 4 - > GUARD.
@@ -310,15 +236,15 @@ public class EnemyCombatBehaviour : CombatBehaviour
         }
 
         
-        //foreach (var element in neurons.Reverse())
-        //{
-        //    Debug.Log(element.Key);
-        //}
-        //
-        //foreach (int number in possibleChoices)
-        //{
-        //    Debug.Log(number);
-        //}
+        foreach (var element in neurons.Reverse())
+        {
+            Debug.Log(element.Key);
+        }
+        
+        foreach (int number in possibleChoices)
+        {
+            Debug.Log(number);
+        }
 
         int choice = possibleChoices[0]; //Set the choice to the highest action decided by the AI first.
 
@@ -344,16 +270,12 @@ public class EnemyCombatBehaviour : CombatBehaviour
                     //    Parry();
                     break;
                 case 1:
-                    switch (Random.Range(0,3))
+                    switch (Random.Range(0, 4))
                     {
-                        
-                        //case 0: ThrowAttack(m_NormalStance.UpKick, m_Kicks[m_NormalStance.UpKick.Head], m_Player); break;
-                        //case 1: ThrowAttack(m_NormalStance.LeftKick,  m_Kicks[m_NormalStance.LeftKick.Head], m_Player); break;
-                        //case 2: ThrowAttack(m_NormalStance.DownKick, m_Kicks[m_NormalStance.DownKick.Head], m_Player); break;
-                        //case 3: ThrowAttack(m_NormalStance.RightKick, m_Kicks[m_NormalStance.RightKick.Head], m_Player); break;
-                        case 0: ThrowAttack(m_NormalStance.UpPunch, m_Punches[m_NormalStance.UpPunch.Head], m_Player); break;
-                        case 1: ThrowAttack(m_NormalStance.RightPunch, m_Punches[m_NormalStance.RightPunch.Head], m_Player); break;
-                        case 2: ThrowAttack(m_NormalStance.LeftPunch, m_Punches[m_NormalStance.LeftPunch.Head], m_Player); break;
+                        case 0: ThrowAttack(m_NormalStance.UpKick, m_Kicks[m_NormalStance.UpKick.Head], m_Player); break;
+                        case 1: ThrowAttack(m_NormalStance.LeftKick,  m_Kicks[m_NormalStance.LeftKick.Head], m_Player); break;
+                        case 2: ThrowAttack(m_NormalStance.DownKick, m_Kicks[m_NormalStance.DownKick.Head], m_Player); break;
+                        case 3: ThrowAttack(m_NormalStance.RightKick, m_Kicks[m_NormalStance.RightKick.Head], m_Player); break;
                     }
                     break;
                 case 2:
@@ -449,5 +371,100 @@ public class EnemyCombatBehaviour : CombatBehaviour
     private void OnAIStopsWandering()
     {
         m_WantToWander = false;
+    }
+    void TrainNeuralNetwork(List<string> rawData, List<TrainingData> trainingData, NeuralNetwork neuralNetwork)
+    {
+        //TODO: Remove training at the start. Load an already trained NN.
+        for (int i = 0; i < rawData.Count; i++)
+        {
+            if (rawData[i].Contains("Data"))
+            {
+                var enemyAction = Regex.Match(rawData[i + 1], @"\d+").Groups[0].Value;
+                var stamina = Regex.Match(rawData[i + 2], @"\d+").Groups[0].Value;
+                var reactionTime = Regex.Match(rawData[i + 3], @"([-+]?[0-9]*\.?[0-9]+)").Groups[0].Value;
+                var action = Regex.Match(rawData[i + 4], @"\d+").Groups[0].Value;
+
+                m_FileIO.ParseFLOAT(stamina, out float staminaFLOAT);
+                m_FileIO.ParseFLOAT(reactionTime, out float reactionTimeFLOAT);
+                m_FileIO.ParseINT(enemyAction, out int enemyActionINT);
+                m_FileIO.ParseINT(action, out int actionINT);
+
+                trainingData.Add(new TrainingData { EnemyAction = enemyActionINT, Stamina = staminaFLOAT, ReactionTime = reactionTimeFLOAT, Action = actionINT });
+            }
+        }
+        foreach (TrainingData dt in trainingData) //Prepare neurons with the data collected from the .txt file.
+        {
+            //Input Neurons
+            float kick = 0.0f;
+            float punch = 0.0f;
+            float parry = 0.0f;
+            float guard = 0.0f;
+            float idle = 0.0f;
+            //float stamina = 0.0f;
+            //Reaction Ranges
+            //float R1 = 0.0f;
+            //float R2 = 0.0f;
+            //float R3 = 0.0f;
+            //float R4 = 0.0f;
+            //float R5 = 0.0f;
+            //float R6 = 0.0f;
+
+            //Output Neurons
+            float actionKick = 0.0f;
+            float actionPunch = 0.0f;
+            float actionParry = 0.0f;
+            float actionIdle = 0.0f;
+            float actionGuard = 0.0f;
+
+            //Setup
+            switch (dt.EnemyAction)
+            {
+                case 0: idle = 1.0f; break;
+                case 1: kick = 1.0f; break;
+                case 2: punch = 1.0f; break;
+                case 3: parry = 1.0f; break;
+                case 4: guard = 1.0f; break;
+            }
+
+            //if (dt.Stamina >= 10.0f)
+            //    stamina = 1.0f;
+            //if(dt.ReactionTime >= 0.0f && dt.ReactionTime < 0.1f)
+            //{
+            //    R1 = 1.0f;
+            //}
+            //else if(dt.ReactionTime >= 0.1f && dt.ReactionTime < 0.2f)
+            //{
+            //    R2 = 1.0f;
+            //}
+            //else if (dt.ReactionTime >= 0.2f && dt.ReactionTime < 0.3f)
+            //{
+            //    R3 = 1.0f;
+            //}
+            //else if (dt.ReactionTime >= 0.3f && dt.ReactionTime < 0.4f)
+            //{
+            //    R4 = 1.0f;
+            //}
+            //else if (dt.ReactionTime >= 0.4f && dt.ReactionTime < 0.5f)
+            //{
+            //    R5 = 1.0f;
+            //}
+            //else if (dt.ReactionTime >= 0.5)
+            //{
+            //    R6 = 1.0f;
+            //}
+
+            switch (dt.Action)
+            {
+                case 0: actionIdle = 1.0f; break;
+                case 1: actionKick = 1.0f; break;
+                case 2: actionPunch = 1.0f; break;
+                case 3: actionParry = 1.0f; break;
+                case 4: actionGuard = 1.0f; break;
+            }
+
+            //Train the network.
+            neuralNetwork.FeedForward(new float[] { idle, kick, punch, parry, guard });
+            neuralNetwork.BackProp(new float[] { actionIdle, actionKick, actionPunch, actionParry, actionGuard });
+        }
     }
 }

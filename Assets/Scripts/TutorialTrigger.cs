@@ -13,6 +13,7 @@ public class TutorialTrigger : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             EventManager.GetInstance().PlayerEnteredTutorialTrigger();
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
     void OnPlayerCompletesTutorial()

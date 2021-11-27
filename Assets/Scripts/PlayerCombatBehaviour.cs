@@ -23,11 +23,8 @@ public class PlayerCombatBehaviour : CombatBehaviour
     }
     void Update()
     {
-        //Debug.Log(m_PreventAttacktInputs);
-        if(Input.GetKey(KeyCode.T))
-        {
-            MenuManager.RestartLevel(0);
-        }
+        //Debug.Log(m_IsGettingHit);
+
         //Debug.Log(m_CurrentAttack);
         ObserveAI();
         //Debug.Log(m_AIState);
@@ -35,42 +32,41 @@ public class PlayerCombatBehaviour : CombatBehaviour
         //{
         //    m_CurrentAttack = "None";
         //}
-        if (Input.GetKey(KeyCode.T))
+        if(!PauseMenu.IsGamePaused)
         {
-            MenuManager.RestartLevel(0);
-        }
-        if (m_Animator.GetBool("isDead"))
-        {
-            enabled = false;
-        }
-        if (m_IsStunned)
-        {
-            m_StunTimer -= Time.deltaTime;
-            if(m_StunTimer <= 0)
+            if (m_Animator.GetBool("isDead"))
             {
-                m_Animator.SetBool("isStunned", false);
-                m_StunTimer = m_StunDuration;
-                m_IsStunned = false;
+                enabled = false;
             }
-        }
-        else if(!m_IsStunned)
-        {
-            if(!m_DisableAllInput)
+            if (m_IsStunned)
             {
-                ProcessAttackInput();
-
-                if (!m_IsAttacking && !m_IsGettingHit && !m_IsParryingFull && !m_IsStunned)
+                m_StunTimer -= Time.deltaTime;
+                if(m_StunTimer <= 0)
                 {
-                    if (Input.GetKey(KeyCode.Space))
+                    m_Animator.SetBool("isStunned", false);
+                    m_StunTimer = m_StunDuration;
+                    m_IsStunned = false;
+                }
+            }
+            else if(!m_IsStunned)
+            {
+                if(!m_DisableAllInput)
+                {
+                    ProcessAttackInput();
+
+                    if (!m_IsAttacking && !m_IsGettingHit && !m_IsParryingFull && !m_IsStunned)
                     {
-                        GuardUp();
+                        if (Input.GetKey(KeyCode.LeftControl))
+                        {
+                            GuardUp();
+                        }
                     }
                 }
             }
-        }
-        if(Input.GetKeyUp(KeyCode.Space))
-        {
-            GuardReleased();
+            if(Input.GetKeyUp(KeyCode.LeftControl))
+            {
+                GuardReleased();
+            }
         }
     }
     void RecordState(State move)
