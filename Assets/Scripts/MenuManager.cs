@@ -13,5 +13,6 @@ public class MenuManager : MonoBehaviour
     public static void RestartLevel(int level)
     {
         SceneManager.LoadScene(level);
+        Time.timeScale = 1;
     }
 }

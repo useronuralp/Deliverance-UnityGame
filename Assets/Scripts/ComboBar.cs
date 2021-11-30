@@ -20,6 +20,10 @@ public class ComboBar : MonoBehaviour
         {
             m_ComboBarImage.color = new Color32(79, 79, 79, 179);
         }
+        else
+        {
+            m_ComboBarImage.color = new Color32(255, 255, 255, 179);
+        }
         if(m_ComboBarImage.fillAmount == 0.0f)
         {
             m_ComboBarImage.color = new Color32(255, 255, 255, 179);
@@ -29,7 +33,7 @@ public class ComboBar : MonoBehaviour
         {
             m_BackgroundImage.enabled = true;
         }
-        if(m_PlayerCombatScript.m_IsAttacking && !m_PlayerCombatScript.m_LockAttacking)
+        if((m_PlayerCombatScript.m_IsAttacking && !m_PlayerCombatScript.m_LockAttacking) || (m_PlayerCombatScript.m_IsParryingFull && !m_PlayerCombatScript.m_LockAttacking))
         {
             m_ComboBarImage.fillAmount = m_PlayerCombatScript.m_StateElapesedTime / (m_PlayerCombatScript.m_ComboWindowStart);
         }
@@ -37,8 +41,5 @@ public class ComboBar : MonoBehaviour
         {
              m_ComboBarImage.fillAmount = 0.0f;
         }
-        //if (m_PlayerCombatScript.m_StateElapesedTime >= m_PlayerCombatScript.m_ComboWindowStart + m_PlayerCombatScript.m_ComboWindowDuration || m_PlayerCombatScript.m_StateElapesedTime == 0.0f)
-        //{
-        //}
     }
 }

@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class PlayerCombatBehaviour : CombatBehaviour
 {
     private State m_AIState = State.NONE;
     private FileIO m_Recorder;
     private bool m_DisableAllInput;
     private GameObject m_LockTarget;
+    private TextMeshProUGUI m_ComboText;
     protected override void Awake()
     {
         base.Awake();
@@ -15,16 +16,19 @@ public class PlayerCombatBehaviour : CombatBehaviour
     }
     private void Start()
     {
+        m_ComboCount = 0;
         m_LockTarget = null;
         m_DisableAllInput = false;
         EventManager.GetInstance().OnPlayerLockedOnToTarget += OnLockOnTarget; //Subscribe to event.
         EventManager.GetInstance().OnPlayerReleasedLockOnTarget += OnReleaseLockOnTarget; //Subscribe to event.
+        m_ComboText = transform.Find("PlayerHUD").Find("ComboUI").Find("ComboText").Find("ComboNumber").GetComponent<TextMeshProUGUI>();
         //m_Recorder = new FileIO("TrainingData.txt");
     }
     void Update()
     {
-        //Debug.Log(m_IsGettingHit);
+        //Debug.Log(m_ComboCount);
 
+        m_ComboText.text = m_ComboCount.ToString();
         //Debug.Log(m_CurrentAttack);
         ObserveAI();
         //Debug.Log(m_AIState);

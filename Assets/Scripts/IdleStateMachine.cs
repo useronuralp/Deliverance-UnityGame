@@ -9,7 +9,6 @@ public class IdleStateMachine : StateMachineBehaviour
     private MovementBehaviour sm_MovementScript;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("In Idle");
         sm_AttachedObject = animator.gameObject;
         sm_MovementScript = sm_AttachedObject.GetComponent<MovementBehaviour>();
         sm_CombatScript = sm_AttachedObject.GetComponent<CombatBehaviour>();

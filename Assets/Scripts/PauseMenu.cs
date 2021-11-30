@@ -9,19 +9,26 @@ public class PauseMenu : MonoBehaviour
     private GameObject m_TutorialPanel;
     public GameObject TutorialScreen;
     private bool m_IsPlayerInTutorial;
+    private bool m_IsPlayerAtDeathScreen;
     private void Start()
     {
+        m_IsPlayerAtDeathScreen = false;
         m_IsPlayerInTutorial = false;
         m_PausePanel = transform.Find("PausePanel").gameObject;
         m_TutorialPanel = transform.Find("TutorialPanel").gameObject;
         EventManager.GetInstance().OnSeperateWindowClosed += OnSeperateWindowClosed;
         EventManager.GetInstance().OnPlayerClosesTutorial += OnPlayerClosesTutorial;
         EventManager.GetInstance().OnPlayerEnteringTutorialTrigger += OnPlayerEntersTutorial;
+        EventManager.GetInstance().OnPlayerDeath += OnPlayerDeath;
+
+
+        if(GameState.WasTutorialAlreadyTriggered)
+            m_PausePanel.transform.Find("TutorialButton").gameObject.SetActive(true);
     }
     void Update()
     {
-        Debug.Log(Time.timeScale);
-        if(!m_IsPlayerInTutorial)
+        //Debug.Log(m_IsPlayerAtDeathScreen);
+        if(!m_IsPlayerInTutorial && !m_IsPlayerAtDeathScreen && !GameState.DidPlayerFinishTheGame)
         {
             if(Input.GetKeyDown(KeyCode.Escape))
             {
@@ -55,7 +62,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         IsGamePaused = false;
-        MenuManager.RestartLevel(0);
+        MenuManager.RestartLevel(1);
     }
     public void OnLockOnButtonPressed()
     {
@@ -82,6 +89,11 @@ public class PauseMenu : MonoBehaviour
         m_TutorialPanel.SetActive(false);
         EventManager.GetInstance().ComboButtonPressed();
     }
+    public void OnParryButtonPressed()
+    {
+        m_TutorialPanel.SetActive(false);
+        EventManager.GetInstance().ParryButtonPressed();
+    }
     public void OnBackButtonPressed()
     {
         m_TutorialPanel.SetActive(false);
@@ -100,5 +112,13 @@ public class PauseMenu : MonoBehaviour
     public void OnPlayerEntersTutorial()
     {
         m_IsPlayerInTutorial = true;
+    }
+    public void OnPlayerDeath()
+    {
+        m_IsPlayerAtDeathScreen = true;
+    }
+    public void OnQuitButtonPressed()
+    {
+        Application.Quit();
     }
 }

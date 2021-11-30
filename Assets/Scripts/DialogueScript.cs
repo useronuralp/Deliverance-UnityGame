@@ -15,7 +15,7 @@ public class DialogueScript : MonoBehaviour
     private bool m_IsPlayerInsideTalkingRange;
     private void Start()
     {
-        m_TalkerName = m_DialogueBox.transform.Find("Name").GetComponent<TextMeshProUGUI>();
+        m_TalkerName = m_DialogueBox.transform.Find("NameFrame").Find("Name").GetComponent<TextMeshProUGUI>();
         m_Dialogue = m_DialogueBox.transform.Find("Dialogue").GetComponent<TextMeshProUGUI>();
         m_FloatingQuestionMark = transform.root.Find("FloatingQuestionMark").GetComponent<SpriteRenderer>();
         m_IsPlayerInsideTalkingRange = false;
@@ -56,7 +56,9 @@ public class DialogueScript : MonoBehaviour
         }
 
         string sentence = m_DialogueQueue.Dequeue();
-        m_Dialogue.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+        //m_Dialogue.text = sentence;
     }
     private void ProgressDialogue()
     {
@@ -85,6 +87,15 @@ public class DialogueScript : MonoBehaviour
             m_IsPlayerInsideTalkingRange = false;
             m_FloatingQuestionMark.enabled = true;
             EventManager.GetInstance().PlayerLeftTalkRange();
+        }
+    }
+    IEnumerator TypeSentence(string sentence)
+    {
+        m_Dialogue.text = "";
+        foreach(char letter in sentence.ToCharArray())
+        {
+            m_Dialogue.text += letter;
+            yield return null;
         }
     }
 }

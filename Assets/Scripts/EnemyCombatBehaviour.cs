@@ -33,6 +33,8 @@ public class EnemyCombatBehaviour : CombatBehaviour
 
     public bool CanFrenzy = false;
     public bool CanParry = false;
+
+    public bool ShouldGoDefensive = false;
     protected override void Awake()
     {
         base.Awake();
@@ -85,10 +87,15 @@ public class EnemyCombatBehaviour : CombatBehaviour
             //Debug.Log(m_PreventAttacktInputs);
             if (m_Animator.GetBool("isDead")) //Check if the character is dead at the start.
             {
+                s_EventManager.OnAIStopsWandering -= OnAIStopsWandering;
                 enabled = false;
             }
             if(m_HealthStaminaScript.m_CurrentHealth <= 50) //AI goes into a frenzy mode (starts to chain attacks) if it's health drops below 50.
             {
+                if(ShouldGoDefensive)
+                {
+                    BeAgressive = false;
+                }
                 m_Frenzy = true;
             }
             if(m_ConsecutiveAttackCount == m_ConsecutiveAttackLimit) //After throwing a random number of attacks in range 3-8, AI starts to wander a bit to let the player breathe.
@@ -236,15 +243,15 @@ public class EnemyCombatBehaviour : CombatBehaviour
         }
 
         
-        foreach (var element in neurons.Reverse())
-        {
-            Debug.Log(element.Key);
-        }
-        
-        foreach (int number in possibleChoices)
-        {
-            Debug.Log(number);
-        }
+        //foreach (var element in neurons.Reverse())
+        //{
+        //    Debug.Log(element.Key);
+        //}
+        //
+        //foreach (int number in possibleChoices)
+        //{
+        //    Debug.Log(number);
+        //}
 
         int choice = possibleChoices[0]; //Set the choice to the highest action decided by the AI first.
 

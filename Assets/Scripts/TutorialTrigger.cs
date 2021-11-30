@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TutorialTrigger : MonoBehaviour
 {
+    private void Awake()
+    {
+        if (GameState.WasTutorialAlreadyTriggered)
+            Destroy(gameObject);
+    }
     private void Start()
     {
         EventManager.GetInstance().OnPlayerClosesTutorial += OnPlayerCompletesTutorial;
@@ -12,6 +17,7 @@ public class TutorialTrigger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            GameState.WasTutorialAlreadyTriggered = true;
             EventManager.GetInstance().PlayerEnteredTutorialTrigger();
             GetComponent<BoxCollider>().enabled = false;
         }

@@ -9,6 +9,8 @@ public class Tutorial : MonoBehaviour
     private GameObject m_Box3;
     private GameObject m_Box4;
     private GameObject m_Box5;
+    private GameObject m_Box6;
+    private GameObject m_Box7;
     private Queue<GameObject> m_Screens;
     private bool m_PlayerReadingTutorial;
     private GameObject m_PreviousScreen;
@@ -24,12 +26,14 @@ public class Tutorial : MonoBehaviour
         m_Box3 = transform.Find("TutorialBox3").gameObject;
         m_Box4 = transform.Find("TutorialBox4").gameObject;
         m_Box5 = transform.Find("TutorialBox5").gameObject;
+        m_Box6 = transform.Find("TutorialBox6").gameObject;
+        m_Box7 = transform.Find("TutorialBox7").gameObject;
         m_PressEToContinue = transform.Find("PressEToContinue").gameObject;
         m_ContinueImage = transform.Find("ContinueImage").gameObject;
         m_Screens = new Queue<GameObject>();
         m_PreviousScreen = null;
         m_PlayerReadingTutorial = false;
-        m_Screens.Enqueue(m_Box1); m_Screens.Enqueue(m_Box2); m_Screens.Enqueue(m_Box3); m_Screens.Enqueue(m_Box4); m_Screens.Enqueue(m_Box5);
+        m_Screens.Enqueue(m_Box1); m_Screens.Enqueue(m_Box2); m_Screens.Enqueue(m_Box3); m_Screens.Enqueue(m_Box4); m_Screens.Enqueue(m_Box5); m_Screens.Enqueue(m_Box6); m_Screens.Enqueue(m_Box7);
         m_PressEToContinue.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
         LeanTween.scale(m_PressEToContinue.gameObject, new Vector3(1, 1, 1), 0.00001f).setLoopType(LeanTweenType.pingPong);
     }
@@ -43,6 +47,7 @@ public class Tutorial : MonoBehaviour
         EventManager.GetInstance().OnDefenseButtonPressed += OnDefenseButtonPressed;
         EventManager.GetInstance().OnResourcesButtonPressed += OnResourcesButtonPressed;
         EventManager.GetInstance().OnComboButtonPressed += OnComboButtonPressed;
+        EventManager.GetInstance().OnParryButtonPressed += OnParryButtonPressed;
 
         EventManager.GetInstance().OnGameResumed += OnGameResumed;
     }
@@ -100,49 +105,27 @@ public class Tutorial : MonoBehaviour
     }
     public void OnLockOnButtonPressed()
     {
-        m_OnSeperateMenu = true;
-        m_Box1.SetActive(true);
-        m_ActiveWindow = m_Box1;
-        m_PressEToContinue.SetActive(true);
-        m_ContinueImage.SetActive(true);
-        Time.timeScale = 0.00001f;
+        ActivateScreen(m_Box1);
     }
     public void OnOffenseButtonPressed()
     {
-        m_OnSeperateMenu = true;
-        m_Box2.SetActive(true);
-        m_ActiveWindow = m_Box2;
-        m_PressEToContinue.SetActive(true);
-        m_ContinueImage.SetActive(true);
-        Time.timeScale = 0.00001f;
+        ActivateScreen(m_Box2);
     }
     public void OnDefenseButtonPressed()
     {
-        m_OnSeperateMenu = true;
-        m_Box3.SetActive(true);
-        m_ActiveWindow = m_Box3;
-        m_PressEToContinue.SetActive(true);
-        m_ContinueImage.SetActive(true);
-        Time.timeScale = 0.00001f;
+        ActivateScreen(m_Box3);
     }
     public void OnResourcesButtonPressed()
     {
-        m_OnSeperateMenu = true;
-        m_Box4.SetActive(true);
-        m_ActiveWindow = m_Box4;
-        m_PressEToContinue.SetActive(true);
-        m_ContinueImage.SetActive(true);
-        Time.timeScale = 0.00001f;
+        ActivateScreen(m_Box4);
     }
     public void OnComboButtonPressed()
     {
-        m_OnSeperateMenu = true;
-        m_Box5.SetActive(true);
-        m_ActiveWindow = m_Box5;
-        m_PressEToContinue.SetActive(true);
-
-        m_ContinueImage.SetActive(true);
-        Time.timeScale = 0.00001f;
+        ActivateScreen(m_Box5);
+    }
+    public void OnParryButtonPressed()
+    {
+        ActivateScreen(m_Box6);
     }
     public void OnGameResumed()
     {
@@ -153,5 +136,14 @@ public class Tutorial : MonoBehaviour
             m_PressEToContinue.SetActive(false);
         if(m_ContinueImage)
             m_ContinueImage.SetActive(false);
+    }
+    private void ActivateScreen(GameObject screen)
+    {
+        m_OnSeperateMenu = true;
+        screen.SetActive(true);
+        m_ActiveWindow = screen;
+        m_PressEToContinue.SetActive(true);
+        m_ContinueImage.SetActive(true);
+        Time.timeScale = 0.00001f;
     }
 }

@@ -5,6 +5,14 @@ using UnityEngine;
 public class DoorTrigger : MonoBehaviour
 {
     private bool m_IsPlayerUnlockRange;
+    private void Awake()
+    {
+        if(GameState.WasTutorialAlreadyTriggered)
+        {
+            transform.root.Find("DoorLock").GetComponent<BoxCollider>().enabled = false;
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         m_IsPlayerUnlockRange = false;

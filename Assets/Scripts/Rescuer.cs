@@ -20,6 +20,13 @@ public class Rescuer : MonoBehaviour
 
     private float m_ElapsedTime;
     private bool m_StartTimer;
+    private void Awake()
+    {
+        if(GameState.WasTutorialAlreadyTriggered)
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         m_StartTimer = false;

@@ -25,6 +25,7 @@ public class GetStunnedStateMachine : StateMachineBehaviour
         sm_CombatScript.m_IsIdle = true;
         sm_CombatScript.m_IsAttacking = false;
         sm_CombatScript.m_IsGuarding = false;
+        sm_CombatScript.m_ComboCount = 0;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-
+using UnityEngine.SceneManagement;
 /// <summary>
 /// Camera movements are also handled in this script along with player movement.
 /// </summary>
@@ -15,6 +15,11 @@ public class PlayerMovementBehaviour : MovementBehaviour
     protected override void Awake()
     {
         base.Awake();
+        if(GameState.WasTutorialAlreadyTriggered && SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            OnEnableLeafParticles();
+            gameObject.transform.position = new Vector3(-18.5f, 6.03f, 21.2f);
+        }
     }
     void Start()
     {
@@ -38,12 +43,15 @@ public class PlayerMovementBehaviour : MovementBehaviour
 
 
         EventManager.GetInstance().OnLockTargetDeath += OnLockTargetDeath;
+        EventManager.GetInstance().OnPlayerEnablesLeaves += OnEnableLeafParticles;
+        EventManager.GetInstance().OnPlayerDisablesLeaves += OnDisableLeafParticles;
+
         m_HealthStaminaScript = GetComponent<HealthStamina>();
         m_RigidBody = GetComponent<Rigidbody>();
     }
     void Update()
     {
-        Debug.Log(PauseMenu.IsGamePaused);
+        //Debug.Log(PauseMenu.IsGamePaused);
         if(!PauseMenu.IsGamePaused)
         {
             if (m_Animator.GetBool("isDead")) //Handling death on top before everything else.
@@ -313,5 +321,13 @@ public class PlayerMovementBehaviour : MovementBehaviour
             m_LockedOnCamera.LookAt = transform;
             EventManager.GetInstance().PlayerReleasedLockOnTarget();
         }
+    }
+    void OnEnableLeafParticles()
+    {
+        transform.root.Find("LeafFall").gameObject.SetActive(true);
+    }
+    void OnDisableLeafParticles()
+    {
+        transform.root.Find("LeafFall").gameObject.SetActive(false);
     }
 }

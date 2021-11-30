@@ -50,6 +50,7 @@ public class BlockHitStateMachine : StateMachineBehaviour
         //Exp
         sm_CombatScript.m_IsIdle = false;
         sm_CombatScript.m_IsAttacking = false;
+        sm_CombatScript.m_ComboCount = 0;
 
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

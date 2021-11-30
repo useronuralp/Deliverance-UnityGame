@@ -12,15 +12,12 @@ public class DeathStateMachine : StateMachineBehaviour
         {
             if(animator.gameObject.CompareTag("EnemyAI"))
             {
-                Debug.Log("AI died");
                 EventManager.GetInstance().LockTargetDied();
                 Destroy(animator.gameObject);   
             }
             else
             {
-                Debug.Log("Player Died");
                 EventManager.GetInstance().PlayerDied();
-                MenuManager.RestartLevel(0);
             }
         }
     }

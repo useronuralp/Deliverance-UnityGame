@@ -5,6 +5,13 @@ using UnityEngine;
 public class SprintPrompt : MonoBehaviour
 {
     private bool m_PlayerSawPrompt;
+    private void Awake()
+    {
+        if(GameState.WasTutorialAlreadyTriggered)
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         m_PlayerSawPrompt = false;

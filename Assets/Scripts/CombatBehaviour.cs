@@ -153,8 +153,6 @@ public abstract class CombatBehaviour : MonoBehaviour
     [HideInInspector]
     public float                              m_DistanceToTarget;     //The distance between this character and its target (lock target).
     [HideInInspector]
-    private ActiveStance                      m_ActiveStance;
-    [HideInInspector]
     public int                                m_ConsecutiveAttackCount;
     [HideInInspector]
     public Stance                             m_NormalStance;
@@ -162,6 +160,8 @@ public abstract class CombatBehaviour : MonoBehaviour
     public float                              m_ComboWindowDuration;
     [HideInInspector]
     public bool                               m_DidHitLand;
+    [HideInInspector]
+    public int                                m_ComboCount;
     //Experimental
     [HideInInspector]
     public float                              m_ComboWindowStart;
@@ -225,11 +225,6 @@ public abstract class CombatBehaviour : MonoBehaviour
             DownKick.ResetHead();
         }
     }
-    protected enum ActiveStance
-    {
-        Normal,
-        Alternative
-    }
     protected enum State
     {
         NONE = -1,
@@ -282,7 +277,7 @@ public abstract class CombatBehaviour : MonoBehaviour
         };
         m_HitLocations = new Dictionary<string, string>()
         {
-            { "NormalStance_LeftKick_1",   "GetHitTopLeft"    },
+            { "NormalStance_LeftKick_1",   "GetHitRight"      },
             { "NormalStance_UpKick_1",     "GetHitTopLeft"    },
             { "NormalStance_RightKick_1",  "GetHitTopLeft"    },
             { "NormalStance_DownKick_1",   "GetHitMiddleLeft" },
@@ -292,10 +287,10 @@ public abstract class CombatBehaviour : MonoBehaviour
             { "NormalStance_RightPunch_1", "GetHitTopLeft"    },
             { "NormalStance_RightKick_2",  "GetHitTopLeft"    },
             { "NormalStance_UpKick_2",     "GetHitTopLeft"    },
-            { "NormalStance_LeftPunch_1",  "GetHitTopLeft"    },
-            { "NormalStance_LeftPunch_2",  "GetHitTopLeft"    },
+            { "NormalStance_LeftPunch_1",  "GetHitRight"      },
+            { "NormalStance_LeftPunch_2",  "GetHitRight"      },
             { "NormalStance_RightPunch_2", "GetHitTopLeft"    },
-            { "NormalStance_LeftKick_2",   "GetHitTopLeft"    },
+            { "NormalStance_LeftKick_2",   "GetHitRight"      },
         };
         m_SnapStarTimers = new Dictionary<string, float>()
         {
@@ -415,7 +410,6 @@ public abstract class CombatBehaviour : MonoBehaviour
     protected virtual void Awake()
     {
         m_ComboWindowDuration          = 0.2f;
-        m_ActiveStance                 = ActiveStance.Normal;
         m_StateElapesedTime            = 0.0f;
         m_StunDuration                 = 2.0f;
         m_IsGettingHit                 = false;
@@ -486,6 +480,10 @@ public abstract class CombatBehaviour : MonoBehaviour
     }
     protected bool ThrowAttack(AttackPair duo, string colliderName, GameObject target)
     {
+        if(m_IsParryingFull)
+        {
+            m_LockAttacking = true;
+        }
         if (m_CanCombo && duo.Head == m_CurrentAttack)                                    //Eliminates the possibility of abusing combo with the same attack over and over again. (BUG FIX / WAS ADDED LATER IN DEVELOPMENT)
         {
             return false;
@@ -520,7 +518,16 @@ public abstract class CombatBehaviour : MonoBehaviour
     }
     protected void Parry()
     {
-        if(!m_PreventAttacktInputs && !m_CanCombo)
+        if (m_CurrentAttack != "None" && !m_CanCombo && m_StateElapesedTime > 0.2f)              //The case in which player tries to spam attakcs. Big no-no. Punish them by taking away their combo ability until the current attack animation ends. (BUG FIX / ADDED LATER)
+        {
+            m_LockAttacking = true;
+            return;
+        }
+        if (m_IsParryingFull)              //The case in which player tries to spam attakcs. Big no-no. Punish them by taking away their combo ability until the current attack animation ends. (BUG FIX / ADDED LATER)
+        {
+            return;
+        }
+        if (!m_PreventAttacktInputs)
         {
             m_IsIdle                           = false;
             m_PreventAttacktInputs             = true;

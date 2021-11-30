@@ -64,6 +64,7 @@ public class AttackStateMachine : StateMachineBehaviour
 
         //Exp
         sm_CombatScript.m_DidThrowAnAttack = false;
+        sm_CombatScript.m_ComboCount++;
     }
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -74,15 +75,18 @@ public class AttackStateMachine : StateMachineBehaviour
         }
 
         //TODO: Make particles glow.
-        sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Emit(2); //Emit particles during the attack.
-        sm_CombatScript.m_PreventAttacktInputs = true;
-        sm_Movementscript.m_DisableMovement    = true;
-        sm_CombatScript.m_IsAttacking          = true;
-        sm_CombatScript.m_IsIdle               = false;
-        sm_LandingTime                         -= Time.deltaTime;
-        sm_AnimationSnapCooldownTimer          -= Time.deltaTime; //Snap cooldown timer for animation.
-        sm_ElapsedTime                         += Time.deltaTime; //starts when the attack animation starts. 
-        sm_CombatScript.m_StateElapesedTime    = sm_ElapsedTime;  //Propogate the elapsed time info to the combat script.
+        if(!sm_CombatScript.m_IsParryingFull)
+        {
+            sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Emit(2); //Emit particles during the attack.
+            sm_CombatScript.m_PreventAttacktInputs = true;
+            sm_Movementscript.m_DisableMovement    = true;
+            sm_CombatScript.m_IsAttacking          = true;
+            sm_CombatScript.m_IsIdle               = false;
+            sm_LandingTime                         -= Time.deltaTime;
+            sm_AnimationSnapCooldownTimer          -= Time.deltaTime; //Snap cooldown timer for animation.
+            sm_ElapsedTime                         += Time.deltaTime; //starts when the attack animation starts.
+            sm_CombatScript.m_StateElapesedTime    = sm_ElapsedTime;  //Propogate the elapsed time info to the combat script.
+        }
 
         if (sm_AnimationSnapCooldownTimer <= 0)  //When snap cooldown ends.
         {
@@ -192,6 +196,17 @@ public class AttackStateMachine : StateMachineBehaviour
             sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Stop();
             sm_CombatScript.m_NormalStance.ResetStance();
         }
+        else if(sm_CombatScript.m_IsParryingFull)
+        {
+            sm_CombatScript.m_IsIdle = false;
+            sm_CombatScript.m_IsAttacking = false;
+            sm_CombatScript.m_PreventAttacktInputs = true;
+            sm_Movementscript.m_DisableMovement = true;
+            sm_CombatScript.m_CanCombo = false;
+            sm_CombatScript.m_LockAttacking = false;
+            sm_CombatScript.m_CurrentAttack = "None";
+            //sm_CombatScript.m_StateElapesedTime = 0.0f;
+        }
         else if(sm_CurrentAttack == sm_CombatScript.m_CurrentAttack) //The case where the character left this state without comboing.
         {
             sm_CombatScript.m_IsIdle               = true;
@@ -204,7 +219,11 @@ public class AttackStateMachine : StateMachineBehaviour
             sm_CombatScript.m_StateElapesedTime    = 0.0f;
             sm_CombatScript.m_HitParticles[sm_CombatScript.m_LimbName].Stop();
             //Debug.Log(sm_CombatScript.m_PreventAttacktInputs);
+            sm_CombatScript.m_ComboCount = 0;
             sm_CombatScript.m_NormalStance.ResetStance();
+
+            sm_CombatScript.m_IsParrying = false;
+            sm_CombatScript.m_IsParryingFull = false;
         }
         //Disable all the colliders upon exit.
         foreach (var nameColliderPair in sm_CombatScript.m_OffensiveColliders)

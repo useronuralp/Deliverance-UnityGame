@@ -101,7 +101,7 @@ public class HealthStamina : MonoBehaviour
     }
     public void GetHit(float damage)                                 //Change the current health first, then pass the percentage to the coroutine.
     {
-        //m_CurrentHealth -= damage;
+        m_CurrentHealth -= damage;
         StartCoroutine(ChangeHealthTo(m_CurrentHealth / m_MaxHealth));
     }
     private IEnumerator ChangeHealthTo(float percentage)             //Only reason this is a Coroutine is that changing the health amount looks smooth this way, rather than sharp and instantenous decrease / increase in visuals.

@@ -29,7 +29,9 @@ public class EnemyMovementBehaviour : MovementBehaviour
     }
     void Update()
     {
-        if(!PauseMenu.IsGamePaused)
+        //Debug.Log("Active? " + gameObject.activeInHierarchy);
+        //Debug.Log(name);
+        if (!PauseMenu.IsGamePaused)
         {
             //Debug.Log(m_WantToWander);
             if (m_WantToWander)
@@ -42,6 +44,9 @@ public class EnemyMovementBehaviour : MovementBehaviour
             //Debug.Log(m_IsAttacking);
             if (m_Animator.GetBool("isDead"))
             {
+                EventManager.GetInstance().OnAIStartsWandering -= OnAIStartsWandering;
+                EventManager.GetInstance().OnAIIsAttacking -= OnAIIsAttacking;
+                EventManager.GetInstance().OnAIIsNotAttacking -= OnAIIsNotAttacking;
                 enabled = false;
             }
 
@@ -174,6 +179,7 @@ public class EnemyMovementBehaviour : MovementBehaviour
     }
     private void OnAIStartsWandering()
     {
+
         StartCoroutine(Wander(Random.Range(1,4)));
     }
     private void OnAIIsAttacking()
