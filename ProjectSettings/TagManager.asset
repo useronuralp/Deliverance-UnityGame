@@ -8,6 +8,9 @@ TagManager:
   - HeadHurtBox
   - TorsoHurtBox
   - LegHurtBox
+  - Terrain
+  - Stone
+  - Rescuer
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - Enemy
   - Player
   - Terrain
-  - 
+  - PostProcessing
   - 
   - 
   - 
